@@ -1,0 +1,504 @@
+{
+  "repository": "C:\\Users\\ammar\\OneDrive\\Desktop\\personal\\arbisoft\\final_project_alternative",
+  "case_count": 8,
+  "index_ms": 49095.168,
+  "index_restore_ms": 628.245,
+  "process_peak_memory_mib": 194.012,
+  "hit_rate_at_1": 0.25,
+  "hit_rate_at_3": 1.0,
+  "recall_at_5": 1.0,
+  "recall_at_10": 1.0,
+  "hit_rate_at_5": 1.0,
+  "hit_rate_at_10": 1.0,
+  "precision_at_5": 0.35,
+  "precision_at_10": 0.2625,
+  "path_recall_at_5": 0.3503,
+  "path_recall_at_10": 0.517,
+  "required_group_recall_at_5": 0.5313,
+  "required_group_recall_at_10": 0.6771,
+  "mean_average_precision_at_10": 0.2526,
+  "mean_reciprocal_rank": 0.5833,
+  "ndcg_at_10": 0.4333,
+  "forbidden_path_hit_rate_at_10": 0.375,
+  "strict_case_pass_rate": 0.0,
+  "strict_quality_score": 0.4286,
+  "mean_query_ms": 3277.236,
+  "query_p50_ms": 3260.028,
+  "query_p95_ms": 3441.554,
+  "query_p99_ms": 3459.735,
+  "cold_query_mean_ms": 3277.236,
+  "warm_query_mean_ms": 3277.236,
+  "query_repeats": 1,
+  "results": [
+    {
+      "id": "memory-store-and-restore",
+      "question": "Trace where SQLite conversation memory is stored, bounded for model context, and restored through the API.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/provider.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/store.py",
+        "backend/app/agent/memory.py",
+        "verification/agentic-rag-evaluation-cases.json"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.2,
+      "path_recall_at_10": 0.4,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.1111,
+      "ndcg_at_10": 0.2717,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 3,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/memory.py"
+        ],
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/api/routes.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/memory.py",
+        "backend/app/agent/service.py",
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 3464.281,
+      "warm_mean_latency_ms": 3464.281
+    },
+    {
+      "id": "secure-github-import",
+      "question": "Trace a GitHub URL from validation through secure shallow clone limits into repository analysis.",
+      "retrieved_paths": [
+        "frontend/src/App.tsx",
+        "backend/app/repository_import.py",
+        "backend/app/mcp_server.py",
+        "backend/app/graph/store.py",
+        "backend/app/agent/service.py",
+        "verification/agentic-rag-evaluation-cases.json",
+        "backend/app/api/routes.py",
+        "backend/tests/test_repository_import.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/agent/retrieval.py"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.2,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.2321,
+      "ndcg_at_10": 0.434,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 3,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/repository_import.py"
+        ],
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/config.py",
+          "backend/app/processes.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/app/processes.py",
+        "backend/app/repository_import.py",
+        "backend/tests/test_repository_import.py"
+      ],
+      "cold_latency_ms": 3217.938,
+      "warm_mean_latency_ms": 3217.938
+    },
+    {
+      "id": "polyglot-parsing",
+      "question": "Explain how JavaScript, TypeScript, TSX, Java, HTML, and CSS files become shared graph nodes and relationships.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/analyzer.py",
+        "backend/tests/test_polyglot_analyzer.py",
+        "frontend/src/App.tsx",
+        "verification/agentic-rag-evaluation-cases.json",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "README.md",
+        "recommended-indexing-and-retrieval-architecture.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.525,
+      "ndcg_at_10": 0.7095,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "backend/tests/test_polyglot_analyzer.py"
+      ],
+      "cold_latency_ms": 3290.647,
+      "warm_mean_latency_ms": 3290.647
+    },
+    {
+      "id": "analysis-http-flow",
+      "question": "Trace the HTTP repository-analysis request from path validation to parsing, session persistence, and index creation.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/semantic.py",
+        "frontend/src/App.tsx",
+        "backend/tests/test_agent.py",
+        "backend/app/graph/store.py",
+        "backend/app/graph/analyzer.py",
+        "verification/agentic-rag-evaluation-cases.json"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.1667,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.25,
+      "required_group_recall_at_10": 0.75,
+      "average_precision_at_10": 0.1806,
+      "ndcg_at_10": 0.3775,
+      "forbidden_hits": [
+        "frontend/src/App.tsx"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/store.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/api/routes.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_api.py"
+      ],
+      "cold_latency_ms": 3202.877,
+      "warm_mean_latency_ms": 3202.877
+    },
+    {
+      "id": "graph-edge-construction",
+      "question": "How are imports, class construction, typed method calls, unresolved calls, and evidence confidence represented in the graph?",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/agent/service.py",
+        "frontend/src/App.tsx",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "backend/app/agent/provider.py",
+        "backend/app/agent/comparison.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.4,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.28,
+      "ndcg_at_10": 0.4704,
+      "forbidden_hits": [
+        "frontend/src/App.tsx"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "backend/tests/test_analyzer.py",
+        "backend/tests/test_polyglot_analyzer.py"
+      ],
+      "cold_latency_ms": 3284.594,
+      "warm_mean_latency_ms": 3284.594
+    },
+    {
+      "id": "agent-tool-loop",
+      "question": "Trace how the repository agent chooses bounded tools, executes them, validates citations, retries, and submits its final answer.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/retrieval.py",
+        "backend/tests/test_agent.py",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "plan.md",
+        "verification/agentic-rag-evaluation-cases.json",
+        "frontend/src/App.tsx"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.28,
+      "ndcg_at_10": 0.466,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/agent/provider.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/provider.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/service.py",
+        "backend/app/observability.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 3235.461,
+      "warm_mean_latency_ms": 3235.461
+    },
+    {
+      "id": "hybrid-retrieval-ranking",
+      "question": "How does the revision-aware source index chunk, persist, filter, rank, cache, and retrieve repository evidence?",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/onboarding.py",
+        "frontend/src/App.tsx",
+        "backend/app/agent/service.py",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "verification/agentic-rag-evaluation-cases.json",
+        "backend/app/graph/analyzer.py",
+        "backend/tests/test_agent.py"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.2933,
+      "ndcg_at_10": 0.4816,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/retrieval.py"
+        ],
+        [
+          "backend/app/indexing.py"
+        ],
+        [
+          "backend/app/agent/semantic.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 3399.348,
+      "warm_mean_latency_ms": 3399.348
+    },
+    {
+      "id": "architecture-inference",
+      "question": "Trace how repository architecture, frameworks, central modules, and entry points are inferred and exposed to Ask and onboarding.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/semantic.py",
+        "backend/tests/test_agent.py",
+        "backend/app/agent/retrieval.py",
+        "frontend/src/App.tsx",
+        "verification/agentic-rag-evaluation-cases.json",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "backend/app/graph/analyzer.py"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.2857,
+      "path_recall_at_10": 0.2857,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.119,
+      "ndcg_at_10": 0.2558,
+      "forbidden_hits": [
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/semantic.py"
+        ],
+        [
+          "backend/app/agent/service.py",
+          "backend/app/onboarding/service.py"
+        ],
+        [
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/service.py",
+        "backend/app/api/routes.py",
+        "backend/app/mcp_server.py",
+        "backend/app/onboarding/service.py",
+        "backend/tests/test_onboarding.py",
+        "backend/tests/test_semantic_tools.py"
+      ],
+      "cold_latency_ms": 3122.742,
+      "warm_mean_latency_ms": 3122.742
+    }
+  ]
+}

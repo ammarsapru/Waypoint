@@ -1,0 +1,42 @@
+{
+  "name": "adaptive-codebase-onboarding-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "test:unit": "vitest run --config vitest.config.mjs",
+    "test:coverage": "vitest run --config vitest.config.mjs --coverage",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "benchmark:frontend": "node scripts/frontend-performance.mjs"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.1.5",
+    "@monaco-editor/react": "^4.7.0",
+    "@xyflow/react": "^12.9.2",
+    "lucide-react": "^0.468.0",
+    "monaco-editor": "^0.52.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^4.1.10",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

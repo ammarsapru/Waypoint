@@ -1,0 +1,107 @@
+[
+  {
+    "id": "memory-store-and-restore",
+    "question": "Trace where SQLite conversation memory is stored, bounded for model context, and restored through the API.",
+    "required_path_groups": [
+      ["backend/app/agent/memory.py"],
+      ["backend/app/agent/service.py"],
+      ["backend/app/api/routes.py"]
+    ],
+    "acceptable_paths": ["backend/app/config.py", "backend/tests/test_agent.py"],
+    "forbidden_paths": ["prompts.md", "frontend/src/App.tsx"],
+    "max_first_relevant_rank": 3,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "secure-github-import",
+    "question": "Trace a GitHub URL from validation through secure shallow clone limits into repository analysis.",
+    "required_path_groups": [
+      ["backend/app/repository_import.py"],
+      ["backend/app/api/routes.py"],
+      ["backend/app/config.py", "backend/app/processes.py"]
+    ],
+    "acceptable_paths": ["backend/tests/test_repository_import.py"],
+    "forbidden_paths": ["frontend/src/components/IssuesWorkspace.tsx"],
+    "max_first_relevant_rank": 3,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "polyglot-parsing",
+    "question": "Explain how JavaScript, TypeScript, TSX, Java, HTML, and CSS files become shared graph nodes and relationships.",
+    "required_path_groups": [
+      ["backend/app/graph/polyglot.py"],
+      ["backend/app/graph/analyzer.py"],
+      ["backend/app/graph/models.py"]
+    ],
+    "acceptable_paths": ["backend/tests/test_polyglot_analyzer.py"],
+    "forbidden_paths": ["prompts.md", "differentiator-plan.md"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "analysis-http-flow",
+    "question": "Trace the HTTP repository-analysis request from path validation to parsing, session persistence, and index creation.",
+    "required_path_groups": [
+      ["backend/app/api/routes.py"],
+      ["backend/app/graph/analyzer.py"],
+      ["backend/app/graph/store.py"],
+      ["backend/app/agent/retrieval.py"]
+    ],
+    "acceptable_paths": ["backend/app/indexing.py", "backend/tests/test_api.py"],
+    "forbidden_paths": ["frontend/src/App.tsx", "verification/scripts/http_flask_e2e.py"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "graph-edge-construction",
+    "question": "How are imports, class construction, typed method calls, unresolved calls, and evidence confidence represented in the graph?",
+    "required_path_groups": [
+      ["backend/app/graph/analyzer.py"],
+      ["backend/app/graph/polyglot.py"],
+      ["backend/app/graph/models.py"]
+    ],
+    "acceptable_paths": ["backend/tests/test_analyzer.py", "backend/tests/test_polyglot_analyzer.py"],
+    "forbidden_paths": ["plan.md", "frontend/src/App.tsx"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "agent-tool-loop",
+    "question": "Trace how the repository agent chooses bounded tools, executes them, validates citations, retries, and submits its final answer.",
+    "required_path_groups": [
+      ["backend/app/agent/service.py"],
+      ["backend/app/agent/provider.py"],
+      ["backend/app/agent/retrieval.py"]
+    ],
+    "acceptable_paths": ["backend/tests/test_agent.py", "backend/app/observability.py"],
+    "forbidden_paths": ["agent-and-mcp-tools.md", "prompts.md"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "hybrid-retrieval-ranking",
+    "question": "How does the revision-aware source index chunk, persist, filter, rank, cache, and retrieve repository evidence?",
+    "required_path_groups": [
+      ["backend/app/agent/retrieval.py"],
+      ["backend/app/indexing.py"],
+      ["backend/app/agent/semantic.py"]
+    ],
+    "acceptable_paths": ["backend/app/graph/store.py", "backend/tests/test_agent.py"],
+    "forbidden_paths": ["recommended-indexing-and-retrieval-architecture.md", "plan.md"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  },
+  {
+    "id": "architecture-inference",
+    "question": "Trace how repository architecture, frameworks, central modules, and entry points are inferred and exposed to Ask and onboarding.",
+    "required_path_groups": [
+      ["backend/app/agent/semantic.py"],
+      ["backend/app/agent/service.py", "backend/app/onboarding/service.py"],
+      ["backend/app/api/routes.py", "backend/app/mcp_server.py"]
+    ],
+    "acceptable_paths": ["backend/tests/test_semantic_tools.py", "backend/tests/test_onboarding.py"],
+    "forbidden_paths": ["AI_SYSTEM_ARCHITECTURE_REPORT.md", "README.md", "prompts.md"],
+    "max_first_relevant_rank": 2,
+    "min_precision_at_5": 0.6
+  }
+]

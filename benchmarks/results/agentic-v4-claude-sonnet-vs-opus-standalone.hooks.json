@@ -1,0 +1,103 @@
+{
+  "event_count": 609,
+  "trace_count": 30,
+  "phase_counts": {
+    "pre": 60,
+    "post": 6,
+    "error": 54
+  },
+  "structured_log_event_count": 489,
+  "structured_event_counts": {
+    "agent.agentic_retrieval_comparison.endpoint.entry": 30,
+    "agent.repository.answer.entry": 30,
+    "model.agent_started": 30,
+    "model.agent_round_started": 45,
+    "model.request_started": 45,
+    "model.comparison_routed": 45,
+    "model.response_received": 18,
+    "model.tool_called": 41,
+    "retrieval.query_started": 15,
+    "retrieval.candidates_generated": 15,
+    "retrieval.query_completed": 15,
+    "model.tool_completed": 37,
+    "model.agent_completed": 3,
+    "agent.repository.answer.return": 3,
+    "agent.agentic_retrieval_comparison.endpoint.return": 3,
+    "agent.semantic_cache_stored": 2,
+    "agent.semantic_cache_hit": 2,
+    "model.answer_submission_rejected": 1,
+    "model.answer_evidence_recovered": 1,
+    "model.claude_sdk_contradictory_success_retried": 27,
+    "model.request_failed": 27,
+    "agent.repository.answer.exception": 27,
+    "agent.agentic_retrieval_comparison.endpoint.exception": 27
+  },
+  "error_counts": {
+    "AgentExecutionError": 54
+  },
+  "quality": {
+    "trace_correlation_rate": 1.0,
+    "pre_terminal_pairing_rate": 1.0,
+    "started_spans": 60,
+    "paired_spans": 60,
+    "orphan_terminal_spans": 0,
+    "incomplete_spans": 0,
+    "possible_secret_leaks": 0,
+    "redaction_markers": 54
+  },
+  "volume": {
+    "serialized_bytes": 1623563,
+    "bytes_per_event": 2665.949,
+    "events_per_trace": 20.3,
+    "hook_callback_total_ms": 3808.136,
+    "hook_callback_mean_ms": 6.253098
+  },
+  "events_by_trace": {
+    "agentic-04e4f6cb654e4eb9856d4451717f7e48": 56,
+    "agentic-1684417b35db4e4fb4c5948fe889f053": 53,
+    "agentic-00f7d5647b4d4185881eaa4abc377f75": 79,
+    "agentic-713dc8c434094c07b77cdb9bb473dd33": 57,
+    "agentic-07f2d9af75354e1da2e0acc1af3cefbc": 14,
+    "agentic-97fdc57cf703434bbebf8bb6b8c5e4bf": 14,
+    "agentic-64210964face4e4d9d3a9d4c1f33661d": 14,
+    "agentic-51ac7f5d14554330bab4cea831b34411": 14,
+    "agentic-9545f742581b4cb78e1813dde3b61fa2": 14,
+    "agentic-9e6b86d91d0940cc879580187f070e67": 14,
+    "agentic-89384be67b9b4681b112bdf4b9e597ae": 14,
+    "agentic-5e3e71070c6e462b955a9ede161215f8": 14,
+    "agentic-922c3b7a8d6d4bd7a44108515fa6cf4f": 14,
+    "agentic-354e52da64f549ca92920e6fa855d4f7": 14,
+    "agentic-24a4b68dd7dc4889bcd51c3bd29a114a": 14,
+    "agentic-0214417b76144a9d85456d37f50aa80e": 14,
+    "agentic-868763f344134a139254c113f5517601": 14,
+    "agentic-daad0b11d6f24db187c14244096fbe12": 14,
+    "agentic-3254f05010294883813f3f4ac6c71207": 14,
+    "agentic-0d89aed7808c4d57b2cdd569a3bc5802": 14,
+    "agentic-93224b8c06174b539b564a14d703d0cd": 14,
+    "agentic-7281af17affb4fdabc9e01f8a5dc7c6e": 14,
+    "agentic-8f8df81afa7c42db87edcb995746de71": 14,
+    "agentic-9dff6f9b808a4774ae6089fee97fb5f1": 14,
+    "agentic-aa976e300be64af193ab5cfb1d7e94da": 14,
+    "agentic-f25ce3025d244eeca1e89960d1c4cc2e": 14,
+    "agentic-edf2190e5de1491798f5cdd90e0dedab": 14,
+    "agentic-eed49365e73042acbe08e93f0db30f9b": 14,
+    "agentic-5da7de022d4a41889caf2b990476aed6": 14,
+    "agentic-bd946904f5d442dda3c55918ccdcc996": 14
+  },
+  "functions": {
+    "backend.app.agent.agentic_comparison.AgenticRetrievalComparisonService._run_traced": {
+      "events": 60,
+      "completed_durations": 30,
+      "mean_duration_ms": 21811.271,
+      "p50_duration_ms": 7783.4,
+      "p95_duration_ms": 106508.957
+    },
+    "backend.app.agent.service.RepositoryAgentService.answer": {
+      "events": 60,
+      "completed_durations": 30,
+      "mean_duration_ms": 21802.724,
+      "p50_duration_ms": 7778.912,
+      "p95_duration_ms": 106501.278
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "reference_repository": "https://github.com/pallets/flask",
+  "analysis_id": "5f15f20171a14697a511789d9a01db3a",
+  "stats": {
+    "files_discovered": 83,
+    "files_parsed": 83,
+    "files_skipped": 0,
+    "parse_failures": 0,
+    "node_count": 1704,
+    "edge_count": 2535,
+    "unresolved_count": 3811,
+    "duration_ms": 13068.558
+  },
+  "summary": {
+    "analysis_id": "5f15f20171a14697a511789d9a01db3a",
+    "node_counts": {
+      "function": 1059,
+      "method": 401,
+      "module": 83,
+      "class": 160,
+      "repository": 1
+    },
+    "edge_counts": {
+      "contains": 1703,
+      "may_call": 432,
+      "imports": 299,
+      "instantiates": 101
+    },
+    "evidence_counts": {
+      "verified": 2002,
+      "inferred": 533
+    },
+    "top_connected_nodes": [
+      {
+        "node_id": "9fe4241a52004027cef9c9ca",
+        "qualified_name": "flask",
+        "kind": "module",
+        "connections": 119
+      },
+      {
+        "node_id": "0190c3a44e0e950bdb45b4eb",
+        "qualified_name": "tests.test_basic",
+        "kind": "module",
+        "connections": 95
+      },
+      {
+        "node_id": "89de9e21b809181c1cb4d2e3",
+        "qualified_name": "verification-flask",
+        "kind": "repository",
+        "connections": 83
+      },
+      {
+        "node_id": "62c610e47dc1b8402a3439eb",
+        "qualified_name": "flask.cli",
+        "kind": "module",
+        "connections": 53
+      },
+      {
+        "node_id": "e8de6f3a1d5fae393c4317bc",
+        "qualified_name": "flask.helpers",
+        "kind": "module",
+        "connections": 51
+      },
+      {
+        "node_id": "3ab7698e674742a6c635767b",
+        "qualified_name": "tests.test_blueprints",
+        "kind": "module",
+        "connections": 49
+      },
+      {
+        "node_id": "b2c52c8b7e7c04207728ca73",
+        "qualified_name": "tests.test_cli",
+        "kind": "module",
+        "connections": 49
+      },
+      {
+        "node_id": "206ed774caa8a5017f4a4842",
+        "qualified_name": "flask.app",
+        "kind": "module",
+        "connections": 42
+      },
+      {
+        "node_id": "8a7aebfdb306372d4e5c6543",
+        "qualified_name": "flask.globals",
+        "kind": "module",
+        "connections": 42
+      },
+      {
+        "node_id": "df2597801ba1733303883872",
+        "qualified_name": "flask.app.Flask",
+        "kind": "class",
+        "connections": 37
+      }
+    ]
+  },
+  "index": {
+    "revision_id": "824d1c6df98bc25b9a0649f7",
+    "fingerprint": "8220bc3fe398918fcf6425d11881445bf040a3d465b417f545fab02fd4a8e201",
+    "status": "complete",
+    "indexed_at": "2026-07-24 04:05:11",
+    "files": 115,
+    "symbols": 1704,
+    "chunks": 1734,
+    "edges": 2535,
+    "vectors": 1734
+  },
+  "architecture": {
+    "import_cycle_count": 1,
+    "hotspot_count": 10
+  },
+  "verified_files": [
+    "src/flask/__init__.py",
+    "src/flask/app.py",
+    "src/flask/cli.py"
+  ],
+  "verified_symbol": {
+    "node_id": "df2597801ba1733303883872",
+    "kind": "class",
+    "name": "Flask",
+    "qualified_name": "flask.app.Flask",
+    "path": "src/flask/app.py",
+    "start_line": 109,
+    "end_line": 1625,
+    "language": "python"
+  },
+  "http_e2e": "passed"
+}

@@ -1,0 +1,992 @@
+{
+  "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+  "tasks": [
+    {
+      "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+      "question": "What is this repository about? Highlight its top 10 features.",
+      "evidence_fingerprint": "6d3f1380f1f65914d3b9fcca025bd206d85937ee3df280ad9173c16a5528c486",
+      "evidence_files": [
+        "src/flask/app.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py",
+        "src/flask/wrappers.py"
+      ],
+      "evidence_passages": 8,
+      "retrieval_operations": 1,
+      "repository_access": "server_retrieved_frozen_evidence",
+      "question_character_limit": 500,
+      "evidence_item_limit": 8,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "This repository is the source code for Flask, a Python web application framework built on top of Werkzeug (WSGI) and Jinja (templating). It provides the core `Flask` application object plus the supporting machinery (contexts, requests, blueprints, sessions, configuration) needed to build web applications and APIs.\n\nTop 10 features evident in the codebase:\n\n1. **Central `Flask` application object (WSGI app)** \u2013 `flask.app.Flask` acts as the central registry for view functions, URL rules, and template configuration; it's the object users instantiate as `app = Flask(__name__)`.\n2. **Sans-IO `App` base class** \u2013 `flask.sansio.app.App` implements the framework-agnostic core logic shared by the WSGI `Flask` class, separating request/response handling concerns from the transport layer.\n3. **`Scaffold` shared behavior** \u2013 `flask.sansio.scaffold.Scaffold` provides common functionality shared between `Flask` and `Blueprint`, including static folder, static URL path, template folder, and root path configuration, plus a CLI `Group` attribute for command-line integration.\n4. **Blueprints for modular apps** \u2013 `flask.sansio.blueprints.Blueprint` lets you define routes and app-related functions without an application object up front, later registering them on a real app; supports its own static/template folders and URL prefixes.\n5. **Application/Request context management** \u2013 `flask.ctx.AppContext` manages information about an app and the current request, pushed at the start and popped at the end of each request or CLI command, running teardown functions on pop.\n6. **Custom `Request` object** \u2013 `flask.wrappers.Request` extends Werkzeug's request wrapper with Flask-specific attributes like `url_rule` (matched routing rule) and `view_args` (matched URL arguments), plus a `routing_exception` for failed matches.\n7. **Flexible configuration system** \u2013 `flask.config.Config` (a dict subclass) supports loading configuration from Python files (`from_pyfile`), modules/objects (`from_object`), and environment-variable-specified files (`from_envvar`), using only uppercase keys.\n8. **Pluggable session interface** \u2013 `flask.sessions.SessionInterface` defines the interface for session handling, defaulting to Werkzeug's secure cookie implementation, and is customizable via `app.session_interface`.\n9. **Static and template folder support** \u2013 Both `Flask`/`App` and `Blueprint` (via `Scaffold`) support configuring static file folders/URL paths and Jinja template folders per app or per blueprint.\n10. **Resource loading based on import name** \u2013 The app/blueprint constructors use an `import_name` (and derived `root_path`) to resolve static, template, and other resource files relative to the module or package location.\n\nOverall, this is the Flask web framework's source tree, centered on the `Flask`/`App` application object, with supporting modules for contexts, requests, configuration, sessions, and blueprint-based modularity.",
+          "basis": "Answer derived solely from the docstrings and class definitions present in the frozen evidence chunks for Flask, App, Scaffold, Blueprint, AppContext, Request, Config, and SessionInterface classes.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask application class",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Defines the central Flask WSGI application object and its role as registry for views, routes, and config."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "Sans-IO App base class",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows the framework-agnostic core App class underlying Flask."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "Scaffold shared behavior",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Defines common static/template folder handling and CLI group shared by Flask and Blueprint."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint class",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Describes blueprint-based modular route registration feature."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext class",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Describes app/request context push-pop lifecycle and teardown handling."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "Request wrapper class",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Describes Flask-specific request object extending Werkzeug's request with routing info."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 367,
+                "end_column": 0
+              },
+              "title": "Config class",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Describes configuration loading features from files, objects, and environment variables."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "SessionInterface class",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Describes pluggable session handling interface feature."
+            }
+          ],
+          "duration_ms": 31551.435,
+          "input_tokens": 2,
+          "output_tokens": 2367,
+          "estimated_cost_usd": 0.085155,
+          "total_tokens": 2369,
+          "output_characters": 2940,
+          "output_tokens_per_second": 75.02,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        },
+        {
+          "provider": "claude-code",
+          "model": "claude-fable-5",
+          "answer": "This repository is **Flask**, a Python web framework. Its central `Flask` class \"implements a WSGI application and acts as the central object,\" serving as \"a central registry for the view functions, the URL rules, template configuration and much more\" (src/flask/app.py, lines 109\u2013141). The codebase is organized around this application object plus supporting modules for blueprints, contexts, request/response wrappers, configuration, and sessions.\n\nTop 10 features grounded in the frozen evidence:\n\n1. **WSGI application object** \u2013 `Flask(App)` implements a WSGI application and is created with the module/package name (`app = Flask(__name__)`) so it can resolve resources on the filesystem (src/flask/app.py:109\u2013141).\n2. **Central registry for views and URL routing** \u2013 the app acts as a registry for view functions and URL rules (src/flask/app.py:109\u2013141; mirrored in the sans-IO `App` base class, src/flask/sansio/app.py:59\u201391).\n3. **Template configuration/rendering** \u2013 template configuration is registered on the app, and `Scaffold` accepts a `template_folder` whose contents are added via a Jinja loader (src/flask/sansio/scaffold.py:52\u201398).\n4. **Static file serving** \u2013 `Scaffold` supports `static_folder`/`static_url_path`; \"If this is set, a static route will be added\" (src/flask/sansio/scaffold.py:52\u201398).\n5. **Blueprints for modular applications** \u2013 `Blueprint` is \"a collection of routes and other app-related functions that can be registered on a real application later,\" using the same decorators as `Flask` but deferring registration (src/flask/sansio/blueprints.py:119\u2013150).\n6. **Application and request contexts** \u2013 `AppContext` carries app and request information, is pushed at the start of each request and CLI command and popped at the end, running registered teardown functions (src/flask/ctx.py:260\u2013291).\n7. **Rich request object** \u2013 `Request` (a Werkzeug `Request` subclass) remembers the matched endpoint, `url_rule`, `view_args`, and any `routing_exception`, and is exposed as `flask.request`; it can be replaced via `Flask.request_class` (src/flask/wrappers.py:18\u201355).\n8. **Flexible configuration system** \u2013 `Config` works like a dict but can be filled from Python files (`from_pyfile`), objects/modules (`from_object`), or environment variables (`from_envvar`); only uppercase keys are loaded (src/flask/config.py:50\u201389).\n9. **Pluggable session support** \u2013 `SessionInterface` defines the interface (only `open_session`/`save_session` are required) to replace the default secure-cookie session implementation, assignable via `app.session_interface` (src/flask/sessions.py:100\u2013134).\n10. **Extensibility and testing/CLI support** \u2013 the app name \"can be used by extensions to improve debugging information\" (src/flask/app.py:109\u2013141); `Scaffold` provides shared behavior between `Flask` and `Blueprint` including a `cli: Group` attribute (src/flask/sansio/scaffold.py:52\u201398), and contexts support the test client and CLI commands (`Flask.test_request_context`, contexts pushed per request and CLI command) (src/flask/ctx.py:260\u2013291).",
+          "basis": "All claims are drawn directly from docstrings and class definitions in the frozen evidence chunks: Flask/App WSGI application and registry roles (app.py, sansio/app.py), Scaffold static/template/CLI support, Blueprint deferred registration, AppContext lifecycle, Request wrapper attributes, Config loading patterns, and SessionInterface pluggability.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 141,
+                "end_column": 0
+              },
+              "title": "Flask class docstring",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Defines Flask as a WSGI application and central registry for views, URL rules, and template configuration; notes extension/debugging use of the app name."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 91,
+                "end_column": 0
+              },
+              "title": "App base class docstring",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Sans-IO base class mirroring the Flask application's central-registry role."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 98,
+                "end_column": 0
+              },
+              "title": "Scaffold class",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Shared behavior between Flask and Blueprint: static folder/route, template folder with Jinja loader, root path discovery, cli Group attribute."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 150,
+                "end_column": 0
+              },
+              "title": "Blueprint class docstring",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Blueprints as collections of routes registered on an application later, enabling modular apps."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 291,
+                "end_column": 0
+              },
+              "title": "AppContext class docstring",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "App/request context lifecycle, teardown functions, debugger and test-client behavior, CLI command contexts."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 55,
+                "end_column": 0
+              },
+              "title": "Request class",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Flask's request object: Werkzeug subclass with url_rule, view_args, routing_exception; replaceable via request_class."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 89,
+                "end_column": 0
+              },
+              "title": "Config class docstring",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Configuration loading from pyfiles, objects, and environment variables; uppercase-key convention."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 134,
+                "end_column": 0
+              },
+              "title": "SessionInterface class docstring",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Pluggable session interface replacing the default secure-cookie sessions via app.session_interface."
+            }
+          ],
+          "duration_ms": 37865.659,
+          "input_tokens": 2,
+          "output_tokens": 2566,
+          "estimated_cost_usd": 0.269623,
+          "total_tokens": 2568,
+          "output_characters": 3059,
+          "output_tokens_per_second": 67.766,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        }
+      ],
+      "task_wall_time_ms": 82308.039
+    },
+    {
+      "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+      "question": "Which files are the main application entry points, and why?",
+      "evidence_fingerprint": "6ce9411aed07cbe56866750cdf1b4e7fae8e6af9cb8ef2e2b5be952b3377c905",
+      "evidence_files": [
+        "src/flask/app.py",
+        "src/flask/cli.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py"
+      ],
+      "evidence_passages": 8,
+      "retrieval_operations": 1,
+      "repository_access": "server_retrieved_frozen_evidence",
+      "question_character_limit": 500,
+      "evidence_item_limit": 8,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "Based on the frozen evidence, the primary application entry point for a Flask-based project is the `Flask` class defined in `src/flask/app.py`. Its docstring explicitly describes it as 'the flask object [that] implements a WSGI application and acts as the central object,' and shows the canonical usage pattern `from flask import Flask; app = Flask(__name__)` that developers use to instantiate the entry-point application object (typically in a project's main module or package `__init__.py`).\n\nThis `Flask` class subclasses `App` in `src/flask/sansio/app.py`, which carries the same central-object docstring and implements the framework-agnostic (sansio) core of the application object \u2014 registry for view functions, URL rules, and template configuration \u2014 that `Flask` builds on to add the actual WSGI request/response handling.\n\nA secondary, CLI-oriented entry point is `FlaskGroup` in `src/flask/cli.py`, a `click` command group that loads and runs a configured Flask app (e.g., via `flask run`), acting as the process entry point when starting an application from the command line rather than importing it directly.\n\nOther classes in the evidence (`Scaffold`, `Blueprint`, `Config`, `SessionInterface`, `AppContext`) are supporting/utility components \u2014 shared behavior, modular route registration, configuration loading, session handling, and context management \u2014 rather than entry points themselves.",
+          "basis": "Answer derived solely from class docstrings and structure shown in the frozen evidence chunks for Flask, App, FlaskGroup, and related supporting classes.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask class - central WSGI application object",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Defines the main Flask application entry point instantiated via `Flask(__name__)`."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "App base class",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Base class for Flask providing the core sansio application object that Flask extends."
+            },
+            {
+              "node_id": "62c610e47dc1b8402a3439eb",
+              "qualified_name": "flask.cli",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/cli.py",
+                "start_line": 531,
+                "start_column": 0,
+                "end_line": 688,
+                "end_column": 0
+              },
+              "title": "FlaskGroup CLI command group",
+              "excerpt": "class FlaskGroup(AppGroup):\n    \"\"\"Special subclass of the :class:`AppGroup` group that supports\n    loading more commands from the configured Flask app.  Normally a\n    developer does not have to interface with this class but there are\n    some very advanced use cases for which it makes sense to create an\n    instance of this. see :ref:`custom-scripts`.\n\n    :param add_default_commands: if this is True then the default run and",
+              "relevance": "Serves as the command-line entry point for loading and running a configured Flask app."
+            }
+          ],
+          "duration_ms": 19063.8,
+          "input_tokens": 2,
+          "output_tokens": 1258,
+          "estimated_cost_usd": 0.06834,
+          "total_tokens": 1260,
+          "output_characters": 1406,
+          "output_tokens_per_second": 65.989,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        },
+        {
+          "provider": "claude-code",
+          "model": "claude-fable-5",
+          "answer": "Based on the frozen evidence, the main application entry points in this repository (Flask) are:\n\n1. **`src/flask/app.py` \u2014 the `Flask` class** (lines 109\u20131625). This is the primary entry point for applications built with the framework. Its docstring states: \"The flask object implements a WSGI application and acts as the central object... Once it is created it will act as a central registry for the view functions, the URL rules, template configuration and much more,\" and \"Usually you create a :class:`Flask` instance in your main module or in the :file:`__init__.py` file of your package like this:: from flask import Flask; app = Flask(__name__)\". So this file defines the WSGI-callable object users instantiate to start an application.\n\n2. **`src/flask/sansio/app.py` \u2014 the `App` base class** (lines 59\u20131013). `Flask` is declared as `class Flask(App)`, and `App` (a `Scaffold` subclass) contains the core, I/O-agnostic application logic that `Flask` builds on. It shares the same \"central object\" role in its docstring, making it the foundational half of the application entry point.\n\n3. **`src/flask/cli.py` \u2014 the `FlaskGroup` class** (lines 531\u2013688). This is the command-line entry point. Its docstring describes it as a \"Special subclass of the :class:`AppGroup` group that supports loading more commands from the configured Flask app,\" with options like `-A/--app`, `--debug/--no-debug`, `-e/--env-file`, default `run` and `shell` commands, and `.env`/`.flaskenv` loading \u2014 i.e., it is how applications are discovered and launched from the `flask` CLI.\n\nSupporting (not entry points themselves, but part of the entry-point machinery):\n- **`src/flask/sansio/scaffold.py` \u2014 `Scaffold`** (lines 52\u2013698): \"Common behavior shared between :class:`~flask.Flask` and :class:`~flask.blueprints.Blueprint`\", the shared base beneath the app object.\n- **`src/flask/sansio/blueprints.py` \u2014 `Blueprint`** (lines 119\u2013692): explicitly *defers* the need for an application object (\"a collection of routes... that can be registered on a real application later\"), confirming that the real entry point is the `Flask` app it is registered on.\n- **`src/flask/ctx.py` \u2014 `AppContext`** (lines 260\u2013525): \"A context is pushed at the beginning of each request and CLI command\", showing how the app object serves both request-handling and CLI execution paths.\n\nIn short: `src/flask/app.py` (the `Flask` WSGI application object, built on `src/flask/sansio/app.py`) is the runtime/application entry point, and `src/flask/cli.py` (`FlaskGroup`) is the command-line entry point that loads and runs that app.",
+          "basis": "Answer derived solely from the frozen evidence excerpts: the Flask class docstring in src/flask/app.py describing it as the WSGI application and central object created in the main module; the App base class in src/flask/sansio/app.py that Flask subclasses; FlaskGroup in src/flask/cli.py described as loading and running the configured Flask app from the CLI; plus supporting Scaffold, Blueprint, and AppContext excerpts.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask class (flask.app.Flask)",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Defines the Flask WSGI application object; docstring says it 'implements a WSGI application and acts as the central object' and is created in the main module \u2014 the primary application entry point."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "App base class (flask.sansio.app.App)",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Base class that Flask extends; contains the core application logic behind the entry point."
+            },
+            {
+              "node_id": "62c610e47dc1b8402a3439eb",
+              "qualified_name": "flask.cli",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/cli.py",
+                "start_line": 531,
+                "start_column": 0,
+                "end_line": 688,
+                "end_column": 0
+              },
+              "title": "FlaskGroup (flask.cli.FlaskGroup)",
+              "excerpt": "class FlaskGroup(AppGroup):\n    \"\"\"Special subclass of the :class:`AppGroup` group that supports\n    loading more commands from the configured Flask app.  Normally a\n    developer does not have to interface with this class but there are\n    some very advanced use cases for which it makes sense to create an\n    instance of this. see :ref:`custom-scripts`.\n\n    :param add_default_commands: if this is True then the default run and",
+              "relevance": "Command-line entry point: loads the configured Flask app, adds default run/shell commands, and supports --app/--debug/--env-file options."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "Scaffold",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Shared base behavior for Flask and Blueprint, underpinning the app object."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Explicitly defers to a real application object, confirming Flask (not Blueprint) is the entry point."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Shows contexts are pushed at the start of each request and CLI command, linking both entry paths to the app object."
+            }
+          ],
+          "duration_ms": 29192.817,
+          "input_tokens": 2,
+          "output_tokens": 2115,
+          "estimated_cost_usd": 0.24650100000000003,
+          "total_tokens": 2117,
+          "output_characters": 2585,
+          "output_tokens_per_second": 72.449,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        }
+      ],
+      "task_wall_time_ms": 31195.925
+    },
+    {
+      "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+      "question": "How is the backend organized from HTTP entry point to business logic?",
+      "evidence_fingerprint": "7e23313a5b35bfb2b7fa4a47cbd88d69420d9126b6cdf7ec6d7a5e3486433c68",
+      "evidence_files": [
+        "src/flask/app.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py",
+        "src/flask/wrappers.py"
+      ],
+      "evidence_passages": 8,
+      "retrieval_operations": 1,
+      "repository_access": "server_retrieved_frozen_evidence",
+      "question_character_limit": 500,
+      "evidence_item_limit": 8,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "The evidence shows this is the Flask web framework's own source, not an application-specific backend, but it reveals the layered architecture Flask provides from HTTP entry point down to reusable logic:\n\n1. **WSGI entry point / central app object** \u2013 `flask.app.Flask` (src/flask/app.py, lines 109-1625) is 'the flask object [that] implements a WSGI application and acts as the central object.' It is the object created by user code (`app = Flask(__name__)`) and registered as the WSGI callable that receives raw HTTP requests from the server.\n\n2. **Sans-IO application core** \u2013 `Flask` subclasses `flask.sansio.app.App` (src/flask/sansio/app.py, lines 59-1013), which holds the framework-agnostic logic for view functions, URL rules, and configuration, separated from the WSGI-specific plumbing that lives in the `Flask` subclass itself.\n\n3. **Shared routing/registration behavior** \u2013 Both `App` and `Blueprint` inherit from `flask.sansio.scaffold.Scaffold` (src/flask/sansio/scaffold.py, lines 52-698), which implements the common behavior for registering routes, static folders, and template folders that either a full app or a blueprint can use.\n\n4. **Modular business logic via Blueprints** \u2013 `flask.sansio.blueprints.Blueprint` (src/flask/sansio/blueprints.py, lines 119-692) lets business logic and routes be defined without an application object up front; blueprints record deferred functions that are executed against a `BlueprintSetupState` when registered on the real `Flask` app, allowing business logic to be organized into separable modules.\n\n5. **Per-request/per-command context** \u2013 `flask.ctx.AppContext` (src/flask/ctx.py, lines 260-525) is pushed at the start of each request (and CLI command) and popped at the end; it carries the app, the request (via a combined app/request context as of 3.2), and session data, providing the execution context in which view/business logic functions run.\n\n6. **Request representation** \u2013 `flask.wrappers.Request` (src/flask/wrappers.py, lines 18-219) is the concrete request object exposed as `flask.request`; it extends Werkzeug's request wrapper with Flask-specific data such as the matched `url_rule`, `view_args`, and any `routing_exception`, which is how the incoming HTTP request is translated into view-function arguments.\n\n7. **Session and configuration support layers** \u2013 `flask.sessions.SessionInterface` (src/flask/sessions.py, lines 100-270) defines the pluggable interface for reading/writing session data during request handling, and `flask.config.Config` (src/flask/config.py, lines 50-367) is a dict subclass used to load and store application configuration from files, objects, or environment variables, which the app and its business logic consult during setup and at request time.\n\nPut together, the flow is: an HTTP request arrives at the WSGI-compliant `Flask`/`App` object \u2192 routing/registration machinery inherited from `Scaffold` (shared with `Blueprint`) matches it to a view \u2192 an `AppContext` is pushed, wrapping the Flask `Request` (with matched URL rule/view args) and session (via `SessionInterface`) \u2192 the matched view function (business logic, potentially organized in a `Blueprint`) executes using `Config` values and the context, after which the context is torn down.",
+          "basis": "Answer synthesized strictly from the class docstrings and structural relationships evident in the provided repository excerpts (Flask, App, Scaffold, Blueprint, Config, AppContext, SessionInterface, Request classes).",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask class (WSGI entry point)",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Central WSGI application object receiving HTTP requests."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "App class (sans-IO core)",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Framework-agnostic application logic that Flask subclasses."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "Scaffold shared behavior",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Common routing/registration logic shared by App and Blueprint."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint class",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Modular organization of routes/business logic registered later on the app."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext class",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Per-request context tying together app, request, and session during handling."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "Request class",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Concrete request object exposing matched URL rule and view args to business logic."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "SessionInterface class",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Pluggable session handling used during request context."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 367,
+                "end_column": 0
+              },
+              "title": "Config class",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Application configuration consulted by app and business logic."
+            }
+          ],
+          "duration_ms": 30589.065,
+          "input_tokens": 2,
+          "output_tokens": 2340,
+          "estimated_cost_usd": 0.084771,
+          "total_tokens": 2342,
+          "output_characters": 3254,
+          "output_tokens_per_second": 76.498,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        },
+        {
+          "provider": "claude-code",
+          "model": "claude-fable-5",
+          "answer": "Based on the frozen evidence, the backend (Flask) is organized in layers from the HTTP entry point down to the application/business logic:\n\n1. **HTTP entry point \u2014 `Flask` (src/flask/app.py)**: The `Flask` class \"implements a WSGI application and acts as the central object.\" It is the WSGI callable that web servers invoke, and it serves as \"a central registry for the view functions, the URL rules, template configuration and much more.\" This is the concrete I/O-facing layer.\n\n2. **Protocol-agnostic core \u2014 `App` (src/flask/sansio/app.py)**: `Flask` subclasses `App`, a \"sans-IO\" base class that holds the same central-registry responsibilities (view functions, URL rules, template configuration) without the WSGI-specific I/O handling, separating transport concerns from application structure.\n\n3. **Shared scaffolding \u2014 `Scaffold` (src/flask/sansio/scaffold.py)**: `App` extends `Scaffold`, which defines \"common behavior shared between `flask.Flask` and `flask.blueprints.Blueprint`\" \u2014 import name resolution, static folders/URL paths, template folders, and root path discovery.\n\n4. **Modular route organization \u2014 `Blueprint` (src/flask/sansio/blueprints.py)**: Business logic is grouped into `Blueprint` objects, each \"a collection of routes and other app-related functions that can be registered on a real application later.\" Blueprints use the same decorators as `Flask` but defer registration via deferred functions called with `BlueprintSetupState`, letting view/business code be defined without an application object ahead of time.\n\n5. **Per-request context \u2014 `AppContext` (src/flask/ctx.py)**: For each request (and CLI command), \"a context is pushed at the beginning ... and popped at the end,\" carrying app and request information to handlers; on pop it runs teardown functions (`teardown_request`, then `teardown_appcontext`), e.g., closing resources like database connections.\n\n6. **Request wrapper \u2014 `Request` (src/flask/wrappers.py)**: Incoming HTTP data is wrapped in `Request` (a Werkzeug `Request` subclass), which \"remembers the matched endpoint and view arguments\" (`url_rule`, `view_args`, `routing_exception`) \u2014 the bridge between URL routing and the view function that contains business logic.\n\n7. **Cross-cutting services**: `Config` (src/flask/config.py) is a dict-like registry filled from files, objects, or environment variables to configure the app, and `SessionInterface` (src/flask/sessions.py) is a pluggable interface (`open_session`/`save_session`, swappable via `app.session_interface`) that manages session state around each request.\n\nIn short: WSGI request \u2192 `Flask` (concrete WSGI layer) \u2192 `App`/`Scaffold` (sans-IO registries and shared behavior) \u2192 `AppContext` pushed with a `Request` wrapper \u2192 URL rule matched to a view function registered on the app or a `Blueprint`, where business logic runs, with `Config` and `SessionInterface` supporting the pipeline.",
+          "basis": "All claims are drawn from the frozen evidence excerpts: Flask class docstring (WSGI application, central registry), App sans-io base, Scaffold shared behavior, Blueprint deferred registration, AppContext push/pop lifecycle, Request wrapper endpoint matching, Config population patterns, and SessionInterface pluggability.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "flask.app.Flask",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Flask is the WSGI application and central object registering view functions and URL rules \u2014 the HTTP entry point."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "flask.sansio.app.App",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Sans-IO base class of Flask holding the central registry logic independent of WSGI I/O."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "flask.sansio.scaffold.Scaffold",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Common behavior shared between Flask and Blueprint (static/template folders, root path)."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "flask.sansio.blueprints.Blueprint",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Blueprints group routes/business logic for deferred registration on the application."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "flask.ctx.AppContext",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Per-request app/request context pushed and popped around each request, running teardown functions."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "flask.wrappers.Request",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Request wrapper that records matched URL rule and view args, linking routing to view functions."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 367,
+                "end_column": 0
+              },
+              "title": "flask.config.Config",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Configuration registry filled from files, objects, or environment variables."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "flask.sessions.SessionInterface",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Pluggable session interface (open_session/save_session) handling session state per request."
+            }
+          ],
+          "duration_ms": 32236.967,
+          "input_tokens": 2,
+          "output_tokens": 2385,
+          "estimated_cost_usd": 0.26063200000000003,
+          "total_tokens": 2387,
+          "output_characters": 2903,
+          "output_tokens_per_second": 73.983,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        }
+      ],
+      "task_wall_time_ms": 34083.454
+    },
+    {
+      "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+      "question": "Trace one important cross-file call path and explain the evidence.",
+      "evidence_fingerprint": "e6f3eaaff842e7d218baeef2c9f4222bdab89466861e7c3b3567fc8341e8da39",
+      "evidence_files": [
+        "src/flask/app.py",
+        "src/flask/cli.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py"
+      ],
+      "evidence_passages": 8,
+      "retrieval_operations": 1,
+      "repository_access": "server_retrieved_frozen_evidence",
+      "question_character_limit": 500,
+      "evidence_item_limit": 8,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "The clearest cross-file path evidenced in the frozen chunks is the class-inheritance/definition chain that wires the public `Flask` application object to its shared base behavior, spanning three separate files:\n\n1. `src/flask/app.py` defines `class Flask(App):` (lines 109-1625). This is the object users instantiate directly (`from flask import Flask; app = Flask(__name__)`). Its docstring states it 'acts as a central registry for the view functions, the URL rules, template configuration and much more,' but the class itself subclasses `App`.\n\n2. `src/flask/sansio/app.py` defines `class App(Scaffold):` (lines 59-1013), in a different module (the 'sansio' - sans I/O - package). `App` carries the same descriptive docstring as `Flask` (central registry for routes, config, etc.), confirming that `Flask` inherits its core registry/configuration behavior from this cross-file base class rather than reimplementing it.\n\n3. `src/flask/sansio/scaffold.py` defines `class Scaffold:` (lines 52-698), explicitly documented as 'Common behavior shared between :class:`~flask.Flask` and :class:`~flask.blueprints.Blueprint`.' Its `__init__` (starting at line 74) sets up `import_name`, `static_folder`, `static_url_path`, etc. This is the root of the chain that both `App` (and therefore `Flask`) and `Blueprint` build upon.\n\n4. `src/flask/sansio/blueprints.py` defines `class Blueprint(Scaffold):` (lines 119-692), independently extending the same `Scaffold` base used by `App`/`Flask`. This shows the cross-file fan-out: `Scaffold` in scaffold.py is the shared foundation consumed by two different subclasses defined in two other files (`sansio/app.py` and `sansio/blueprints.py`), and `Flask` in `app.py` further extends `App` to become the concrete, user-facing class.\n\nSo the traced path is: `Scaffold` (sansio/scaffold.py) -> subclassed by `App` (sansio/app.py) -> subclassed by `Flask` (app.py), with `Blueprint` (sansio/blueprints.py) independently subclassing the same `Scaffold` to share behavior like import-name resolution and static/template folder configuration across the app and blueprint objects.",
+          "basis": "Derived solely from the class declaration lines and docstrings present in the frozen evidence chunks for src/flask/app.py, src/flask/sansio/app.py, src/flask/sansio/scaffold.py, and src/flask/sansio/blueprints.py, which explicitly state the inheritance relationships (Flask(App), App(Scaffold), Blueprint(Scaffold)) and the shared-behavior intent documented in Scaffold's docstring.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "class Flask(App)",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows Flask is defined as a subclass of App, the user-facing entry point of the chain."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "class App(Scaffold)",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows App, defined in a separate file, is the intermediate base class that Flask extends, itself subclassing Scaffold."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "class Scaffold",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Root shared base class explicitly documented as common behavior between Flask and Blueprint, defining import_name/static/template setup used across files."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "class Blueprint(Scaffold)",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Shows a second, independent subclass of Scaffold in another file, confirming Scaffold is a cross-file shared foundation."
+            }
+          ],
+          "duration_ms": 34702.116,
+          "input_tokens": 2,
+          "output_tokens": 2096,
+          "estimated_cost_usd": 0.081443,
+          "total_tokens": 2098,
+          "output_characters": 2108,
+          "output_tokens_per_second": 60.4,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        },
+        {
+          "provider": "claude-code",
+          "model": "claude-fable-5",
+          "answer": "One important cross-file call path visible in the frozen evidence is the constructor/inheritance chain that runs when a user writes `app = Flask(__name__)`:\n\n1. **`flask.app.Flask` (src/flask/app.py, class starting at line 109)** \u2014 The evidence shows `class Flask(App)`, i.e. the public `Flask` object subclasses `App`. Its docstring states it \"implements a WSGI application and acts as the central object\" and is \"passed the name of the module or package of the application,\" and shows the canonical usage `app = Flask(__name__)`. Instantiating `Flask` therefore delegates construction up to `App` in a different file.\n\n2. **`flask.sansio.app.App` (src/flask/sansio/app.py, class starting at line 59)** \u2014 The evidence shows `class App(Scaffold)`. `App` carries the same central-registry responsibilities (\"central registry for the view functions, the URL rules, template configuration and much more\") and notes that the package name is \"used to resolve resources.\" Because `App` subclasses `Scaffold`, construction chains again to a third file.\n\n3. **`flask.sansio.scaffold.Scaffold` (src/flask/sansio/scaffold.py, class starting at line 52)** \u2014 The evidence shows `Scaffold`'s docstring: \"Common behavior shared between :class:`~flask.Flask` and :class:`~flask.blueprints.Blueprint`,\" and its `__init__(self, import_name, static_folder=None, static_url_path=None, template_folder=None, root_path=None)`. This is where the shared setup actually happens: `self.import_name = import_name`, `self.static_folder = static_folder`, `self.static_url_path = static_url_path`, plus template-folder handling \u2014 exactly the parameters described in the `Flask` docstring (\"This name is used to find resources on the filesystem...\").\n\nSo the traced path is: `Flask(__name__)` (src/flask/app.py) \u2192 `App` base-class construction (src/flask/sansio/app.py) \u2192 `Scaffold.__init__` (src/flask/sansio/scaffold.py), which stores `import_name` and the static/template configuration used later for resource resolution.\n\nSupporting evidence that this base layer is a genuine shared hub: **`flask.sansio.blueprints.Blueprint` (src/flask/sansio/blueprints.py, class starting at line 119)** is also declared as `class Blueprint(Scaffold)`, confirming that `Scaffold` is the common ancestor consumed from two separate files (`app.py` chain and `blueprints.py`). The `Blueprint` docstring corroborates the shared design: it \"uses the same decorators as :class:`~flask.Flask`\" and takes the same `import_name` parameter which \"helps locate the ``root_path``\" \u2014 the same attribute set in `Scaffold.__init__`.",
+          "basis": "Class declarations in the frozen evidence directly show the inheritance chain Flask(App) \u2192 App(Scaffold) \u2192 Scaffold, spanning src/flask/app.py, src/flask/sansio/app.py, and src/flask/sansio/scaffold.py. Scaffold.__init__'s signature and body (import_name, static_folder, static_url_path assignments) are quoted in the excerpt. Blueprint(Scaffold) in src/flask/sansio/blueprints.py confirms Scaffold as the shared cross-file base.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "class Flask(App)",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows Flask subclasses App and is the entry point of the constructor chain (`app = Flask(__name__)`)."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "class App(Scaffold)",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Intermediate base class in a different file; shows App subclasses Scaffold, continuing the cross-file chain."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "class Scaffold and Scaffold.__init__",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Shows the shared __init__ that stores import_name, static_folder, static_url_path, template_folder \u2014 the endpoint of the traced call path."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "class Blueprint(Scaffold)",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Confirms Scaffold is a shared cross-file base also used by Blueprint, corroborating the docstring's claim of common behavior."
+            }
+          ],
+          "duration_ms": 40194.509,
+          "input_tokens": 2,
+          "output_tokens": 2240,
+          "estimated_cost_usd": 0.25431499999999996,
+          "total_tokens": 2242,
+          "output_characters": 2576,
+          "output_tokens_per_second": 55.729,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_non_streaming",
+          "tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed"
+        }
+      ],
+      "task_wall_time_ms": 42046.791
+    }
+  ]
+}

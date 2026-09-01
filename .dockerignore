@@ -1,0 +1,10 @@
+.git
+.venv
+.waypoint-data
+.waypoint-clones
+frontend/node_modules
+frontend/dist
+logs
+benchmarks/*.log
+verification/results/*.log
+.env

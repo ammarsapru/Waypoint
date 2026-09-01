@@ -1,0 +1,121 @@
+{
+  "version": "2.0",
+  "default_output_constraints": {
+    "min_answer_characters": 200,
+    "max_answer_characters": 8000,
+    "min_citations": 2,
+    "max_citations": 8,
+    "max_citation_span_lines": 160,
+    "max_output_tokens": 6000
+  },
+  "cases": [
+  {
+    "id": "repository-overview",
+    "question": "What is this repository about? Highlight its top 10 features.",
+    "required_evidence_groups": [["README.md", "docs/index.rst"], ["src/flask/app.py", "src/flask/sansio/app.py"], ["src/flask/blueprints.py", "src/flask/sansio/blueprints.py"]],
+    "acceptable_paths": ["README.md", "docs/index.rst", "src/flask/app.py", "src/flask/sansio/app.py", "src/flask/blueprints.py", "src/flask/sansio/blueprints.py", "src/flask/sessions.py", "src/flask/templating.py", "src/flask/ctx.py", "src/flask/helpers.py", "src/flask/json/__init__.py"],
+    "expected_citation_groups": [[{"path":"README.md","start_line":1,"end_line":120},{"path":"docs/index.rst","start_line":1,"end_line":120}], [{"path":"src/flask/app.py","start_line":109,"end_line":220},{"path":"src/flask/sansio/app.py","start_line":59,"end_line":180}], [{"path":"src/flask/sansio/blueprints.py","start_line":119,"end_line":230}]],
+    "required_concepts": [["web framework"], ["wsgi"], ["routing", "url rule"], ["template", "jinja"], ["session"], ["blueprint"], ["request context", "application context"]],
+    "min_concept_recall": 0.7, "min_evidence_group_recall": 0.67, "min_citation_precision": 0.6
+  },
+  {
+    "id": "sessions",
+    "question": "How does Flask's session architecture work and where can it be replaced?",
+    "required_evidence_groups": [["src/flask/sessions.py"], ["src/flask/app.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/sessions.py", "src/flask/app.py", "src/flask/sansio/app.py", "docs/api.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/sessions.py","start_line":100,"end_line":180}], [{"path":"src/flask/sessions.py","start_line":249,"end_line":370}]],
+    "required_concepts": [["sessioninterface", "session interface"], ["open_session", "open session"], ["save_session", "save session"], ["secure cookie", "signed cookie"], ["replace", "custom"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "request-lifecycle",
+    "question": "Trace the request lifecycle from the WSGI entry point to a view response.",
+    "required_evidence_groups": [["src/flask/app.py"], ["src/flask/ctx.py"], ["src/flask/wrappers.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/app.py", "src/flask/ctx.py", "src/flask/wrappers.py", "src/flask/sansio/app.py", "docs/reqcontext.rst", "docs/lifecycle.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/app.py","start_line":1566,"end_line":1625}], [{"path":"src/flask/app.py","start_line":966,"end_line":1060}], [{"path":"src/flask/ctx.py","start_line":260,"end_line":525}]],
+    "required_concepts": [["wsgi_app", "wsgi app"], ["request context"], ["dispatch_request", "dispatch request"], ["finalize_request", "finalize request"], ["response"], ["teardown"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 0.67, "min_citation_precision": 0.6
+  },
+  {
+    "id": "blueprints",
+    "question": "What are blueprints, and how are their routes connected to an application?",
+    "required_evidence_groups": [["src/flask/sansio/blueprints.py"], ["src/flask/blueprints.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/sansio/blueprints.py", "src/flask/blueprints.py", "src/flask/sansio/app.py", "docs/blueprints.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/sansio/blueprints.py","start_line":119,"end_line":260}], [{"path":"src/flask/blueprints.py","start_line":18,"end_line":120},{"path":"src/flask/sansio/app.py","start_line":560,"end_line":700}]],
+    "required_concepts": [["collection of routes", "routes"], ["register"], ["defer", "record"], ["application", "app"], ["url prefix", "url_prefix"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "contexts",
+    "question": "How do Flask application and request contexts interact, and how are they cleaned up?",
+    "required_evidence_groups": [["src/flask/ctx.py"], ["src/flask/globals.py"]],
+    "acceptable_paths": ["src/flask/ctx.py", "src/flask/globals.py", "docs/appcontext.rst", "docs/reqcontext.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/ctx.py","start_line":260,"end_line":525}], [{"path":"src/flask/globals.py","start_line":1,"end_line":80}]],
+    "required_concepts": [["appcontext", "application context"], ["requestcontext", "request context"], ["contextvar", "context variable"], ["push"], ["pop"], ["teardown"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "error-handling",
+    "question": "Trace how an exception raised by a view becomes an HTTP response.",
+    "required_evidence_groups": [["src/flask/app.py"], ["src/flask/wrappers.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/app.py", "src/flask/wrappers.py", "src/flask/sansio/app.py", "docs/errorhandling.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/app.py","start_line":865,"end_line":950}], [{"path":"src/flask/app.py","start_line":1021,"end_line":1060}]],
+    "required_concepts": [["handle_user_exception", "user exception"], ["error handler", "error_handler"], ["http exception"], ["finalize_request", "finalize request"], ["response"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "templating",
+    "question": "How does Flask create a Jinja environment and render a template with context processors?",
+    "required_evidence_groups": [["src/flask/templating.py"], ["src/flask/app.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/templating.py", "src/flask/app.py", "src/flask/sansio/app.py", "docs/templating.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/templating.py","start_line":108,"end_line":185}], [{"path":"src/flask/app.py","start_line":469,"end_line":610}]],
+    "required_concepts": [["jinja"], ["environment"], ["render_template", "render template"], ["context processor"], ["template context"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "cli-discovery",
+    "question": "How does the Flask CLI discover and load an application?",
+    "required_evidence_groups": [["src/flask/cli.py"], ["src/flask/app.py", "src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/cli.py", "src/flask/app.py", "src/flask/sansio/app.py", "docs/cli.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/cli.py","start_line":300,"end_line":405}], [{"path":"src/flask/cli.py","start_line":531,"end_line":720}]],
+    "required_concepts": [["flask app", "FLASK_APP"], ["import"], ["factory"], ["scriptinfo", "script info"], ["load_app", "load app"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "json-provider",
+    "question": "How can Flask JSON serialization be customized, and where is the provider used?",
+    "required_evidence_groups": [["src/flask/json/provider.py"], ["src/flask/sansio/app.py", "src/flask/json/__init__.py"]],
+    "acceptable_paths": ["src/flask/json/provider.py", "src/flask/json/__init__.py", "src/flask/sansio/app.py", "src/flask/json/tag.py"],
+    "expected_citation_groups": [[{"path":"src/flask/json/provider.py","start_line":19,"end_line":100}], [{"path":"src/flask/json/provider.py","start_line":130,"end_line":205}]],
+    "required_concepts": [["jsonprovider", "json provider"], ["defaultjsonprovider", "default json provider"], ["dumps"], ["loads"], ["custom", "replace"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "signals",
+    "question": "Which signals surround request processing and template rendering, and where are they emitted?",
+    "required_evidence_groups": [["src/flask/signals.py"], ["src/flask/app.py"], ["src/flask/templating.py"]],
+    "acceptable_paths": ["src/flask/signals.py", "src/flask/app.py", "src/flask/templating.py", "docs/signals.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/signals.py","start_line":1,"end_line":30}], [{"path":"src/flask/app.py","start_line":900,"end_line":1050}], [{"path":"src/flask/templating.py","start_line":120,"end_line":180}]],
+    "required_concepts": [["request_started"], ["request_finished"], ["template_rendered"], ["got_request_exception"], ["send"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 0.67, "min_citation_precision": 0.6
+  },
+  {
+    "id": "testing-client",
+    "question": "How does Flask's test client preserve contexts and expose session transactions?",
+    "required_evidence_groups": [["src/flask/testing.py"], ["src/flask/ctx.py", "src/flask/sessions.py"]],
+    "acceptable_paths": ["src/flask/testing.py", "src/flask/ctx.py", "src/flask/sessions.py", "docs/testing.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/testing.py","start_line":109,"end_line":220}], [{"path":"src/flask/ctx.py","start_line":260,"end_line":525},{"path":"src/flask/sessions.py","start_line":100,"end_line":180}]],
+    "required_concepts": [["flaskclient", "test client"], ["preserve context"], ["session_transaction", "session transaction"], ["environ"], ["context"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  },
+  {
+    "id": "config-loading",
+    "question": "Compare the ways Flask configuration can be loaded and explain instance-relative configuration.",
+    "required_evidence_groups": [["src/flask/config.py"], ["src/flask/sansio/app.py"]],
+    "acceptable_paths": ["src/flask/config.py", "src/flask/sansio/app.py", "docs/config.rst"],
+    "expected_citation_groups": [[{"path":"src/flask/config.py","start_line":50,"end_line":250}], [{"path":"src/flask/sansio/app.py","start_line":230,"end_line":360}]],
+    "required_concepts": [["from_object"], ["from_pyfile"], ["from_prefixed_env"], ["instance relative", "instance_relative_config"], ["mapping"]],
+    "min_concept_recall": 0.8, "min_evidence_group_recall": 1.0, "min_citation_precision": 0.6
+  }
+  ]
+}

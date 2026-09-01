@@ -1,0 +1,12 @@
+INFO:     127.0.0.1:62173 - "GET /api/v1/health HTTP/1.1" 200 OK
+2026-07-19T00:22:26.729Z ERROR    event=parser.file_failed pid=33540 process=MainProcess thread=AnyIO worker thread:21424 trace=56ce647f5a234cdd985612543cae4575 span=b371f84d6cf3478f at=backend.app.graph.analyzer._parse_file:609 message="Python file could not be parsed" fields={"exception_message": "invalid decimal literal (tests/test_runner_apps/tagged/tests_syntax_error.py, line 11)", "exception_type": "SyntaxError", "line": 11, "path": "tests/test_runner_apps/tagged/tests_syntax_error.py"}
+2026-07-19T00:22:56.819Z WARNING  event=graph.unresolved_details_truncated pid=33540 process=MainProcess thread=AnyIO worker thread:21424 trace=56ce647f5a234cdd985612543cae4575 span=b371f84d6cf3478f at=backend.app.graph.analyzer.analyze:812 message="Unresolved call details were bounded for repository scale" fields={"call_detail_limit": 20000, "omitted_calls": 140779, "stored_details": 23440, "total_unresolved": 164219}
+INFO:     127.0.0.1:62173 - "POST /api/v1/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57005 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/search?q=django&limit=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57005 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/source?path= HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:57005 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/nodes/7e3b406958efbb844852169e/neighborhood?depth=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57005 - "POST /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/answer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57005 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/architecture HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64058 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/search?q=registry&limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64058 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/source?path=django%2Fapps%2Fregistry.py HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64058 - "GET /api/v1/analyses/d05d1887a9494ff7b2f19a78d86c8739/journey/97c2a9eead7ba8823eb599fd?max_steps=20 HTTP/1.1" 200 OK

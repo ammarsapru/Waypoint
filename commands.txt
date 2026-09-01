@@ -1,0 +1,194 @@
+WAYPOINT - WINDOWS POWERSHELL COMMANDS
+=====================================
+
+Run every command from the project root:
+C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative
+
+
+FIRST-TIME SETUP (run once)
+---------------------------
+
+# Create the Python virtual environment and install backend dependencies.
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+
+# Install frontend dependencies.
+Set-Location frontend
+npm.cmd install
+Set-Location ..
+
+# Create the backend-only environment file, then edit .env and add your key.
+Copy-Item .env.example .env
+
+# Primary provider for model-backed Ask, Onboarding, mastery, missions, and issue investigation:
+# ANTHROPIC_API_KEY=your_key_here
+# WAYPOINT_MODEL=claude-sonnet-5
+
+# Claude Code subscription fallback (enabled by default):
+# First authenticate once with: claude login
+# WAYPOINT_CLAUDE_CODE_FALLBACK=1
+# WAYPOINT_CLAUDE_CODE_MODEL=sonnet
+# WAYPOINT_CLAUDE_CODE_MAX_TURNS=4
+# WAYPOINT_PROVIDER_STARTUP_PROBE=1
+
+# Optional for higher GitHub issue-history API limits:
+# GITHUB_TOKEN=your_token_here
+
+# Optional location for persisted chat and analysis-session state:
+# WAYPOINT_STATE_PATH=.waypoint-data/waypoint.sqlite3
+
+
+START THE APPLICATION FOR DEVELOPMENT
+-------------------------------------
+
+Open PowerShell terminal 1 in the project root and start the backend:
+
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+Open PowerShell terminal 2 in the project root and start the frontend:
+
+Set-Location frontend
+npm.cmd run dev
+
+Then open the UI in a browser:
+http://127.0.0.1:5173
+
+Backend API documentation:
+http://127.0.0.1:8000/docs
+
+The backend reads .env from the project root when it starts. Restart the backend
+after changing the key. The key must never be placed in frontend/.env or use VITE_.
+
+
+OPTIONAL: START THE BACKEND WITH EXTENSIVE DIAGNOSTIC LOGS
+----------------------------------------------------------
+
+Run these commands in backend terminal 1 before the Uvicorn command:
+
+$env:ONBOARD_LOG_LEVEL="DEBUG"
+$env:ONBOARD_TRACE_FUNCTIONS="1"
+$env:ONBOARD_LOG_VALUE_LIMIT="4000"
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+For the extremely noisy maximum Python call trace, also run this before Uvicorn:
+
+$env:ONBOARD_MAX_TRACE="1"
+
+
+PRODUCTION-LIKE SINGLE-SERVER MODE (optional)
+---------------------------------------------
+
+# Build the frontend, then let FastAPI serve both the UI and API on port 8000.
+Set-Location frontend
+npm.cmd run build
+Set-Location ..
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+
+Then open:
+http://127.0.0.1:8000
+
+
+STOPPING THE SERVERS
+--------------------
+
+Press Ctrl+C once in each terminal running a server.
+
+
+START THE MCP CONNECTOR (LOCAL STDIO)
+------------------------------------
+
+.\.venv\Scripts\python.exe -m backend.app.mcp_server --transport stdio
+
+
+START THE MCP CONNECTOR (STREAMABLE HTTP)
+-----------------------------------------
+
+$env:WAYPOINT_MCP_HOST="127.0.0.1"
+$env:WAYPOINT_MCP_PORT="8010"
+.\.venv\Scripts\python.exe -m backend.app.mcp_server --transport streamable-http
+
+# The MCP URL is http://127.0.0.1:8010/mcp
+# Optional protocol inspector:
+npx.cmd -y @modelcontextprotocol/inspector
+# Run the local retrieval quality benchmark
+.\.venv\Scripts\python.exe benchmarks\run_retrieval.py --repository . --output benchmarks\results\retrieval-latest.json
+# Deterministic unit suite
+.\.venv\Scripts\python.exe -m pytest -m unit --no-cov
+
+# Deterministic integration suite
+.\.venv\Scripts\python.exe -m pytest -m integration --no-cov
+
+# Whole-backend coverage gate followed by per-core-feature gate
+.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe -m verification.scripts.core_coverage_report
+.\.venv\Scripts\python.exe -m verification.scripts.coverage_report
+
+# V3 fixed eight-case retrieval comparison
+.\.venv\Scripts\python.exe benchmarks\run_retrieval.py --repository . --cases benchmarks\retrieval_cases.json --output benchmarks\results\retrieval-v3-eight.json --repeats 1
+
+# V3 50-case development diagnostic (labels are pending human adjudication)
+.\.venv\Scripts\python.exe benchmarks\run_retrieval_v3.py --repository waypoint=. --repository flask=.waypoint-clones/pallets--flask--214023150b --repository praw=.waypoint-clones/haxtheweb--praw--69db9269ab --allow-unadjudicated --repeats 1 --output benchmarks\results\retrieval-v3.json
+
+
+CHECK EVERY KNOWN BEDROCK MODEL ENDPOINT (cheap, real calls, ~64 tokens each)
+------------------------------------------------------------------------------
+
+# Re-run anytime to see current status of every Bedrock id this project has
+# ever referenced (production models + previously Marketplace/account-gated
+# ones, in case AWS entitlement changed). Uses the app's own Converse adapter.
+.\.venv\Scripts\python.exe -m verification.scripts.probe_bedrock_endpoints
+
+# Last run (2026-08-31): 3/8 reachable.
+#   OK   us.anthropic.claude-sonnet-4-6            (production - investigation)
+#   OK   us.anthropic.claude-opus-4-6-v1           (production - synthesis)
+#   OK   openai.gpt-oss-120b-1:0                   (accessible, poor tool-use - see benchmarks\results\agentic-v4-bedrock-claude-vs-gptoss.md)
+#   FAIL us.anthropic.claude-opus-4-1-20250805-v1:0    (AccessDeniedException - Marketplace subscription incomplete)
+#   FAIL us.anthropic.claude-haiku-4-5-20251001-v1:0   (AccessDeniedException - Marketplace subscription incomplete)
+#   FAIL claude-sonnet-5 / claude-opus-5 / claude-fable-5  (ValidationException - not a valid Bedrock model id in this form)
+# Both models the live app actually routes to (sonnet-4-6, opus-4-6-v1) are healthy.
+
+
+TOGGLE MODEL PROVIDER / ARCHITECTURE FOR TESTING
+-------------------------------------------------
+
+# These use $env:VAR overrides scoped to ONE PowerShell terminal session only -
+# they never touch the real .env file. Close and reopen the terminal (or run
+# the "restore" block) to go back to normal. Restart the backend after any
+# change here - settings load once at process start.
+
+# --- Force Bedrock ONLY (hide the Anthropic API key + Claude Code fallback
+#     for this terminal, so the cascade can't fall through past Bedrock) ---
+$env:ANTHROPIC_API_KEY=""
+$env:WAYPOINT_CLAUDE_CODE_FALLBACK="0"
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+# --- Force the direct Anthropic API ONLY (hide the AWS region for this
+#     terminal so Bedrock is never attempted) ---
+$env:AWS_REGION=""
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+# --- Force the Claude Code subscription fallback ONLY (hide both Bedrock and
+#     the Anthropic API key; requires `claude login` already completed once) ---
+$env:AWS_REGION=""
+$env:ANTHROPIC_API_KEY=""
+$env:WAYPOINT_CLAUDE_CODE_FALLBACK="1"
+.\.venv\Scripts\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+
+# --- Restore normal cascade (Bedrock -> Anthropic API -> Bedrock retry ->
+#     Claude Code) in the current terminal ---
+$env:AWS_REGION="us-east-1"
+$env:ANTHROPIC_API_KEY=$null
+Remove-Item Env:\ANTHROPIC_API_KEY -ErrorAction SilentlyContinue
+$env:WAYPOINT_CLAUDE_CODE_FALLBACK="1"
+# (ANTHROPIC_API_KEY then reloads from .env on the next backend start, since
+# only the current shell's override was cleared, not the file itself.)
+
+# --- Toggle single-model vs dual-role (investigation/synthesis split) ---
+# Edit .env directly for a persistent change (restart backend after editing):
+#   WAYPOINT_MODEL_ARCHITECTURE=single    <- one model handles the whole conversation
+#   WAYPOINT_MODEL_ARCHITECTURE=dual      <- Sonnet investigates, Opus synthesizes (current default)
+
+# --- Confirm which provider/model actually served the last request ---
+# Check the trace log's most recent model.role_routed / model.response_received
+# events, or hit the usage endpoint for the routed_provider on real ledger rows:
+curl.exe -s http://127.0.0.1:8000/api/v1/usage/summary

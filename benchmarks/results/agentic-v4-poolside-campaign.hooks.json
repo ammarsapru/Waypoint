@@ -1,0 +1,48 @@
+{
+  "event_count": 8,
+  "trace_count": 2,
+  "phase_counts": {
+    "pre": 4,
+    "error": 4
+  },
+  "error_counts": {
+    "AgentExecutionError": 4
+  },
+  "quality": {
+    "trace_correlation_rate": 1.0,
+    "pre_terminal_pairing_rate": 1.0,
+    "started_spans": 4,
+    "paired_spans": 4,
+    "orphan_terminal_spans": 0,
+    "incomplete_spans": 0,
+    "possible_secret_leaks": 0,
+    "redaction_markers": 0
+  },
+  "volume": {
+    "serialized_bytes": 5653,
+    "bytes_per_event": 706.625,
+    "events_per_trace": 4.0,
+    "hook_callback_total_ms": 21.267,
+    "hook_callback_mean_ms": 2.658437
+  },
+  "events_by_trace": {
+    "agentic-921c03eb2e02490093c752078e6e1fd2": 4,
+    "agentic-38e78fe87d474a549c9bc7a05b1a2618": 4
+  },
+  "functions": {
+    "backend.app.agent.agentic_comparison.AgenticRetrievalComparisonService._run_traced": {
+      "events": 4,
+      "completed_durations": 2,
+      "mean_duration_ms": 34304.248,
+      "p50_duration_ms": 1942.313,
+      "p95_duration_ms": 66666.184
+    },
+    "backend.app.agent.service.RepositoryAgentService.answer": {
+      "events": 4,
+      "completed_durations": 2,
+      "mean_duration_ms": 34287.804,
+      "p50_duration_ms": 1923.575,
+      "p95_duration_ms": 66652.032
+    }
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "repository": "C:\\Users\\ammar\\OneDrive\\Desktop\\personal\\arbisoft\\final_project_alternative",
+  "case_count": 8,
+  "index_ms": 39723.518,
+  "index_restore_ms": 517.845,
+  "process_peak_memory_mib": 197.566,
+  "hit_rate_at_1": 0.75,
+  "hit_rate_at_3": 1.0,
+  "recall_at_5": 1.0,
+  "recall_at_10": 1.0,
+  "hit_rate_at_5": 1.0,
+  "hit_rate_at_10": 1.0,
+  "precision_at_5": 0.575,
+  "precision_at_10": 0.375,
+  "path_recall_at_5": 0.5598,
+  "path_recall_at_10": 0.7411,
+  "required_group_recall_at_5": 0.7604,
+  "required_group_recall_at_10": 0.9271,
+  "mean_average_precision_at_10": 0.5622,
+  "mean_reciprocal_rank": 0.8542,
+  "ndcg_at_10": 0.7135,
+  "forbidden_path_hit_rate_at_10": 0.125,
+  "strict_case_pass_rate": 0.5,
+  "strict_quality_score": 0.7387,
+  "mean_query_ms": 1203.18,
+  "query_p50_ms": 805.939,
+  "query_p95_ms": 3031.216,
+  "query_p99_ms": 3945.952,
+  "cold_query_mean_ms": 1203.18,
+  "warm_query_mean_ms": 1203.18,
+  "query_repeats": 1,
+  "results": [
+    {
+      "id": "memory-store-and-restore",
+      "question": "Trace where SQLite conversation memory is stored, bounded for model context, and restored through the API.",
+      "retrieved_paths": [
+        "backend/app/graph/store.py",
+        "backend/app/agent/issues.py",
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/app/agent/memory.py",
+        "backend/tests/test_agent.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/onboarding/service.py",
+        "backend/app/issues/models.py",
+        "backend/app/graph/models.py"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.6,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.42,
+      "ndcg_at_10": 0.5677,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 3,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/memory.py"
+        ],
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/api/routes.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/memory.py",
+        "backend/app/agent/service.py",
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 4174.636,
+      "warm_mean_latency_ms": 4174.636
+    },
+    {
+      "id": "secure-github-import",
+      "question": "Trace a GitHub URL from validation through secure shallow clone limits into repository analysis.",
+      "retrieved_paths": [
+        "backend/app/repository_import.py",
+        "backend/app/config.py",
+        "backend/app/issues/service.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/api/routes.py",
+        "backend/tests/test_repository_import.py",
+        "backend/app/onboarding/questions.py",
+        "verification/scripts/live_multistep_demo.py",
+        "backend/app/agent/service.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6143,
+      "ndcg_at_10": 0.787,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 3,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/repository_import.py"
+        ],
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/config.py",
+          "backend/app/processes.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/app/processes.py",
+        "backend/app/repository_import.py",
+        "backend/tests/test_repository_import.py"
+      ],
+      "cold_latency_ms": 659.341,
+      "warm_mean_latency_ms": 659.341
+    },
+    {
+      "id": "polyglot-parsing",
+      "question": "Explain how JavaScript, TypeScript, TSX, Java, HTML, and CSS files become shared graph nodes and relationships.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/graph/analyzer.py",
+        "backend/tests/test_polyglot_analyzer.py",
+        "backend/app/agent/retrieval.py",
+        "benchmarks/run_parsing_accuracy.py",
+        "frontend/src/components/GraphView.tsx",
+        "frontend/src/App.tsx",
+        "backend/app/agent/semantic.py",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "backend/app/graph/models.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.85,
+      "ndcg_at_10": 0.9447,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "backend/tests/test_polyglot_analyzer.py"
+      ],
+      "cold_latency_ms": 708.608,
+      "warm_mean_latency_ms": 708.608
+    },
+    {
+      "id": "analysis-http-flow",
+      "question": "Trace the HTTP repository-analysis request from path validation to parsing, session persistence, and index creation.",
+      "retrieved_paths": [
+        "verification/scripts/http_flask_e2e.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/api/routes.py",
+        "backend/app/graph/store.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/issues/service.py",
+        "backend/app/mcp_server.py",
+        "backend/app/agent/service.py",
+        "benchmarks/run_parsing_accuracy.py",
+        "backend/app/agent/onboarding.py"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.75,
+      "required_group_recall_at_10": 0.75,
+      "average_precision_at_10": 0.3194,
+      "ndcg_at_10": 0.4725,
+      "forbidden_hits": [
+        "verification/scripts/http_flask_e2e.py"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/store.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/api/routes.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_api.py"
+      ],
+      "cold_latency_ms": 756.514,
+      "warm_mean_latency_ms": 756.514
+    },
+    {
+      "id": "graph-edge-construction",
+      "question": "How are imports, class construction, typed method calls, unresolved calls, and evidence confidence represented in the graph?",
+      "retrieved_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/polyglot.py",
+        "backend/app/graph/models.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/onboarding/service.py",
+        "benchmarks/run_parsing_accuracy.py",
+        "backend/app/agent/semantic.py",
+        "backend/tests/test_polyglot_analyzer.py",
+        "frontend/src/components/GraphView.tsx",
+        "backend/app/graph/store.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.6,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.7,
+      "ndcg_at_10": 0.8297,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "backend/tests/test_analyzer.py",
+        "backend/tests/test_polyglot_analyzer.py"
+      ],
+      "cold_latency_ms": 871.0,
+      "warm_mean_latency_ms": 871.0
+    },
+    {
+      "id": "agent-tool-loop",
+      "question": "Trace how the repository agent chooses bounded tools, executes them, validates citations, retries, and submits its final answer.",
+      "retrieved_paths": [
+        "backend/app/agent/service.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/config.py",
+        "backend/tests/test_agent.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/comparison.py",
+        "backend/app/agent/issues.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/memory.py",
+        "backend/app/agent/provider.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.455,
+      "ndcg_at_10": 0.6903,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/agent/provider.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/provider.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/service.py",
+        "backend/app/observability.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 907.722,
+      "warm_mean_latency_ms": 907.722
+    },
+    {
+      "id": "hybrid-retrieval-ranking",
+      "question": "How does the revision-aware source index chunk, persist, filter, rank, cache, and retrieve repository evidence?",
+      "retrieved_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py",
+        "benchmarks/run_retrieval.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/issues.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/agent/onboarding.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.8,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.71,
+      "ndcg_at_10": 0.8304,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/retrieval.py"
+        ],
+        [
+          "backend/app/indexing.py"
+        ],
+        [
+          "backend/app/agent/semantic.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 692.254,
+      "warm_mean_latency_ms": 692.254
+    },
+    {
+      "id": "architecture-inference",
+      "question": "Trace how repository architecture, frameworks, central modules, and entry points are inferred and exposed to Ask and onboarding.",
+      "retrieved_paths": [
+        "backend/app/agent/semantic.py",
+        "backend/app/api/routes.py",
+        "backend/app/onboarding/service.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/agent/onboarding.py",
+        "benchmarks/run_repositories.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/repository_import.py",
+        "backend/tests/test_agent.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4286,
+      "path_recall_at_10": 0.4286,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.4286,
+      "ndcg_at_10": 0.5857,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 2,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.6,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/semantic.py"
+        ],
+        [
+          "backend/app/agent/service.py",
+          "backend/app/onboarding/service.py"
+        ],
+        [
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/semantic.py",
+        "backend/app/agent/service.py",
+        "backend/app/api/routes.py",
+        "backend/app/mcp_server.py",
+        "backend/app/onboarding/service.py",
+        "backend/tests/test_onboarding.py",
+        "backend/tests/test_semantic_tools.py"
+      ],
+      "cold_latency_ms": 855.363,
+      "warm_mean_latency_ms": 855.363
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+v4-wp-01: 0 passed, 2 failed
+{
+  "benchmark_version": "4.0",
+  "case_count": 1,
+  "successful_model_runs": 0,
+  "failed_model_runs": 2,
+  "summary": {}
+}

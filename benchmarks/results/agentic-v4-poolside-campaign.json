@@ -1,0 +1,106 @@
+{
+  "benchmark_version": "4.0",
+  "protocol": "independent_agent_retrieval",
+  "cases_manifests": [
+    "benchmarks\\retrieval_cases_v4_cases.json"
+  ],
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "v4-wp-01",
+    "v4-wp-02",
+    "v4-wp-03",
+    "v4-wp-04",
+    "v4-wp-05",
+    "v4-wp-06",
+    "v4-wp-07",
+    "v4-wp-08",
+    "v4-wp-09",
+    "v4-wp-10",
+    "v4-wp-11",
+    "v4-wp-12",
+    "v4-wp-13",
+    "v4-wp-14",
+    "v4-wp-15",
+    "v4-wp-16",
+    "v4-wp-17",
+    "v4-wp-18",
+    "v4-wp-19",
+    "v4-wp-20",
+    "v4-fl-01",
+    "v4-fl-02",
+    "v4-fl-03",
+    "v4-fl-04",
+    "v4-fl-05",
+    "v4-fl-06",
+    "v4-fl-07",
+    "v4-fl-08",
+    "v4-fl-09",
+    "v4-fl-10",
+    "v4-pr-01",
+    "v4-pr-02",
+    "v4-pr-03",
+    "v4-pr-04",
+    "v4-pr-05",
+    "v4-pr-06",
+    "v4-pr-07",
+    "v4-pr-08",
+    "v4-pr-09",
+    "v4-pr-10",
+    "v4-on-01",
+    "v4-on-02",
+    "v4-on-03",
+    "v4-on-04",
+    "v4-on-05",
+    "v4-on-06",
+    "v4-on-07",
+    "v4-on-08",
+    "v4-on-09",
+    "v4-on-10"
+  ],
+  "endpoints": [
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free"
+    }
+  ],
+  "case_count": 50,
+  "successful_model_runs": 0,
+  "failed_model_runs": 2,
+  "completed_model_attempts": 2,
+  "expected_model_attempts": 100,
+  "success_rate": 0.0,
+  "summary": {},
+  "runs": [],
+  "failures": [
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free",
+      "trace_id": "agentic-921c03eb2e02490093c752078e6e1fd2",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: OpenRouter returned HTTP 429: {\"code\": 429, \"message\": \"Provider returned error\"}",
+      "duration_ms": 1945.615,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free",
+      "trace_id": "agentic-38e78fe87d474a549c9bc7a05b1a2618",
+      "error_type": "AgentExecutionError",
+      "detail": "Repository synthesis exceeded 2 attempts",
+      "duration_ms": 66668.595,
+      "validation_status": "failed"
+    }
+  ],
+  "hook_artifacts": {
+    "events_jsonl": "benchmarks\\results\\agentic-v4-poolside-campaign.hooks.jsonl",
+    "aggregate_json": "benchmarks\\results\\agentic-v4-poolside-campaign.hooks.json"
+  }
+}

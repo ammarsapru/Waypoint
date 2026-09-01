@@ -1,0 +1,930 @@
+{
+  "analysis_id": "db40e1f66b094d829629a4e2fdf42d02",
+  "case_count": 4,
+  "scoring": {
+    "task_pass": "non-empty validated answer, citations, >=60% required-concept recall, and at least one expected file cited",
+    "warning": "Required-concept matching is deterministic but does not replace human factual review."
+  },
+  "failed_tasks": 0,
+  "provider_summaries": {
+    "claude-code:sonnet": {
+      "tasks": 4,
+      "successful_responses": 4,
+      "provider_or_validation_failures": 0,
+      "task_success_rate": 1.0,
+      "mean_concept_recall": 0.9643,
+      "mean_expected_path_recall": 0.875,
+      "latency_p50_ms": 27540.568,
+      "latency_p95_ms": 47076.934,
+      "ttft_p50_ms": null,
+      "ttft_measured_tasks": 0,
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 20237,
+      "cache_read_input_tokens": 111959,
+      "effective_input_tokens": 132208,
+      "output_tokens": 11266,
+      "tool_calls": 4,
+      "citations": 23
+    },
+    "openrouter:openrouter/free": {
+      "tasks": 4,
+      "successful_responses": 2,
+      "provider_or_validation_failures": 2,
+      "task_success_rate": 0.5,
+      "mean_concept_recall": 0.9,
+      "mean_expected_path_recall": 0.75,
+      "latency_p50_ms": 34434.041,
+      "latency_p95_ms": 48910.665,
+      "ttft_p50_ms": 23944.391,
+      "ttft_measured_tasks": 2,
+      "input_tokens": 10430,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "effective_input_tokens": 10430,
+      "output_tokens": 3234,
+      "tool_calls": 2,
+      "citations": 4
+    }
+  },
+  "tasks": [
+    {
+      "id": "repository-overview",
+      "question": "What is this repository about? Highlight its top 10 features.",
+      "expected_paths": [
+        "src/flask/app.py",
+        "src/flask/sansio/app.py"
+      ],
+      "candidate_evidence_files": [
+        "src/flask/app.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/debughelpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py",
+        "src/flask/views.py",
+        "src/flask/wrappers.py"
+      ],
+      "candidate_evidence_recall": 1.0,
+      "wall_time_ms": 66772.582,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "This repository is the Flask project \u2014 a lightweight WSGI web application framework for Python (`src/flask/...`). It provides the core building blocks for creating web applications: the central `Flask`/`App` object, routing, blueprints, request/response handling, contexts, configuration, sessions, and class-based views. Top 10 features evident from the code:\n\n1. **Central `Flask` application object** (`flask.app.Flask`, extending `flask.sansio.app.App`) \u2014 the WSGI application and central registry for view functions, URL rules, and template configuration.\n2. **`Scaffold` base class** \u2014 shared behavior (static/template folder handling, root path resolution) common to both `Flask` and `Blueprint`.\n3. **Blueprints** (`flask.sansio.blueprints.Blueprint`) \u2014 allow defining routes and app-related functions without an application object ahead of time, later registered on a real app via `BlueprintSetupState`.\n4. **Static and template folder support** \u2014 configurable per app or blueprint (`static_folder`, `static_url_path`, `template_folder`) for serving files and rendering Jinja templates.\n5. **Application and Request Contexts** (`flask.ctx.AppContext`) \u2014 manage per-request/CLI-command context, pushed at the start and popped at the end, running teardown functions.\n6. **Custom Request object** (`flask.wrappers.Request`) \u2014 extends Werkzeug's `Request`, adding Flask-specific attributes like `url_rule`, `view_args`, and `routing_exception` for matched routes.\n7. **Configuration management** (`flask.config.Config`) \u2014 a dict subclass supporting loading config from Python files, objects, or environment variables (`from_pyfile`, `from_object`, `from_envvar`).\n8. **Session interface** (`flask.sessions.SessionInterface`) \u2014 a pluggable interface (default uses Werkzeug's secure cookie) for managing user sessions, replaceable via `app.session_interface`.\n9. **Class-based Views** (`flask.views.View`) \u2014 allows defining generic class-based views via `dispatch_request`, converted into view functions with `as_view()`, supporting custom methods and decorators.\n10. **Debug helpers** (`flask.debughelpers`) \u2014 improved error reporting for development, e.g. `UnexpectedUnicodeError` and `DebugFilesKeyError` for clearer debugging of file upload issues.\n\nOverall, this is the Flask framework's source code, focused on providing a simple, extensible core for building WSGI-based web applications in Python.",
+          "basis": "Derived directly from class/module docstrings and code excerpts in the provided evidence chunks from src/flask/app.py, src/flask/sansio/app.py, src/flask/sansio/scaffold.py, src/flask/sansio/blueprints.py, src/flask/ctx.py, src/flask/wrappers.py, src/flask/config.py, src/flask/sessions.py, src/flask/views.py, and src/flask/debughelpers.py.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask application class",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Defines the core Flask WSGI application object and central registry."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "App base class",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Sans-IO base class for the Flask application object."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "Scaffold shared behavior",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Shared static/template folder logic used by Flask and Blueprint."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint class",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Implements Flask's blueprint feature for modular route registration."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext class",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Implements application/request context management."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "Request wrapper",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Custom request object extending Werkzeug's Request."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 367,
+                "end_column": 0
+              },
+              "title": "Config class",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Implements configuration loading from files/objects/env vars."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "SessionInterface class",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Defines the pluggable session management interface."
+            },
+            {
+              "node_id": "d02a658171fc423d3a5d88a1",
+              "qualified_name": "flask.views",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/views.py",
+                "start_line": 1,
+                "start_column": 0,
+                "end_line": 160,
+                "end_column": 0
+              },
+              "title": "View class-based views",
+              "excerpt": "from __future__ import annotations\n\nimport typing as t\n\nfrom . import typing as ft\nfrom .globals import current_app\nfrom .globals import request\n",
+              "relevance": "Implements class-based view support via View and as_view."
+            },
+            {
+              "node_id": "70ca2461a3f7bf2d8f3234be",
+              "qualified_name": "flask.debughelpers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/debughelpers.py",
+                "start_line": 1,
+                "start_column": 0,
+                "end_line": 160,
+                "end_column": 0
+              },
+              "title": "Debug helpers",
+              "excerpt": "from __future__ import annotations\n\nimport typing as t\n\nfrom jinja2.loaders import BaseLoader\nfrom werkzeug.routing import RequestRedirect\n\nfrom .blueprints import Blueprint",
+              "relevance": "Provides improved debugging error classes."
+            }
+          ],
+          "duration_ms": 21106.451,
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 9254,
+          "effective_input_tokens": 9256,
+          "output_tokens": 2092,
+          "estimated_cost_usd": 0.0410782,
+          "total_tokens": 11348,
+          "output_characters": 2407,
+          "output_tokens_per_second": 99.117,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_sdk_first_assistant_event_ms=19946.597",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 0.8571,
+            "expected_path_recall": 1.0,
+            "expected_path_precision": 0.2,
+            "matched_concepts": [
+              [
+                "wsgi"
+              ],
+              [
+                "routing",
+                "url rule"
+              ],
+              [
+                "template",
+                "jinja"
+              ],
+              [
+                "session"
+              ],
+              [
+                "blueprint"
+              ],
+              [
+                "request context",
+                "application context"
+              ]
+            ],
+            "missing_concepts": [
+              [
+                "web framework"
+              ]
+            ],
+            "cited_paths": [
+              "src/flask/app.py",
+              "src/flask/config.py",
+              "src/flask/ctx.py",
+              "src/flask/debughelpers.py",
+              "src/flask/sansio/app.py",
+              "src/flask/sansio/blueprints.py",
+              "src/flask/sansio/scaffold.py",
+              "src/flask/sessions.py",
+              "src/flask/views.py",
+              "src/flask/wrappers.py"
+            ],
+            "passed": true
+          }
+        }
+      ],
+      "failures": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "error_type": "ValueError",
+          "detail": "openrouter:openrouter/free returned an invalid answer: 1 validation error for SubmittedAnswer\nsuggested_questions\n  List should have at most 5 items after validation, not 9 [type=too_long, input_value=['How do I create a Flask...g and error reporting?'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/too_long",
+          "duration_ms": 64962.53,
+          "validation_status": "failed"
+        }
+      ]
+    },
+    {
+      "id": "sessions",
+      "question": "How does Flask's session architecture work and where can it be replaced?",
+      "expected_paths": [
+        "src/flask/sessions.py"
+      ],
+      "candidate_evidence_files": [
+        "src/flask/app.py",
+        "src/flask/cli.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py",
+        "src/flask/wrappers.py"
+      ],
+      "candidate_evidence_recall": 1.0,
+      "wall_time_ms": 35081.46,
+      "answers": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "answer": "Flask's session architecture uses Werkzeug's SecureCookie implementation by default, which encrypts session data and signs it to prevent tampering. Sessions are stored client-side in cookies and can be replaced by implementing a custom SessionInterface. The SessionInterface requires implementing open_session() and save_session() methods to handle session storage and retrieval. This allows integration with alternative storage backends like databases or Redis. The session interface can be replaced by assigning a custom instance to app.session_interface.",
+          "basis": "The session architecture is documented in the Flask source code, particularly in the SessionInterface class and related components. The replacement mechanism is described in the Flask documentation and source code comments.",
+          "citations": [
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 160,
+                "end_column": 0
+              },
+              "title": "SessionInterface Class",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Defines the interface for custom session implementations, requiring open_session() and save_session() methods."
+            },
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask Class Initialization",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows how to replace the default session interface by assigning a custom SessionInterface instance to app.session_interface."
+            },
+            {
+              "node_id": "a0a24e65a3644caf96945e54",
+              "qualified_name": "flask.config",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/config.py",
+                "start_line": 50,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "Configuration Handling",
+              "excerpt": "class Config(dict):  # type: ignore[type-arg]\n    \"\"\"Works exactly like a dict but provides ways to fill it from files\n    or special dictionaries.  There are two common patterns to populate the\n    config.\n\n    Either you can fill the config from a config file::\n\n        app.config.from_pyfile('yourconfig.cfg')",
+              "relevance": "Indirectly relevant as session configuration (e.g., SESSION_TYPE) is managed through Flask's configuration system."
+            }
+          ],
+          "duration_ms": 18348.903,
+          "input_tokens": 5386,
+          "cache_creation_input_tokens": null,
+          "cache_read_input_tokens": null,
+          "effective_input_tokens": 5386,
+          "output_tokens": 438,
+          "estimated_cost_usd": 0.0,
+          "total_tokens": 5824,
+          "output_characters": 557,
+          "output_tokens_per_second": 23.871,
+          "ttft_ms": 2201.151,
+          "ttft_status": "measured_streaming_delta",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 0.8,
+            "expected_path_recall": 1.0,
+            "expected_path_precision": 0.3333,
+            "matched_concepts": [
+              [
+                "sessioninterface",
+                "session interface"
+              ],
+              [
+                "open_session",
+                "open session"
+              ],
+              [
+                "save_session",
+                "save session"
+              ],
+              [
+                "replace",
+                "custom"
+              ]
+            ],
+            "missing_concepts": [
+              [
+                "secure cookie",
+                "signed cookie"
+              ]
+            ],
+            "cited_paths": [
+              "src/flask/app.py",
+              "src/flask/config.py",
+              "src/flask/sessions.py"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "Flask's session support is built around a pluggable SessionInterface abstraction rather than a hard-coded implementation. The default behavior uses Werkzeug's secure cookie (signed cookie) implementation, but this is only the default.\n\nHow it works:\n- flask.sessions.SessionInterface (src/flask/sessions.py, lines 100-270) is described as 'the basic interface you have to implement in order to replace the default session interface which uses werkzeug's securecookie implementation.' The only required methods are open_session and save_session; other methods have useful defaults you don't need to change.\n- The object returned by open_session must provide a dict-like interface plus the properties/methods from SessionMixin. The docs recommend subclassing dict together with SessionMixin (e.g. 'class Session(dict, SessionMixin): pass').\n- If open_session returns None, Flask calls make_null_session to create a NullSession that acts as a replacement when session support can't work (e.g., because the secret key isn't set).\n- Session data is tied to request handling via AppContext (src/flask/ctx.py, lines 260-525): the context 'contains information about an app, and about the request when handling a request... The session data this context represents. If not given, loaded from the request on first access.' A context is pushed at the start of each request/CLI command and popped at the end.\n- The SessionInterface docs also note a concurrency consideration: multiple requests with the same session may be handled concurrently, there's no guaranteed order in which each request's session is opened or saved, so custom implementations must consider whether reads/writes to the backing store need synchronization.\n\nWhere it can be replaced:\n- To swap out the default cookie-based session, you assign your own implementation to the app's session_interface attribute: 'app = Flask(__name__); app.session_interface = MySessionInterface()' as shown directly in the SessionInterface docstring (src/flask/sessions.py, lines 100-270).\n- Flask itself exposes the extension point via flask.Flask.session_interface (referenced in the SessionInterface docstring), so any subclass of SessionInterface implementing open_session and save_session can replace the default Werkzeug securecookie-based session store (e.g., to back sessions with a database, Redis, or another server-side store) without changing other Flask internals like Scaffold, Blueprint, or the Config/Request classes, which are unrelated to session storage.",
+          "basis": "Answer drawn directly from the SessionInterface class docstring in src/flask/sessions.py (lines 100-270) describing the replaceable session interface, its required methods, NullSession fallback, and the app.session_interface assignment pattern, combined with the AppContext docstring in src/flask/ctx.py (lines 260-525) describing how session data is loaded per-request within the app/request context lifecycle.",
+          "citations": [
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "SessionInterface class",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Defines the pluggable session interface, the required open_session/save_session methods, the NullSession fallback, and how to replace it via app.session_interface, including concurrency considerations."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext class",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "Shows how session data is associated with the app/request context and loaded from the request on first access, tying session architecture into the request lifecycle."
+            }
+          ],
+          "duration_ms": 33974.684,
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 9594,
+          "cache_read_input_tokens": 46616,
+          "effective_input_tokens": 56214,
+          "output_tokens": 2813,
+          "estimated_cost_usd": 0.1206318,
+          "total_tokens": 59027,
+          "output_characters": 2515,
+          "output_tokens_per_second": 82.797,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_sdk_first_assistant_event_ms=15616.342",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 1.0,
+            "expected_path_recall": 1.0,
+            "expected_path_precision": 0.5,
+            "matched_concepts": [
+              [
+                "sessioninterface",
+                "session interface"
+              ],
+              [
+                "open_session",
+                "open session"
+              ],
+              [
+                "save_session",
+                "save session"
+              ],
+              [
+                "secure cookie",
+                "signed cookie"
+              ],
+              [
+                "replace",
+                "custom"
+              ]
+            ],
+            "missing_concepts": [],
+            "cited_paths": [
+              "src/flask/ctx.py",
+              "src/flask/sessions.py"
+            ],
+            "passed": true
+          }
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "request-lifecycle",
+      "question": "Trace the request lifecycle from the WSGI entry point to a view response.",
+      "expected_paths": [
+        "src/flask/app.py",
+        "src/flask/ctx.py"
+      ],
+      "candidate_evidence_files": [
+        "src/flask/app.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/sessions.py",
+        "src/flask/views.py",
+        "src/flask/wrappers.py"
+      ],
+      "candidate_evidence_recall": 1.0,
+      "wall_time_ms": 50520.629,
+      "answers": [
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "Based only on the supplied evidence (which contains class-level docstrings/attributes rather than the bodies of wsgi_app/full_dispatch_request/dispatch_request), the request lifecycle can be traced as follows:\n\n1. WSGI entry point: `Flask` (src/flask/app.py, subclassing `App` in src/flask/sansio/app.py) is documented as 'The flask object implements a WSGI application and acts as the central object,' serving as the central registry for view functions, URL rules, and template configuration that the WSGI server invokes on each incoming request.\n\n2. Context setup: `AppContext` (src/flask/ctx.py) states that 'a context is pushed at the beginning of each request and CLI command, and popped at the end.' It is referred to as a 'request context' when it carries request information, making per-request state (current app, request, session) available for the duration of the request.\n\n3. Request/URL matching: `Request` (src/flask/wrappers.py) 'Remembers the matched endpoint and view arguments,' exposing `url_rule` (the internal URL rule that matched) and `view_args` (the dict of matched URL variables) that are populated during routing before the view is called. If matching fails, `routing_exception` holds the raised HTTP exception (e.g., NotFound).\n\n4. Route registration scaffolding: `Scaffold` (src/flask/sansio/scaffold.py) provides the common decorator/registration behavior shared by `Flask` and `Blueprint`; `Blueprint` (src/flask/sansio/blueprints.py) 'represents a blueprint, a collection of routes and other app-related functions that can be registered on a real application later,' contributing to the URL map consulted during routing.\n\n5. View invocation: For class-based views, `View` (src/flask/views.py) is the base class whose `dispatch_request` method is overridden to 'create a generic class-based view'; `as_view()` produces the view function registered via `add_url_rule`, which is called with the matched `view_args` to produce a response.\n\n6. Session handling during the request: `SessionInterface` (src/flask/sessions.py) governs how session data is opened (via `open_session`) and saved (via `save_session`) as part of handling the request, providing the dict-like session object used by view code.\n\n7. Teardown: Per `AppContext`'s docstring, 'when the context is popped, it will evaluate all the teardown functions registered with teardown_request (if handling a request) then teardown_appcontext,' concluding the request lifecycle after the view response is produced.\n\nLimitation: the evidence does not include the actual source of `wsgi_app`, `full_dispatch_request`, `dispatch_request` (on Flask), or `finalize_request`, so exact call order and error-handling logic within those methods cannot be verified from the provided chunks; the trace above reflects only what the docstrings and documented attributes state.",
+          "basis": "Answer constructed strictly from the excerpted docstrings/attributes of Flask/App, AppContext, Request, Scaffold/Blueprint, View, and SessionInterface classes in the frozen evidence; no method bodies for wsgi_app/dispatch_request were present in evidence, so the trace is limited to documented lifecycle behavior stated in those class docstrings.",
+          "citations": [
+            {
+              "node_id": "206ed774caa8a5017f4a4842",
+              "qualified_name": "flask.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/app.py",
+                "start_line": 109,
+                "start_column": 0,
+                "end_line": 1625,
+                "end_column": 0
+              },
+              "title": "Flask class docstring",
+              "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Describes Flask as the WSGI application entry point and central registry for views/URL rules."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 1013,
+                "end_column": 0
+              },
+              "title": "App class docstring",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Base class documenting the app as the central WSGI object shared with Flask."
+            },
+            {
+              "node_id": "b1f7c0c635e9ffb051a8e6b7",
+              "qualified_name": "flask.ctx",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/ctx.py",
+                "start_line": 260,
+                "start_column": 0,
+                "end_line": 525,
+                "end_column": 0
+              },
+              "title": "AppContext class docstring",
+              "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+              "relevance": "States that a context is pushed at request start and popped at end, running teardown functions, forming the outer lifecycle wrapper."
+            },
+            {
+              "node_id": "977fda75428269b85dc6da05",
+              "qualified_name": "flask.wrappers",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/wrappers.py",
+                "start_line": 18,
+                "start_column": 0,
+                "end_line": 219,
+                "end_column": 0
+              },
+              "title": "Request class docstring and attributes",
+              "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+              "relevance": "Documents url_rule, view_args, and routing_exception populated during URL matching before view dispatch."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 698,
+                "end_column": 0
+              },
+              "title": "Scaffold class docstring",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Common route-registration behavior shared by Flask and Blueprint contributing to URL map used in routing."
+            },
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint class docstring",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Describes blueprints as collections of routes registered onto the app, feeding the URL map consulted during dispatch."
+            },
+            {
+              "node_id": "d02a658171fc423d3a5d88a1",
+              "qualified_name": "flask.views",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/views.py",
+                "start_line": 1,
+                "start_column": 0,
+                "end_line": 160,
+                "end_column": 0
+              },
+              "title": "View class and dispatch_request",
+              "excerpt": "from __future__ import annotations\n\nimport typing as t\n\nfrom . import typing as ft\nfrom .globals import current_app\nfrom .globals import request\n",
+              "relevance": "Shows the class-based view mechanism whose dispatch_request produces the response for matched view args."
+            },
+            {
+              "node_id": "4ad303b96ea5580106feccb5",
+              "qualified_name": "flask.sessions",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sessions.py",
+                "start_line": 100,
+                "start_column": 0,
+                "end_line": 270,
+                "end_column": 0
+              },
+              "title": "SessionInterface class docstring",
+              "excerpt": "class SessionInterface:\n    \"\"\"The basic interface you have to implement in order to replace the\n    default session interface which uses werkzeug's securecookie\n    implementation.  The only methods you have to implement are\n    :meth:`open_session` and :meth:`save_session`, the others have\n    useful defaults which you don't need to change.\n\n    The session object returned by the :meth:`open_session` method has to",
+              "relevance": "Describes how session data is opened and saved during request handling."
+            }
+          ],
+          "duration_ms": 49389.096,
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 10643,
+          "cache_read_input_tokens": 46764,
+          "effective_input_tokens": 57411,
+          "output_tokens": 4878,
+          "estimated_cost_usd": 0.1580682,
+          "total_tokens": 62289,
+          "output_characters": 2848,
+          "output_tokens_per_second": 98.767,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_sdk_first_assistant_event_ms=14142.486",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 1.0,
+            "expected_path_recall": 1.0,
+            "expected_path_precision": 0.25,
+            "matched_concepts": [
+              [
+                "wsgi_app",
+                "wsgi app"
+              ],
+              [
+                "request context"
+              ],
+              [
+                "dispatch_request",
+                "dispatch request"
+              ],
+              [
+                "finalize_request",
+                "finalize request"
+              ],
+              [
+                "response"
+              ]
+            ],
+            "missing_concepts": [],
+            "cited_paths": [
+              "src/flask/app.py",
+              "src/flask/ctx.py",
+              "src/flask/sansio/app.py",
+              "src/flask/sansio/blueprints.py",
+              "src/flask/sansio/scaffold.py",
+              "src/flask/sessions.py",
+              "src/flask/views.py",
+              "src/flask/wrappers.py"
+            ],
+            "passed": true
+          }
+        }
+      ],
+      "failures": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "error_type": "ValueError",
+          "detail": "openrouter:openrouter/free cited evidence outside the frozen set: src/flask/ctx.py:L260-L698, src/flask/views.py:L1-L367",
+          "duration_ms": 14070.993,
+          "validation_status": "failed"
+        }
+      ]
+    },
+    {
+      "id": "blueprints",
+      "question": "What are blueprints, and how are their routes connected to an application?",
+      "expected_paths": [
+        "src/flask/sansio/blueprints.py",
+        "src/flask/blueprints.py"
+      ],
+      "candidate_evidence_files": [
+        "src/flask/app.py",
+        "src/flask/cli.py",
+        "src/flask/config.py",
+        "src/flask/ctx.py",
+        "src/flask/json/provider.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/views.py",
+        "src/flask/wrappers.py"
+      ],
+      "candidate_evidence_recall": 0.5,
+      "wall_time_ms": 51592.99,
+      "answers": [
+        {
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "answer": "Blueprints are objects that allow defining application functions (such as routes) without requiring an application object ahead of time. They use the same decorators as Flask, but defer the need for an application by recording them for later registration. When a blueprint is registered on a real application (e.g., via `app.register_blueprint`), its routes are connected to the application, with the blueprint's name prepended to endpoint names and the blueprint's URL prefix applied.\n\nSee the Blueprint class definition for details:\n\n- It represents a blueprint, a collection of routes and other app-related functions that can be registered on a real application later.\n- Decorating a function with a blueprint creates a deferred function that is called with `BlueprintSetupState` when the blueprint is registered on an application.\n- The blueprint's name is prepended to each endpoint name, and its static and template folders can be added to the app.\n\nThus, blueprints provide a modular way to organize routes and other app functionality, which are later connected to the application when the blueprint is registered.",
+          "basis": "The Blueprint class documentation describes blueprints as collections of routes and app-related functions that can be registered later, using the same decorators as Flask but deferring registration. When a blueprint is registered on an application, its routes are connected, with the blueprint's name prepended to endpoint names and its URL prefix applied.",
+          "citations": [
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 692,
+                "end_column": 0
+              },
+              "title": "Blueprint",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Blueprint definition and purpose"
+            }
+          ],
+          "duration_ms": 50519.179,
+          "input_tokens": 5044,
+          "cache_creation_input_tokens": null,
+          "cache_read_input_tokens": null,
+          "effective_input_tokens": 5044,
+          "output_tokens": 2796,
+          "estimated_cost_usd": 0.0,
+          "total_tokens": 7840,
+          "output_characters": 1121,
+          "output_tokens_per_second": 55.345,
+          "ttft_ms": 45687.632,
+          "ttft_status": "measured_streaming_delta",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 1.0,
+            "expected_path_recall": 0.5,
+            "expected_path_precision": 1.0,
+            "matched_concepts": [
+              [
+                "collection of routes",
+                "routes"
+              ],
+              [
+                "register"
+              ],
+              [
+                "defer",
+                "record"
+              ],
+              [
+                "application",
+                "app"
+              ]
+            ],
+            "missing_concepts": [],
+            "cited_paths": [
+              "src/flask/sansio/blueprints.py"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "provider": "claude-code",
+          "model": "sonnet",
+          "answer": "A Blueprint (flask.sansio.blueprints.Blueprint) is described in the codebase as \u201ca collection of routes and other app-related functions that can be registered on a real application later.\u201d It lets you define view functions, URL rules, static/template folders, etc. without needing an application object to exist yet. Like Flask.App, Blueprint inherits from the shared Scaffold base class, which provides the common route-decorating machinery (route(), add_url_rule(), static/template folder handling) that both Flask and Blueprint use. Because Blueprint shares Scaffold with the App/Flask classes, calls such as @blueprint.route(...) use the exact same decorator/registration API as @app.route(...), but instead of registering the URL rule immediately on a live application, the Blueprint records the call as a deferred function. According to the Blueprint docstring: \u2018Decorating a function with a blueprint creates a deferred function that is called with :class:`~flask.blueprints.BlueprintSetupState` when the blueprint is registered on an application.\u2019 In other words, the routes/decorators you attach to a Blueprint are not wired to any application at definition time \u2014 they are stored, and only when the blueprint is later registered on a Flask app (conventionally via app.register_blueprint(blueprint)) are those deferred functions executed with a BlueprintSetupState object, which is what actually adds the blueprint's URL rules (with the blueprint's name prefixed to each endpoint name) into the application's URL map. This is why the Blueprint constructor takes a `name` parameter that \u2018will be prepended to each endpoint name,\u2019 letting the same route logic be mounted under different prefixes/apps.",
+          "basis": "Answer drawn directly from the class docstrings for flask.sansio.blueprints.Blueprint and flask.sansio.scaffold.Scaffold in the frozen evidence, which describe Blueprint as a deferred, registrable collection of routes sharing the Scaffold base with Flask/App.",
+          "citations": [
+            {
+              "node_id": "aa04b7ad65e20c09309a35c7",
+              "qualified_name": "flask.sansio.blueprints",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/blueprints.py",
+                "start_line": 119,
+                "start_column": 0,
+                "end_line": 146,
+                "end_column": 0
+              },
+              "title": "Blueprint class docstring",
+              "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+              "relevance": "Defines what a Blueprint is: a collection of routes deferred for later registration on an application, using BlueprintSetupState."
+            },
+            {
+              "node_id": "a3dda31320f82d342405b0d0",
+              "qualified_name": "flask.sansio.scaffold",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/scaffold.py",
+                "start_line": 52,
+                "start_column": 0,
+                "end_line": 65,
+                "end_column": 0
+              },
+              "title": "Scaffold base class docstring",
+              "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+              "relevance": "Shows Scaffold is the shared base providing route/decorator behavior common to both Flask and Blueprint."
+            },
+            {
+              "node_id": "5dc63d4c5369ecf5f9981ae2",
+              "qualified_name": "flask.sansio.app",
+              "kind": "module",
+              "span": {
+                "path": "src/flask/sansio/app.py",
+                "start_line": 59,
+                "start_column": 0,
+                "end_line": 90,
+                "end_column": 0
+              },
+              "title": "App class docstring",
+              "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+              "relevance": "Shows the App class (parent of Flask) that Blueprints are ultimately registered onto."
+            }
+          ],
+          "duration_ms": 18135.381,
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 9325,
+          "effective_input_tokens": 9327,
+          "output_tokens": 1483,
+          "estimated_cost_usd": 0.032045500000000005,
+          "total_tokens": 10810,
+          "output_characters": 1708,
+          "output_tokens_per_second": 81.774,
+          "ttft_ms": null,
+          "ttft_status": "unavailable_sdk_first_assistant_event_ms=6293.164",
+          "tool_calls": 1,
+          "repository_tool_calls": 0,
+          "structured_output_tool_calls": 1,
+          "requested_max_output_tokens": 6000,
+          "validation_status": "passed",
+          "score": {
+            "concept_recall": 1.0,
+            "expected_path_recall": 0.5,
+            "expected_path_precision": 0.3333,
+            "matched_concepts": [
+              [
+                "collection of routes",
+                "routes"
+              ],
+              [
+                "register"
+              ],
+              [
+                "defer",
+                "record"
+              ],
+              [
+                "application",
+                "app"
+              ]
+            ],
+            "missing_concepts": [],
+            "cited_paths": [
+              "src/flask/sansio/app.py",
+              "src/flask/sansio/blueprints.py",
+              "src/flask/sansio/scaffold.py"
+            ],
+            "passed": true
+          }
+        }
+      ],
+      "failures": []
+    }
+  ]
+}

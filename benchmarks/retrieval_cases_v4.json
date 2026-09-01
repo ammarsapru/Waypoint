@@ -1,0 +1,13 @@
+{
+  "version": "4.0",
+  "base_manifest": "retrieval_cases_v4_cases.json",
+  "protocol": "independent_agent_retrieval",
+  "stages": ["candidate_retrieval", "explicit_inspection", "cited_retrieval"],
+  "notes": [
+    "Each endpoint receives the same question, repository revision, tool contracts and budgets.",
+    "Each endpoint independently selects and calls repository tools; evidence is not frozen in advance.",
+    "Candidate, explicitly inspected and finally cited paths are scored separately.",
+    "V4 uses new scenarios; V2 and V3 questions are not reused or merged.",
+    "Seed labels require independent human adjudication before release gating."
+  ]
+}

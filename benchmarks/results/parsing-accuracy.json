@@ -1,0 +1,83 @@
+{
+  "fixture_files": 9,
+  "languages": [
+    "python",
+    "javascript",
+    "typescript",
+    "tsx",
+    "java",
+    "html",
+    "css"
+  ],
+  "files_discovered": 9,
+  "files_parsed": 9,
+  "parse_failures": 0,
+  "parse_success_rate": 1.0,
+  "duration_ms": 128.986,
+  "peak_python_allocation_mib": 0.349,
+  "node_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "true_positive": 16,
+    "false_positive": 0,
+    "false_negative": 0,
+    "unexpected": [],
+    "missing": []
+  },
+  "edge_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "true_positive": 9,
+    "false_positive": 0,
+    "false_negative": 0,
+    "unexpected": [],
+    "missing": []
+  },
+  "edge_metrics_by_kind": {
+    "imports": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 0,
+      "unexpected": [],
+      "missing": []
+    },
+    "instantiates": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "unexpected": [],
+      "missing": []
+    },
+    "may_call": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 0,
+      "unexpected": [],
+      "missing": []
+    }
+  },
+  "emitted_node_counts": {
+    "method": 4,
+    "module": 9,
+    "class": 9,
+    "function": 3,
+    "repository": 1
+  },
+  "emitted_edge_counts": {
+    "contains": 25,
+    "instantiates": 2,
+    "imports": 4,
+    "may_call": 3
+  }
+}

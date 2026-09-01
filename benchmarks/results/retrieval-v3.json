@@ -1,0 +1,3489 @@
+{
+  "benchmark_version": "3.0",
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "wp-01",
+    "wp-02",
+    "wp-03",
+    "wp-04",
+    "wp-05",
+    "wp-06",
+    "wp-07",
+    "wp-08",
+    "wp-09",
+    "wp-10",
+    "wp-11",
+    "wp-12",
+    "wp-13",
+    "wp-14",
+    "wp-15",
+    "wp-16",
+    "wp-17",
+    "wp-18",
+    "wp-19",
+    "wp-20",
+    "fl-01",
+    "fl-02",
+    "fl-03",
+    "fl-04",
+    "fl-05",
+    "fl-06",
+    "fl-07",
+    "fl-08",
+    "fl-09",
+    "fl-10",
+    "fl-11",
+    "fl-12",
+    "fl-13",
+    "fl-14",
+    "fl-15",
+    "pr-01",
+    "pr-02",
+    "pr-03",
+    "pr-04",
+    "pr-05",
+    "pr-06",
+    "pr-07",
+    "pr-08",
+    "pr-09",
+    "pr-10",
+    "pr-11",
+    "pr-12",
+    "pr-13",
+    "pr-14",
+    "pr-15"
+  ],
+  "case_count": 50,
+  "query_repeats": 1,
+  "overall": {
+    "cases": 50,
+    "hit_at_1": 0.84,
+    "hit_at_3": 0.98,
+    "hit_at_5": 1.0,
+    "hit_at_10": 1.0,
+    "precision_at_5": 0.456,
+    "precision_at_10": 0.29,
+    "path_recall_at_5": 0.5361,
+    "path_recall_at_10": 0.6725,
+    "required_group_recall_at_5": 0.6887,
+    "required_group_recall_at_10": 0.8533,
+    "average_precision_at_10": 0.5163,
+    "ndcg_at_10": 0.6641,
+    "mean_reciprocal_rank": 0.9007,
+    "forbidden_path_hit_rate_at_10": 0.1,
+    "strict_case_pass_rate": 0.52,
+    "strict_quality_score": 0.7257
+  },
+  "slices": {
+    "repository": {
+      "flask": {
+        "cases": 15,
+        "hit_at_1": 0.9333,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4267,
+        "precision_at_10": 0.2667,
+        "path_recall_at_5": 0.5533,
+        "path_recall_at_10": 0.6833,
+        "required_group_recall_at_5": 0.7667,
+        "required_group_recall_at_10": 0.9333,
+        "average_precision_at_10": 0.549,
+        "ndcg_at_10": 0.698,
+        "mean_reciprocal_rank": 0.9667,
+        "forbidden_path_hit_rate_at_10": 0.2,
+        "strict_case_pass_rate": 0.6,
+        "strict_quality_score": 0.7578
+      },
+      "praw": {
+        "cases": 15,
+        "hit_at_1": 0.8,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.44,
+        "precision_at_10": 0.2667,
+        "path_recall_at_5": 0.5092,
+        "path_recall_at_10": 0.5916,
+        "required_group_recall_at_5": 0.6789,
+        "required_group_recall_at_10": 0.7944,
+        "average_precision_at_10": 0.4598,
+        "ndcg_at_10": 0.6042,
+        "mean_reciprocal_rank": 0.8778,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 0.5333,
+        "strict_quality_score": 0.7116
+      },
+      "waypoint": {
+        "cases": 20,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.95,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.49,
+        "precision_at_10": 0.325,
+        "path_recall_at_5": 0.5433,
+        "path_recall_at_10": 0.725,
+        "required_group_recall_at_5": 0.6375,
+        "required_group_recall_at_10": 0.8375,
+        "average_precision_at_10": 0.534,
+        "ndcg_at_10": 0.6836,
+        "mean_reciprocal_rank": 0.8683,
+        "forbidden_path_hit_rate_at_10": 0.1,
+        "strict_case_pass_rate": 0.45,
+        "strict_quality_score": 0.7123
+      }
+    },
+    "split": {
+      "development": {
+        "cases": 30,
+        "hit_at_1": 0.8333,
+        "hit_at_3": 0.9667,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4667,
+        "precision_at_10": 0.31,
+        "path_recall_at_5": 0.5368,
+        "path_recall_at_10": 0.7075,
+        "required_group_recall_at_5": 0.6839,
+        "required_group_recall_at_10": 0.9,
+        "average_precision_at_10": 0.5207,
+        "ndcg_at_10": 0.6753,
+        "mean_reciprocal_rank": 0.89,
+        "forbidden_path_hit_rate_at_10": 0.1333,
+        "strict_case_pass_rate": 0.6,
+        "strict_quality_score": 0.7421
+      },
+      "heldout": {
+        "cases": 20,
+        "hit_at_1": 0.85,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.44,
+        "precision_at_10": 0.26,
+        "path_recall_at_5": 0.535,
+        "path_recall_at_10": 0.62,
+        "required_group_recall_at_5": 0.6958,
+        "required_group_recall_at_10": 0.7833,
+        "average_precision_at_10": 0.5096,
+        "ndcg_at_10": 0.6474,
+        "mean_reciprocal_rank": 0.9167,
+        "forbidden_path_hit_rate_at_10": 0.05,
+        "strict_case_pass_rate": 0.4,
+        "strict_quality_score": 0.7012
+      }
+    },
+    "language": {
+      "configuration": {
+        "cases": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "path_recall_at_5": 0.6667,
+        "path_recall_at_10": 0.6667,
+        "required_group_recall_at_5": 1.0,
+        "required_group_recall_at_10": 1.0,
+        "average_precision_at_10": 0.6667,
+        "ndcg_at_10": 0.7654,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 1,
+        "strict_quality_score": 0.9053
+      },
+      "documentation": {
+        "cases": 10,
+        "hit_at_1": 0.7,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.36,
+        "precision_at_10": 0.24,
+        "path_recall_at_5": 0.4322,
+        "path_recall_at_10": 0.5357,
+        "required_group_recall_at_5": 0.6183,
+        "required_group_recall_at_10": 0.7667,
+        "average_precision_at_10": 0.371,
+        "ndcg_at_10": 0.5309,
+        "mean_reciprocal_rank": 0.8167,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 0.5,
+        "strict_quality_score": 0.6642
+      },
+      "html": {
+        "cases": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "path_recall_at_5": 0.3333,
+        "path_recall_at_10": 0.3333,
+        "required_group_recall_at_5": 0.5,
+        "required_group_recall_at_10": 0.5,
+        "average_precision_at_10": 0.3333,
+        "ndcg_at_10": 0.4693,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 0,
+        "strict_quality_score": 0.5504
+      },
+      "java": {
+        "cases": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "path_recall_at_5": 0.75,
+        "path_recall_at_10": 1.0,
+        "required_group_recall_at_5": 0.6667,
+        "required_group_recall_at_10": 1.0,
+        "average_precision_at_10": 0.8929,
+        "ndcg_at_10": 0.962,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 1,
+        "strict_quality_score": 0.9758
+      },
+      "javascript": {
+        "cases": 2,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.7,
+        "precision_at_10": 0.35,
+        "path_recall_at_5": 0.875,
+        "path_recall_at_10": 0.875,
+        "required_group_recall_at_5": 1.0,
+        "required_group_recall_at_10": 1.0,
+        "average_precision_at_10": 0.7771,
+        "ndcg_at_10": 0.8683,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 1,
+        "strict_quality_score": 0.9409
+      },
+      "python": {
+        "cases": 31,
+        "hit_at_1": 0.8387,
+        "hit_at_3": 0.9677,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4516,
+        "precision_at_10": 0.2968,
+        "path_recall_at_5": 0.5339,
+        "path_recall_at_10": 0.6995,
+        "required_group_recall_at_5": 0.6828,
+        "required_group_recall_at_10": 0.871,
+        "average_precision_at_10": 0.5244,
+        "ndcg_at_10": 0.6769,
+        "mean_reciprocal_rank": 0.8989,
+        "forbidden_path_hit_rate_at_10": 0.1613,
+        "strict_case_pass_rate": 0.4839,
+        "strict_quality_score": 0.7156
+      },
+      "shell": {
+        "cases": 2,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.7,
+        "precision_at_10": 0.4,
+        "path_recall_at_5": 0.6167,
+        "path_recall_at_10": 0.7167,
+        "required_group_recall_at_5": 0.75,
+        "required_group_recall_at_10": 0.875,
+        "average_precision_at_10": 0.65,
+        "ndcg_at_10": 0.7737,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 0.5,
+        "strict_quality_score": 0.7998
+      },
+      "typescript": {
+        "cases": 2,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.35,
+        "path_recall_at_5": 0.6,
+        "path_recall_at_10": 0.7,
+        "required_group_recall_at_5": 0.7084,
+        "required_group_recall_at_10": 0.875,
+        "average_precision_at_10": 0.55,
+        "ndcg_at_10": 0.7152,
+        "mean_reciprocal_rank": 1.0,
+        "forbidden_path_hit_rate_at_10": 0,
+        "strict_case_pass_rate": 0.5,
+        "strict_quality_score": 0.7734
+      }
+    }
+  },
+  "repository_performance": {
+    "waypoint": {
+      "index_ms": 39807.029,
+      "index_restore_ms": 503.745,
+      "process_peak_memory_mib": 196.391,
+      "mean_query_ms": 852.267,
+      "query_p95_ms": 1093.098
+    },
+    "flask": {
+      "index_ms": 5882.806,
+      "index_restore_ms": 77.98,
+      "process_peak_memory_mib": 258.938,
+      "mean_query_ms": 199.933,
+      "query_p95_ms": 348.427
+    },
+    "praw": {
+      "index_ms": 15734.605,
+      "index_restore_ms": 133.962,
+      "process_peak_memory_mib": 258.938,
+      "mean_query_ms": 340.474,
+      "query_p95_ms": 634.666
+    }
+  },
+  "results": [
+    {
+      "id": "wp-01",
+      "question": "Trace conversation memory persistence, semantic vector retrieval, recent history, and model prompt assembly.",
+      "retrieved_paths": [
+        "backend/app/agent/memory.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/retrieval.py",
+        "backend/tests/test_agent.py",
+        "backend/app/onboarding/models.py",
+        "benchmarks/run_retrieval.py",
+        "backend/app/graph/store.py",
+        "backend/app/agent/semantic.py",
+        "verification/scripts/model_comparison_benchmark.py",
+        "benchmarks/run_retrieval_v3.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.6875,
+      "ndcg_at_10": 0.8048,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/memory.py"
+        ],
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/config.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/memory.py",
+        "backend/app/agent/service.py",
+        "backend/app/config.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 4140.014,
+      "warm_mean_latency_ms": 4140.014,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-02",
+      "question": "Trace secure GitHub clone validation, limits, subprocess execution, and analysis dispatch.",
+      "retrieved_paths": [
+        "backend/app/repository_import.py",
+        "backend/app/api/routes.py",
+        "backend/app/agent/service.py",
+        "backend/app/config.py",
+        "backend/app/issues/service.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/mcp_server.py",
+        "backend/app/agent/onboarding.py",
+        "verification/core-features.json",
+        "backend/app/onboarding/service.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5536,
+      "ndcg_at_10": 0.7247,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/repository_import.py"
+        ],
+        [
+          "backend/app/config.py",
+          "backend/app/processes.py"
+        ],
+        [
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/api/routes.py",
+        "backend/app/config.py",
+        "backend/app/mcp_server.py",
+        "backend/app/processes.py",
+        "backend/app/repository_import.py",
+        "backend/tests/test_repository_import.py"
+      ],
+      "cold_latency_ms": 625.926,
+      "warm_mean_latency_ms": 625.926,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-03",
+      "question": "How do Java packages imports classes constructors and typed receiver method calls become graph nodes and edges?",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/graph/analyzer.py",
+        "backend/tests/test_polyglot_analyzer.py",
+        "benchmarks/run_parsing_accuracy.py",
+        "frontend/src/components/GraphView.tsx",
+        "backend/app/onboarding/service.py",
+        "backend/app/graph/models.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/graph/store.py",
+        "frontend/src/App.tsx"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.8929,
+      "ndcg_at_10": 0.962,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ],
+        [
+          "backend/tests/test_polyglot_analyzer.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "backend/tests/test_polyglot_analyzer.py"
+      ],
+      "cold_latency_ms": 750.492,
+      "warm_mean_latency_ms": 750.492,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "java",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-04",
+      "question": "Trace repository analysis from the HTTP request through graph persistence and revision indexing.",
+      "retrieved_paths": [
+        "backend/app/graph/store.py",
+        "backend/app/agent/service.py",
+        "backend/app/api/routes.py",
+        "verification/scripts/http_flask_e2e.py",
+        "backend/app/indexing.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/polyglot.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/agent/semantic.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.5,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.8333,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6079,
+      "ndcg_at_10": 0.7796,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/store.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/api/routes.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_api.py"
+      ],
+      "cold_latency_ms": 705.83,
+      "warm_mean_latency_ms": 705.83,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-05",
+      "question": "How does hybrid FTS vector graph retrieval rank and diversify source evidence?",
+      "retrieved_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/models.py",
+        "benchmarks/run_retrieval.py",
+        "backend/app/graph/store.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/polyglot.py",
+        "backend/app/onboarding/service.py",
+        "frontend/src/components/GraphView.tsx",
+        "backend/app/agent/semantic.py",
+        "benchmarks/run_retrieval_v3.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.4,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.3,
+      "ndcg_at_10": 0.4852,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/retrieval.py"
+        ],
+        [
+          "backend/app/graph/store.py"
+        ],
+        [
+          "backend/app/indexing.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py",
+        "backend/tests/test_benchmarks.py"
+      ],
+      "cold_latency_ms": 533.367,
+      "warm_mean_latency_ms": 533.367,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-06",
+      "question": "Trace repository agent tool selection execution citation validation retry and final submission.",
+      "retrieved_paths": [
+        "backend/app/agent/service.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/issues.py",
+        "backend/app/agent/comparison.py",
+        "backend/app/agent/semantic.py",
+        "backend/tests/test_agent.py",
+        "backend/app/agent/provider.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/observability.py",
+        "backend/app/onboarding/questions.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5516,
+      "ndcg_at_10": 0.7771,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/agent/provider.py"
+        ],
+        [
+          "backend/app/observability.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/provider.py",
+        "backend/app/agent/service.py",
+        "backend/app/observability.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 654.472,
+      "warm_mean_latency_ms": 654.472,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-07",
+      "question": "How does model comparison freeze evidence and measure tokens latency TTFT tools and validation failures?",
+      "retrieved_paths": [
+        "verification/scripts/model_comparison_benchmark.py",
+        "backend/app/agent/comparison.py",
+        "backend/tests/test_model_comparison.py",
+        "verification/scripts/model_quality_benchmark.py",
+        "backend/app/onboarding/models.py",
+        "SDK_TTFT_MEASUREMENT_REPORT.md",
+        "verification/model-comparison/README.md",
+        "backend/app/agent/provider.py",
+        "backend/app/graph/models.py",
+        "backend/app/agent/service.py"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.5,
+      "path_recall_at_5": 0.8,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6683,
+      "ndcg_at_10": 0.7678,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/comparison.py"
+        ],
+        [
+          "backend/app/agent/provider.py"
+        ],
+        [
+          "backend/app/onboarding/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/comparison.py",
+        "backend/app/agent/provider.py",
+        "backend/app/onboarding/models.py",
+        "backend/tests/test_model_comparison.py",
+        "verification/scripts/model_quality_benchmark.py"
+      ],
+      "cold_latency_ms": 640.032,
+      "warm_mean_latency_ms": 640.032,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-08",
+      "question": "Trace how role objective experience and time budget produce a grounded onboarding route.",
+      "retrieved_paths": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/api/routes.py",
+        "backend/app/onboarding/service.py",
+        "backend/app/config.py",
+        "frontend/src/components/OnboardingWorkspace.tsx",
+        "backend/tests/test_onboarding.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/agent/service.py",
+        "benchmarks/run_repositories.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6845,
+      "ndcg_at_10": 0.8548,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/onboarding.py"
+        ],
+        [
+          "backend/app/onboarding/models.py"
+        ],
+        [
+          "backend/app/onboarding/service.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/onboarding/service.py",
+        "backend/tests/test_onboarding.py"
+      ],
+      "cold_latency_ms": 589.549,
+      "warm_mean_latency_ms": 589.549,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-09",
+      "question": "How are free text onboarding challenges graded and bounded against expected concepts?",
+      "retrieved_paths": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/onboarding/service.py",
+        "backend/app/config.py",
+        "backend/tests/test_onboarding.py",
+        "frontend/src/components/OnboardingWorkspace.tsx",
+        "backend/app/onboarding/models.py",
+        "backend/app/api/routes.py",
+        "WAYPOINT_BENCHMARKS_AND_TESTS.md",
+        "backend/app/onboarding/questions.py",
+        "benchmarks/run_repositories.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6667,
+      "ndcg_at_10": 0.8385,
+      "forbidden_hits": [
+        "frontend/src/components/OnboardingWorkspace.tsx"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/onboarding.py"
+        ],
+        [
+          "backend/app/onboarding/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/onboarding/models.py",
+        "backend/tests/test_onboarding.py"
+      ],
+      "cold_latency_ms": 660.862,
+      "warm_mean_latency_ms": 660.862,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-10",
+      "question": "Trace issue listing timeline retrieval and grounded issue synthesis.",
+      "retrieved_paths": [
+        "backend/app/agent/service.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/issues.py",
+        "backend/app/issues/service.py",
+        "backend/app/onboarding/models.py",
+        "benchmarks/run_retrieval.py",
+        "backend/app/issues/models.py",
+        "backend/app/agent/comparison.py",
+        "benchmarks/run_retrieval_v3.py",
+        "backend/app/agent/onboarding.py"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.2524,
+      "ndcg_at_10": 0.4287,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/issues/service.py"
+        ],
+        [
+          "backend/app/agent/issues.py"
+        ],
+        [
+          "backend/app/issues/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/issues.py",
+        "backend/app/api/routes.py",
+        "backend/app/issues/models.py",
+        "backend/app/issues/service.py",
+        "backend/tests/test_issues.py"
+      ],
+      "cold_latency_ms": 517.52,
+      "warm_mean_latency_ms": 517.52,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-11",
+      "question": "Where are structured logs tracing hooks subprocess events model calls and tool results implemented?",
+      "retrieved_paths": [
+        "verification/scripts/model_comparison_benchmark.py",
+        "benchmarks/results/retrieval-v3.json",
+        "benchmarks/retrieval_cases_v3.json",
+        "verification/results/model-comparison-benchmark.json",
+        "backend/app/agent/service.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/observability.py",
+        "benchmarks/results/baseline-small/latest.json",
+        "verification/agentic-rag-evaluation-cases.json",
+        "backend/app/agent/semantic.py"
+      ],
+      "first_relevant_rank": 5,
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.1214,
+      "ndcg_at_10": 0.2811,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/observability.py"
+        ],
+        [
+          "backend/app/processes.py"
+        ],
+        [
+          "backend/app/agent/service.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/service.py",
+        "backend/app/observability.py",
+        "backend/app/processes.py",
+        "backend/tests/test_observability.py"
+      ],
+      "cold_latency_ms": 932.733,
+      "warm_mean_latency_ms": 932.733,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-12",
+      "question": "How does the MCP server expose analysis retrieval onboarding issues memory and model comparison services?",
+      "retrieved_paths": [
+        "backend/app/mcp_server.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/issues/service.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/agent/issues.py",
+        "agent-and-mcp-tools.md",
+        "backend/app/agent/service.py",
+        "backend/app/onboarding/service.py",
+        "verification/core-features.json",
+        "backend/app/api/routes.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.419,
+      "ndcg_at_10": 0.6218,
+      "forbidden_hits": [
+        "agent-and-mcp-tools.md"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/mcp_server.py"
+        ],
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/agent/onboarding.py",
+          "backend/app/issues/service.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/service.py",
+        "backend/app/issues/service.py",
+        "backend/app/mcp_server.py",
+        "backend/tests/test_mcp_server.py"
+      ],
+      "cold_latency_ms": 676.977,
+      "warm_mean_latency_ms": 676.977,
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-13",
+      "question": "How are repository revisions fingerprinted restored and compared without mixing identities?",
+      "retrieved_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/comparison.py",
+        "backend/app/graph/store.py",
+        "backend/app/mcp_server.py",
+        "verification/scripts/model_comparison_benchmark.py",
+        "recommended-indexing-and-retrieval-architecture.md",
+        "backend/app/onboarding/service.py",
+        "backend/app/issues/service.py",
+        "benchmarks/run_retrieval.py",
+        "backend/tests/test_agent.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.4917,
+      "ndcg_at_10": 0.6984,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/indexing.py"
+        ],
+        [
+          "backend/app/graph/store.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/store.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 710.214,
+      "warm_mean_latency_ms": 710.214,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-14",
+      "question": "Trace source read safety from alias resolution through path containment size decoding and line limits.",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        ".env.example",
+        "backend/app/agent/retrieval.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/observability.py",
+        "backend/app/issues/service.py",
+        "backend/app/agent/semantic.py",
+        "frontend/src/components/SourcePanel.tsx",
+        "verification/scripts/live_multistep_demo.py"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 0.25,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.3333,
+      "average_precision_at_10": 0.0833,
+      "ndcg_at_10": 0.1952,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/retrieval.py"
+        ],
+        [
+          "backend/app/indexing.py"
+        ],
+        [
+          "backend/app/config.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/config.py",
+        "backend/app/indexing.py",
+        "backend/tests/test_agent.py"
+      ],
+      "cold_latency_ms": 731.96,
+      "warm_mean_latency_ms": 731.96,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-15",
+      "question": "Trace an Ask message from React input clearing through API transport conversation restoration and evidence display.",
+      "retrieved_paths": [
+        "frontend/src/components/AskWorkspace.tsx",
+        "backend/app/graph/analyzer.py",
+        "backend/app/api/routes.py",
+        "frontend/src/api.ts",
+        "backend/app/agent/service.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/mcp_server.py",
+        "verification/scripts/http_flask_e2e.py",
+        "backend/app/agent/provider.py",
+        "backend/app/agent/onboarding.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.6,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.75,
+      "required_group_recall_at_10": 0.75,
+      "average_precision_at_10": 0.4833,
+      "ndcg_at_10": 0.6548,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "frontend/src/components/AskWorkspace.tsx"
+        ],
+        [
+          "frontend/src/api.ts"
+        ],
+        [
+          "backend/app/api/routes.py"
+        ],
+        [
+          "backend/app/agent/memory.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/memory.py",
+        "backend/app/api/routes.py",
+        "frontend/src/App.tsx",
+        "frontend/src/api.ts",
+        "frontend/src/components/AskWorkspace.tsx"
+      ],
+      "cold_latency_ms": 723.795,
+      "warm_mean_latency_ms": 723.795,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "typescript",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-16",
+      "question": "How does the frontend render file cards graph relationships source evidence and inspector state?",
+      "retrieved_paths": [
+        "frontend/src/components/Inspector.tsx",
+        "backend/app/graph/polyglot.py",
+        "frontend/src/App.tsx",
+        "frontend/src/components/GraphView.tsx",
+        "backend/app/graph/analyzer.py",
+        "frontend/src/components/SourcePanel.tsx",
+        "frontend/src/components/OnboardingWorkspace.tsx",
+        "backend/app/graph/models.py",
+        "backend/app/agent/semantic.py",
+        "frontend/src/components/AskWorkspace.tsx"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.6,
+      "path_recall_at_10": 0.8,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6167,
+      "ndcg_at_10": 0.7756,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "frontend/src/components/GraphView.tsx"
+        ],
+        [
+          "frontend/src/components/Inspector.tsx"
+        ],
+        [
+          "frontend/src/components/SourcePanel.tsx"
+        ]
+      ],
+      "acceptable_paths": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/GraphView.tsx",
+        "frontend/src/components/Inspector.tsx",
+        "frontend/src/components/SourcePanel.tsx",
+        "frontend/src/types.ts"
+      ],
+      "cold_latency_ms": 694.5,
+      "warm_mean_latency_ms": 694.5,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "typescript",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-17",
+      "question": "How are external packages and unresolved references represented separately from internal graph relationships?",
+      "retrieved_paths": [
+        "backend/app/graph/polyglot.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/agent/semantic.py",
+        "frontend/src/components/GraphView.tsx",
+        "backend/tests/test_polyglot_analyzer.py",
+        "benchmarks/run_repositories.py",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "backend/app/graph/store.py",
+        "backend/app/onboarding/service.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 1.0,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.95,
+      "ndcg_at_10": 0.9829,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/graph/analyzer.py"
+        ],
+        [
+          "backend/app/graph/polyglot.py"
+        ],
+        [
+          "backend/app/graph/models.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/models.py",
+        "backend/app/graph/polyglot.py",
+        "frontend/src/components/GraphView.tsx"
+      ],
+      "cold_latency_ms": 664.641,
+      "warm_mean_latency_ms": 664.641,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-18",
+      "question": "Trace provider startup probing billing fallback fixed model routing and bounded Claude Code turns.",
+      "retrieved_paths": [
+        "backend/app/agent/provider.py",
+        "backend/app/config.py",
+        "backend/tests/test_provider.py",
+        ".env.example",
+        "verification/scripts/model_comparison_benchmark.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/graph/models.py",
+        "backend/app/agent/service.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/api/routes.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.75,
+      "ndcg_at_10": 0.8319,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/provider.py"
+        ],
+        [
+          "backend/app/config.py"
+        ],
+        [
+          "backend/app/main.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/provider.py",
+        "backend/app/config.py",
+        "backend/app/main.py",
+        "backend/tests/test_provider.py"
+      ],
+      "cold_latency_ms": 696.265,
+      "warm_mean_latency_ms": 696.265,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-19",
+      "question": "How are architecture entry points dependency impact related tests and code journeys inferred?",
+      "retrieved_paths": [
+        "backend/tests/test_semantic_tools.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/mcp_server.py",
+        "backend/tests/test_agent.py",
+        "backend/tests/test_polyglot_analyzer.py",
+        "backend/tests/test_mcp_server.py",
+        "backend/app/onboarding/service.py",
+        "backend/tests/test_onboarding.py",
+        "backend/tests/test_api.py",
+        "backend/tests/test_analyzer.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.6,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.6,
+      "ndcg_at_10": 0.7227,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/semantic.py"
+        ],
+        [
+          "backend/app/agent/retrieval.py"
+        ],
+        [
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py",
+        "backend/app/api/routes.py",
+        "backend/app/mcp_server.py",
+        "backend/tests/test_semantic_tools.py"
+      ],
+      "cold_latency_ms": 655.645,
+      "warm_mean_latency_ms": 655.645,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "wp-20",
+      "question": "How do output schemas citation containment and deterministic evidence recovery reject hallucinated answers?",
+      "retrieved_paths": [
+        "backend/app/agent/service.py",
+        "verification/scripts/model_comparison_benchmark.py",
+        "backend/app/agent/onboarding.py",
+        "backend/app/agent/comparison.py",
+        "backend/app/onboarding/service.py",
+        "AI_SYSTEM_ARCHITECTURE_REPORT.md",
+        "verification/scripts/model_quality_benchmark.py",
+        "verification/tested-evidence/README.md",
+        "backend/app/onboarding/questions.py",
+        "backend/app/graph/models.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.4,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.3,
+      "ndcg_at_10": 0.4852,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "backend/app/agent/service.py"
+        ],
+        [
+          "backend/app/onboarding/models.py"
+        ],
+        [
+          "backend/app/agent/comparison.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "backend/app/agent/comparison.py",
+        "backend/app/agent/service.py",
+        "backend/app/onboarding/models.py",
+        "backend/tests/test_agent.py",
+        "backend/tests/test_model_comparison.py"
+      ],
+      "cold_latency_ms": 740.536,
+      "warm_mean_latency_ms": 740.536,
+      "repository": "waypoint",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-01",
+      "question": "Trace the WSGI request lifecycle from entry through context dispatch finalization and response.",
+      "retrieved_paths": [
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/helpers.py",
+        "src/flask/ctx.py",
+        "src/flask/testing.py",
+        "src/flask/json/provider.py",
+        "src/flask/logging.py",
+        "src/flask/wrappers.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/views.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.375,
+      "ndcg_at_10": 0.5922,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/ctx.py"
+        ],
+        [
+          "src/flask/wrappers.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/lifecycle.rst",
+        "docs/reqcontext.rst",
+        "src/flask/app.py",
+        "src/flask/ctx.py",
+        "src/flask/wrappers.py"
+      ],
+      "cold_latency_ms": 675.119,
+      "warm_mean_latency_ms": 675.119,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-02",
+      "question": "How are sessions opened saved signed and replaced with a custom interface?",
+      "retrieved_paths": [
+        "src/flask/sessions.py",
+        "src/flask/app.py",
+        "tests/test_session_interface.py",
+        "src/flask/sansio/app.py",
+        "src/flask/testing.py",
+        "src/flask/json/provider.py",
+        "src/flask/ctx.py",
+        "src/flask/helpers.py",
+        "src/flask/blueprints.py",
+        "src/flask/signals.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6875,
+      "ndcg_at_10": 0.8048,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/sessions.py"
+        ],
+        [
+          "src/flask/app.py",
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/api.rst",
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sessions.py"
+      ],
+      "cold_latency_ms": 123.799,
+      "warm_mean_latency_ms": 123.799,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-03",
+      "question": "Trace blueprint route recording deferred setup and application registration.",
+      "retrieved_paths": [
+        "src/flask/sansio/blueprints.py",
+        "src/flask/blueprints.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/app.py",
+        "tests/test_blueprints.py",
+        "docs/conf.py",
+        "examples/tutorial/flaskr/__init__.py",
+        "src/flask/json/provider.py",
+        "src/flask/wrappers.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.75,
+      "ndcg_at_10": 0.8319,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/sansio/blueprints.py"
+        ],
+        [
+          "src/flask/blueprints.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/blueprints.rst",
+        "src/flask/blueprints.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py"
+      ],
+      "cold_latency_ms": 150.373,
+      "warm_mean_latency_ms": 150.373,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-04",
+      "question": "How do application and request contexts use context variables push pop and teardown?",
+      "retrieved_paths": [
+        "src/flask/ctx.py",
+        "src/flask/app.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/testing.py",
+        "src/flask/sansio/app.py",
+        "src/flask/helpers.py",
+        "src/flask/cli.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sessions.py",
+        "tests/test_reqctx.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.4,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.4,
+      "ndcg_at_10": 0.5531,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/ctx.py"
+        ],
+        [
+          "src/flask/globals.py"
+        ],
+        [
+          "src/flask/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/appcontext.rst",
+        "docs/reqcontext.rst",
+        "src/flask/app.py",
+        "src/flask/ctx.py",
+        "src/flask/globals.py"
+      ],
+      "cold_latency_ms": 185.878,
+      "warm_mean_latency_ms": 185.878,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-05",
+      "question": "Trace view exceptions through error handlers signals and response finalization.",
+      "retrieved_paths": [
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/signals.py",
+        "tests/test_user_error_handler.py",
+        "src/flask/sansio/scaffold.py",
+        "tests/test_signals.py",
+        "tests/type_check/typing_error_handler.py",
+        "src/flask/views.py",
+        "src/flask/wrappers.py",
+        "src/flask/ctx.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5,
+      "ndcg_at_10": 0.7031,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/signals.py"
+        ],
+        [
+          "src/flask/wrappers.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/errorhandling.rst",
+        "src/flask/app.py",
+        "src/flask/signals.py",
+        "src/flask/wrappers.py"
+      ],
+      "cold_latency_ms": 154.386,
+      "warm_mean_latency_ms": 154.386,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-06",
+      "question": "How is the Jinja environment created and template context rendered with signals?",
+      "retrieved_paths": [
+        "src/flask/signals.py",
+        ".github/ISSUE_TEMPLATE/config.yml",
+        "examples/tutorial/flaskr/templates/blog/create.html",
+        "tests/test_signals.py",
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/templating.py",
+        "src/flask/ctx.py",
+        "examples/tutorial/flaskr/templates/auth/register.html",
+        "src/flask/sansio/scaffold.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.4571,
+      "ndcg_at_10": 0.6715,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/templating.py"
+        ],
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/signals.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/templating.rst",
+        "src/flask/app.py",
+        "src/flask/signals.py",
+        "src/flask/templating.py"
+      ],
+      "cold_latency_ms": 185.367,
+      "warm_mean_latency_ms": 185.367,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-07",
+      "question": "How does the Flask CLI discover import and load an application factory?",
+      "retrieved_paths": [
+        "src/flask/cli.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/json/provider.py",
+        "src/flask/app.py",
+        "examples/tutorial/flaskr/db.py",
+        "src/flask/blueprints.py",
+        "examples/tutorial/flaskr/__init__.py",
+        "src/flask/testing.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.3333,
+      "ndcg_at_10": 0.5294,
+      "forbidden_hits": [
+        "src/flask/testing.py"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/cli.py"
+        ],
+        [
+          "src/flask/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/cli.rst",
+        "src/flask/__main__.py",
+        "src/flask/app.py",
+        "src/flask/cli.py"
+      ],
+      "cold_latency_ms": 168.918,
+      "warm_mean_latency_ms": 168.918,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-08",
+      "question": "How can JSON serialization providers dumps and loads be customized?",
+      "retrieved_paths": [
+        "src/flask/json/provider.py",
+        "src/flask/json/__init__.py",
+        "src/flask/json/tag.py",
+        "tests/test_json.py",
+        "src/flask/sansio/app.py",
+        "src/flask/testing.py",
+        "src/flask/app.py",
+        "tests/test_json_tag.py",
+        "src/flask/sessions.py",
+        "src/flask/debughelpers.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 1.0,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.95,
+      "ndcg_at_10": 0.9829,
+      "forbidden_hits": [
+        "src/flask/sessions.py"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/json/provider.py"
+        ],
+        [
+          "src/flask/json/__init__.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "src/flask/json/__init__.py",
+        "src/flask/json/provider.py",
+        "src/flask/json/tag.py",
+        "src/flask/sansio/app.py"
+      ],
+      "cold_latency_ms": 155.825,
+      "warm_mean_latency_ms": 155.825,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-09",
+      "question": "How does the test client preserve contexts and manage session transactions?",
+      "retrieved_paths": [
+        "src/flask/testing.py",
+        "tests/test_testing.py",
+        "tests/test_reqctx.py",
+        "examples/tutorial/tests/test_auth.py",
+        "tests/test_session_interface.py",
+        "tests/test_basic.py",
+        "tests/templates/context_template.html",
+        "tests/test_helpers.py",
+        "examples/javascript/tests/test_js_example.py",
+        "src/flask/ctx.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.3,
+      "ndcg_at_10": 0.5032,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/testing.py"
+        ],
+        [
+          "src/flask/ctx.py"
+        ],
+        [
+          "src/flask/sessions.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/testing.rst",
+        "src/flask/ctx.py",
+        "src/flask/sessions.py",
+        "src/flask/testing.py"
+      ],
+      "cold_latency_ms": 170.412,
+      "warm_mean_latency_ms": 170.412,
+      "repository": "flask",
+      "split": "development",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-10",
+      "question": "Compare configuration loading from files objects environment prefixes and mappings.",
+      "retrieved_paths": [
+        "src/flask/config.py",
+        "src/flask/sansio/app.py",
+        "src/flask/app.py",
+        "src/flask/cli.py",
+        "src/flask/helpers.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/json/provider.py",
+        "src/flask/templating.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/wrappers.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6667,
+      "ndcg_at_10": 0.7654,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/config.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/config.rst",
+        "src/flask/config.py",
+        "src/flask/sansio/app.py"
+      ],
+      "cold_latency_ms": 141.423,
+      "warm_mean_latency_ms": 141.423,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "configuration",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-11",
+      "question": "How are request started request finished exception and template signals declared and emitted?",
+      "retrieved_paths": [
+        "src/flask/signals.py",
+        "tests/test_signals.py",
+        "src/flask/__init__.py",
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "examples/tutorial/flaskr/templates/blog/create.html",
+        "examples/celery/src/task_app/templates/index.html",
+        "examples/javascript/js_example/templates/xhr.html",
+        "examples/tutorial/flaskr/templates/auth/login.html",
+        "examples/tutorial/flaskr/templates/base.html"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.375,
+      "ndcg_at_10": 0.5585,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/signals.py"
+        ],
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/templating.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/signals.rst",
+        "src/flask/app.py",
+        "src/flask/signals.py",
+        "src/flask/templating.py"
+      ],
+      "cold_latency_ms": 184.576,
+      "warm_mean_latency_ms": 184.576,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-12",
+      "question": "How do class based views convert dispatch methods into registered view functions?",
+      "retrieved_paths": [
+        "src/flask/views.py",
+        "src/flask/sansio/app.py",
+        "src/flask/app.py",
+        "src/flask/sansio/scaffold.py",
+        "tests/test_views.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/wrappers.py",
+        "examples/javascript/js_example/views.py",
+        "examples/celery/src/task_app/views.py",
+        "src/flask/ctx.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6667,
+      "ndcg_at_10": 0.7654,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/views.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/views.rst",
+        "src/flask/sansio/app.py",
+        "src/flask/views.py"
+      ],
+      "cold_latency_ms": 180.305,
+      "warm_mean_latency_ms": 180.305,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-13",
+      "question": "How are static files located sent and cached by applications and blueprints?",
+      "retrieved_paths": [
+        "src/flask/sansio/blueprints.py",
+        "src/flask/blueprints.py",
+        "src/flask/sansio/app.py",
+        "src/flask/app.py",
+        "tests/test_blueprints.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/wrappers.py",
+        "src/flask/helpers.py",
+        "src/flask/json/provider.py",
+        "src/flask/cli.py"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5,
+      "ndcg_at_10": 0.6766,
+      "forbidden_hits": [
+        "src/flask/json/provider.py"
+      ],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/sansio/scaffold.py"
+        ],
+        [
+          "src/flask/blueprints.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "src/flask/app.py",
+        "src/flask/blueprints.py",
+        "src/flask/helpers.py",
+        "src/flask/sansio/scaffold.py"
+      ],
+      "cold_latency_ms": 148.47,
+      "warm_mean_latency_ms": 148.47,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-14",
+      "question": "Trace URL rule matching endpoint lookup view arguments and automatic options handling.",
+      "retrieved_paths": [
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/views.py",
+        "src/flask/sansio/blueprints.py",
+        ".github/ISSUE_TEMPLATE/bug-report.md",
+        "src/flask/wrappers.py",
+        "tests/test_views.py",
+        "src/flask/ctx.py",
+        "src/flask/cli.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.5,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 0.6667,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6071,
+      "ndcg_at_10": 0.7668,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/app.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ],
+        [
+          "src/flask/wrappers.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "src/flask/app.py",
+        "src/flask/sansio/app.py",
+        "src/flask/wrappers.py",
+        "tests/test_basic.py"
+      ],
+      "cold_latency_ms": 165.726,
+      "warm_mean_latency_ms": 165.726,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "fl-15",
+      "question": "How does Flask configure logging and attach default handlers based on debug state?",
+      "retrieved_paths": [
+        "src/flask/logging.py",
+        "src/flask/sansio/app.py",
+        "src/flask/app.py",
+        "tests/test_logging.py",
+        "src/flask/json/provider.py",
+        "src/flask/sansio/scaffold.py",
+        "src/flask/wrappers.py",
+        "src/flask/sessions.py",
+        "src/flask/sansio/blueprints.py",
+        "src/flask/debughelpers.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6667,
+      "ndcg_at_10": 0.7654,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "src/flask/logging.py"
+        ],
+        [
+          "src/flask/sansio/app.py"
+        ]
+      ],
+      "acceptable_paths": [
+        "docs/logging.rst",
+        "src/flask/logging.py",
+        "src/flask/sansio/app.py"
+      ],
+      "cold_latency_ms": 208.416,
+      "warm_mean_latency_ms": 208.416,
+      "repository": "flask",
+      "split": "heldout",
+      "language": "python",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-01",
+      "question": "What is PRAW and how do rules knowledge worldview and skills support HAX agents?",
+      "retrieved_paths": [
+        "skills/hax-rule-management/SKILL.md",
+        ".agents/skills/docx/scripts/office/validate.py",
+        "RULES.md",
+        ".agents/skills/docx/scripts/office/helpers/simplify_redlines.py",
+        ".agents/skills/docx/SKILL.md",
+        ".agents/skills/docx/scripts/accept_changes.py",
+        ".agents/skills/docx/scripts/office/validators/base.py",
+        ".agents/skills/pptx/scripts/office/validators/docx.py",
+        ".agents/skills/xlsx/scripts/office/validators/docx.py",
+        ".agents/skills/youtube-vtt/SKILL.md"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "path_recall_at_5": 0.1429,
+      "path_recall_at_10": 0.1429,
+      "required_group_recall_at_5": 0.25,
+      "required_group_recall_at_10": 0.25,
+      "average_precision_at_10": 0.0476,
+      "ndcg_at_10": 0.1374,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "README.md"
+        ],
+        [
+          "RULES.md"
+        ],
+        [
+          "KNOWLEDGE.md",
+          "WORLDVIEW.md"
+        ],
+        [
+          "skills/README.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "KNOWLEDGE.md",
+        "LEARNING.md",
+        "README.md",
+        "RULES.md",
+        "WARP.md",
+        "WORLDVIEW.md",
+        "skills/README.md"
+      ],
+      "cold_latency_ms": 1354.382,
+      "warm_mean_latency_ms": 1354.382,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-02",
+      "question": "How should an agent create and publish a new HAX skill?",
+      "retrieved_paths": [
+        "skills/audio-program-hax/SKILL.md",
+        ".agents/skills/pdf/scripts/create_validation_image.py",
+        "skills/PUBLISHING.md",
+        "skills/hax-claudehax/SKILL.md",
+        "skills/hax-tutorial-site/SKILL.md",
+        "skills/hax-ubd-backward-design/references/design-standards.md",
+        "skills/hax-rule-management/SKILL.md",
+        ".agents/skills/pptx/scripts/clean.py",
+        ".agents/skills/pptx/SKILL.md",
+        "skills/hax-issue-research/SKILL.md"
+      ],
+      "first_relevant_rank": 3,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.25,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.3333,
+      "required_group_recall_at_10": 0.6667,
+      "average_precision_at_10": 0.1548,
+      "ndcg_at_10": 0.3253,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/README.md"
+        ],
+        [
+          "skills/PUBLISHING.md"
+        ],
+        [
+          "skills/hax-rule-management/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "README.md",
+        "skills/PUBLISHING.md",
+        "skills/README.md",
+        "skills/hax-rule-management/SKILL.md"
+      ],
+      "cold_latency_ms": 274.539,
+      "warm_mean_latency_ms": 274.539,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-03",
+      "question": "How does the web component development skill guide Lit HAX schema and design system work?",
+      "retrieved_paths": [
+        "skills/hax-webcomponent-dev/SKILL.md",
+        "hax-imports/import-example.html",
+        "skills/hax-design-system/SKILL.md",
+        "skills/hax-ecosystem-onboarding/SKILL.md",
+        "webcomponents/WARP.md",
+        "skills/hax-ubd-backward-design/references/manifest-schema.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        ".well-known/skills/default/SKILL.md",
+        "skills/hax-udl-audit/references/udl-element-map.md",
+        "skills/hax-udl-audit/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5667,
+      "ndcg_at_10": 0.7366,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-webcomponent-dev/SKILL.md"
+        ],
+        [
+          "skills/hax-design-system/SKILL.md"
+        ],
+        [
+          "webcomponents/WARP.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "design-system/WARP.md",
+        "skills/hax-design-system/SKILL.md",
+        "skills/hax-webcomponent-dev/SKILL.md",
+        "webcomponents/WARP.md"
+      ],
+      "cold_latency_ms": 326.217,
+      "warm_mean_latency_ms": 326.217,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-04",
+      "question": "How do accessibility UDL and content chunking audit skills evaluate learning content?",
+      "retrieved_paths": [
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-udl-audit/SKILL.md",
+        "skills/hax-a11y-audit/SKILL.md",
+        "skills/hax-ubd-unit-audit/SKILL.md",
+        "skills/hax-udl-audit/references/udl-element-map.md",
+        "skills/hax-ubd-stage3/SKILL.md",
+        "skills/README.md",
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-ubd-stage1/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.6042,
+      "ndcg_at_10": 0.7537,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-a11y-audit/SKILL.md"
+        ],
+        [
+          "skills/hax-udl-audit/SKILL.md"
+        ],
+        [
+          "skills/hax-content-chunking-audit/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "skills/hax-a11y-audit/SKILL.md",
+        "skills/hax-a11y-audit/references/a11y-element-map.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "skills/hax-udl-audit/SKILL.md"
+      ],
+      "cold_latency_ms": 249.295,
+      "warm_mean_latency_ms": 249.295,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-05",
+      "question": "Trace the Understanding by Design workflow across backward design stages and unit auditing.",
+      "retrieved_paths": [
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-ubd-unit-audit/SKILL.md",
+        "skills/hax-ubd-backward-design/references/design-standards.md",
+        "hax-imports/import-example.html",
+        "skills/hax-ubd-stage3/SKILL.md",
+        "skills/hax-ubd-stage1/SKILL.md",
+        "skills/hax-ubd-stage2/SKILL.md",
+        "skills/hax-udl-audit/SKILL.md",
+        "RULES.md",
+        "skills/hax-ubd-backward-design/references/manifest-schema.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.5,
+      "path_recall_at_5": 0.4286,
+      "path_recall_at_10": 0.7143,
+      "required_group_recall_at_5": 0.6,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5687,
+      "ndcg_at_10": 0.7442,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-ubd-backward-design/SKILL.md"
+        ],
+        [
+          "skills/hax-ubd-stage1/SKILL.md"
+        ],
+        [
+          "skills/hax-ubd-stage2/SKILL.md"
+        ],
+        [
+          "skills/hax-ubd-stage3/SKILL.md"
+        ],
+        [
+          "skills/hax-ubd-unit-audit/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-ubd-essential-questions/SKILL.md",
+        "skills/hax-ubd-grasps/SKILL.md",
+        "skills/hax-ubd-stage1/SKILL.md",
+        "skills/hax-ubd-stage2/SKILL.md",
+        "skills/hax-ubd-stage3/SKILL.md",
+        "skills/hax-ubd-unit-audit/SKILL.md"
+      ],
+      "cold_latency_ms": 211.088,
+      "warm_mean_latency_ms": 211.088,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-06",
+      "question": "How does the tutorial skill transform DOCX content and YouTube metadata into HAX material?",
+      "retrieved_paths": [
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-tutorial-site/SKILL.md",
+        "skills/hax-tutorial-site/scripts/youtube-metadata.cjs",
+        "skills/hax-tutorial-site/references/social-copy-templates.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        ".agents/skills/youtube-vtt/SKILL.md",
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-site-building/SKILL.md",
+        "skills/audio-program-hax/SKILL.md",
+        ".agents/skills/youtube-vtt/scripts/youtube-to-vtt.cjs"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.75,
+      "path_recall_at_10": 0.75,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.75,
+      "ndcg_at_10": 0.8319,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-tutorial-site/SKILL.md"
+        ],
+        [
+          "skills/hax-tutorial-site/scripts/docx-to-content.cjs"
+        ],
+        [
+          "skills/hax-tutorial-site/scripts/youtube-metadata.cjs"
+        ]
+      ],
+      "acceptable_paths": [
+        "skills/hax-tutorial-site/SKILL.md",
+        "skills/hax-tutorial-site/references/hax-tutorial.json",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-tutorial-site/scripts/youtube-metadata.cjs"
+      ],
+      "cold_latency_ms": 311.335,
+      "warm_mean_latency_ms": 311.335,
+      "repository": "praw",
+      "split": "development",
+      "language": "javascript",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-07",
+      "question": "How do audio transcription and audio HAX publishing skills form a pipeline?",
+      "retrieved_paths": [
+        "skills/audio-program-hax/SKILL.md",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/PUBLISHING.md",
+        "skills/audio-program-transcribe/SKILL.md",
+        "skills/hax-tutorial-site/SKILL.md",
+        "skills/hax-a11y-audit/SKILL.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "skills/hax-ubd-unit-audit/SKILL.md",
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-ubd-grasps/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5,
+      "ndcg_at_10": 0.6714,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/audio-program-transcribe/SKILL.md"
+        ],
+        [
+          "skills/audio-program-hax/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "skills/README.md",
+        "skills/audio-program-hax/SKILL.md",
+        "skills/audio-program-transcribe/SKILL.md"
+      ],
+      "cold_latency_ms": 296.107,
+      "warm_mean_latency_ms": 296.107,
+      "repository": "praw",
+      "split": "development",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-08",
+      "question": "How are repository rules added managed and validated from shell scripts and skill instructions?",
+      "retrieved_paths": [
+        "skills/hax-rule-management/SKILL.md",
+        "scripts/manage-rules.sh",
+        ".agents/skills/xlsx/scripts/office/validate.py",
+        ".agents/skills/pptx/scripts/office/validate.py",
+        ".agents/skills/docx/scripts/office/validate.py",
+        ".agents/skills/docx/scripts/office/validators/base.py",
+        ".agents/skills/pptx/scripts/office/validators/base.py",
+        ".agents/skills/xlsx/scripts/office/validators/base.py",
+        "RULES.md",
+        ".agents/skills/pptx/scripts/office/validators/docx.py"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.4,
+      "path_recall_at_10": 0.6,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 0.75,
+      "average_precision_at_10": 0.4667,
+      "ndcg_at_10": 0.6552,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "scripts/add-rule.sh"
+        ],
+        [
+          "scripts/manage-rules.sh"
+        ],
+        [
+          "skills/hax-rule-management/SKILL.md"
+        ],
+        [
+          "RULES.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "RULES.md",
+        "WARP.md",
+        "scripts/add-rule.sh",
+        "scripts/manage-rules.sh",
+        "skills/hax-rule-management/SKILL.md"
+      ],
+      "cold_latency_ms": 304.854,
+      "warm_mean_latency_ms": 304.854,
+      "repository": "praw",
+      "split": "development",
+      "language": "shell",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-09",
+      "question": "How are LinkedIn posts configured submitted and recorded?",
+      "retrieved_paths": [
+        "programs/linkedin/post-to-linkedin.js",
+        "programs/issue-management/weekly-post.sh",
+        "programs/linkedin/setup-linkedin.js",
+        "programs/linkedin/post-history.json",
+        "programs/linkedin/README.md",
+        "hax-imports/import-example.html",
+        "programs/README.md",
+        "hax-onboarding.sh",
+        "skills/hax-tutorial-site/references/author-profile.json",
+        "skills/hax-issue-analysis/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.4,
+      "path_recall_at_5": 1.0,
+      "path_recall_at_10": 1.0,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.8042,
+      "ndcg_at_10": 0.9047,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "programs/linkedin/setup-linkedin.js"
+        ],
+        [
+          "programs/linkedin/post-to-linkedin.js"
+        ],
+        [
+          "programs/linkedin/README.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "programs/linkedin/README.md",
+        "programs/linkedin/post-history.json",
+        "programs/linkedin/post-to-linkedin.js",
+        "programs/linkedin/setup-linkedin.js"
+      ],
+      "cold_latency_ms": 254.844,
+      "warm_mean_latency_ms": 254.844,
+      "repository": "praw",
+      "split": "development",
+      "language": "javascript",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-10",
+      "question": "How does issue management fetch query and publish weekly GitHub issue information?",
+      "retrieved_paths": [
+        "programs/issue-management/fetch_issues.sh",
+        "programs/issue-management/weekly-post.sh",
+        "programs/issue-management/query_issues.sh",
+        "programs/issue-management/README.md",
+        "skills/hax-issue-analysis/SKILL.md",
+        "programs/linkedin/post-to-linkedin.js",
+        "hax-imports/import-example.html",
+        "programs/README.md",
+        "skills/PUBLISHING.md",
+        "README.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 1.0,
+      "precision_at_10": 0.5,
+      "path_recall_at_5": 0.8333,
+      "path_recall_at_10": 0.8333,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.8333,
+      "ndcg_at_10": 0.8922,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "programs/issue-management/fetch_issues.sh"
+        ],
+        [
+          "programs/issue-management/query_issues.sh"
+        ],
+        [
+          "programs/issue-management/weekly-post.sh"
+        ],
+        [
+          "programs/issue-management/README.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "programs/issue-management/README.md",
+        "programs/issue-management/fetch_issues.sh",
+        "programs/issue-management/query_issues.sh",
+        "programs/issue-management/weekly-post.sh",
+        "skills/hax-issue-analysis/SKILL.md",
+        "skills/hax-issue-research/SKILL.md"
+      ],
+      "cold_latency_ms": 172.273,
+      "warm_mean_latency_ms": 172.273,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "shell",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-11",
+      "question": "What HAX import format and components are demonstrated by the import example?",
+      "retrieved_paths": [
+        "hax-imports/import-example.html",
+        "webcomponents/WARP.md",
+        "skills/hax-webcomponent-dev/SKILL.md",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-udl-audit/SKILL.md",
+        "HAX_AI_Training_Data_Analysis_Summary.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "skills/hax-a11y-audit/evals/evals.json",
+        "skills/hax-ubd-unit-audit/SKILL.md",
+        "skills/hax-claudehax/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "path_recall_at_5": 0.3333,
+      "path_recall_at_10": 0.3333,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 0.5,
+      "average_precision_at_10": 0.3333,
+      "ndcg_at_10": 0.4693,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "hax-imports/import-example.html"
+        ],
+        [
+          "hax-imports/README.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "hax-imports/README.md",
+        "hax-imports/import-example.html",
+        "skills/hax-site-building/SKILL.md"
+      ],
+      "cold_latency_ms": 290.236,
+      "warm_mean_latency_ms": 290.236,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "html",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-12",
+      "question": "How does ecosystem onboarding connect HAX sites web components design system and ClaudeHAX?",
+      "retrieved_paths": [
+        "hax-onboarding.sh",
+        "skills/hax-ecosystem-onboarding/SKILL.md",
+        "hax-imports/import-example.html",
+        "webcomponents/LEARNING.md",
+        ".well-known/skills/default/SKILL.md",
+        "skills/hax-design-system/SKILL.md",
+        "skills/README.md",
+        "skills/hax-webcomponent-dev/SKILL.md",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-site-building/SKILL.md"
+      ],
+      "first_relevant_rank": 2,
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.3,
+      "path_recall_at_5": 0.1667,
+      "path_recall_at_10": 0.5,
+      "required_group_recall_at_5": 0.25,
+      "required_group_recall_at_10": 0.75,
+      "average_precision_at_10": 0.175,
+      "ndcg_at_10": 0.3739,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-ecosystem-onboarding/SKILL.md"
+        ],
+        [
+          "skills/hax-site-building/SKILL.md"
+        ],
+        [
+          "skills/hax-webcomponent-dev/SKILL.md"
+        ],
+        [
+          "skills/hax-claudehax/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "README.md",
+        "haxcms/WARP.md",
+        "skills/hax-claudehax/SKILL.md",
+        "skills/hax-ecosystem-onboarding/SKILL.md",
+        "skills/hax-site-building/SKILL.md",
+        "skills/hax-webcomponent-dev/SKILL.md"
+      ],
+      "cold_latency_ms": 315.191,
+      "warm_mean_latency_ms": 315.191,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-13",
+      "question": "How does the OpenStax conversion skill map books into HAX content?",
+      "retrieved_paths": [
+        "skills/hax-openstax2hax/SKILL.md",
+        "skills/hax-tutorial-site/scripts/docx-to-content.cjs",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "skills/hax-ubd-backward-design/references/ubd-element-map.md",
+        "skills/hax-claudehax/SKILL.md",
+        "skills/hax-ubd-backward-design/SKILL.md",
+        "skills/hax-udl-audit/references/udl-element-map.md",
+        "skills/hax-a11y-audit/references/a11y-element-map.md",
+        "skills/hax-ubd-stage3/SKILL.md",
+        "skills/hax-ubd-stage2/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "path_recall_at_5": 0.3333,
+      "path_recall_at_10": 0.3333,
+      "required_group_recall_at_5": 0.5,
+      "required_group_recall_at_10": 0.5,
+      "average_precision_at_10": 0.3333,
+      "ndcg_at_10": 0.4693,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-openstax2hax/SKILL.md"
+        ],
+        [
+          "skills/hax-site-building/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "skills/README.md",
+        "skills/hax-openstax2hax/SKILL.md",
+        "skills/hax-site-building/SKILL.md"
+      ],
+      "cold_latency_ms": 277.474,
+      "warm_mean_latency_ms": 277.474,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-14",
+      "question": "How do issue analysis and issue research skills differ and work together?",
+      "retrieved_paths": [
+        "skills/hax-issue-analysis/SKILL.md",
+        ".agents/skills/docx/scripts/office/validators/base.py",
+        "skills/hax-issue-research/SKILL.md",
+        "skills/README.md",
+        ".well-known/skills/default/SKILL.md",
+        ".agents/skills/docx/SKILL.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        ".agents/skills/grad-blooms/references/verb-taxonomy.md",
+        ".agents/skills/grad-blooms/SKILL.md",
+        ".agents/skills/pptx/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.6667,
+      "path_recall_at_10": 0.6667,
+      "required_group_recall_at_5": 1.0,
+      "required_group_recall_at_10": 1.0,
+      "average_precision_at_10": 0.5556,
+      "ndcg_at_10": 0.7039,
+      "forbidden_hits": [],
+      "strict_pass": true,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "skills/hax-issue-analysis/SKILL.md"
+        ],
+        [
+          "skills/hax-issue-research/SKILL.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "programs/issue-management/README.md",
+        "skills/hax-issue-analysis/SKILL.md",
+        "skills/hax-issue-research/SKILL.md"
+      ],
+      "cold_latency_ms": 225.57,
+      "warm_mean_latency_ms": 225.57,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    },
+    {
+      "id": "pr-15",
+      "question": "How are project rules learning notes and worldview documents separated by purpose?",
+      "retrieved_paths": [
+        "RULES.md",
+        "scripts/manage-rules.sh",
+        "skills/audio-program-hax/SKILL.md",
+        "skills/hax-udl-audit/references/udl-element-map.md",
+        "webcomponents/LEARNING.md",
+        "skills/hax-ubd-unit-audit/SKILL.md",
+        "haxcms/LEARNING.md",
+        "skills/hax-content-chunking-audit/SKILL.md",
+        "LEARNING.md",
+        "skills/hax-rule-management/SKILL.md"
+      ],
+      "first_relevant_rank": 1,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "hit_at_10": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "path_recall_at_5": 0.1667,
+      "path_recall_at_10": 0.3333,
+      "required_group_recall_at_5": 0.25,
+      "required_group_recall_at_10": 0.5,
+      "average_precision_at_10": 0.2037,
+      "ndcg_at_10": 0.3937,
+      "forbidden_hits": [],
+      "strict_pass": false,
+      "strict_requirements": {
+        "max_first_relevant_rank": 5,
+        "min_required_group_recall_at_10": 1.0,
+        "min_precision_at_5": 0.0,
+        "no_forbidden_paths_at_10": true
+      },
+      "required_path_groups": [
+        [
+          "RULES.md"
+        ],
+        [
+          "LEARNING.md"
+        ],
+        [
+          "KNOWLEDGE.md"
+        ],
+        [
+          "WORLDVIEW.md"
+        ]
+      ],
+      "acceptable_paths": [
+        "DESIGN.md",
+        "KNOWLEDGE.md",
+        "LEARNING.md",
+        "RULES.md",
+        "WARP.md",
+        "WORLDVIEW.md"
+      ],
+      "cold_latency_ms": 243.702,
+      "warm_mean_latency_ms": 243.702,
+      "repository": "praw",
+      "split": "heldout",
+      "language": "documentation",
+      "adjudication": {
+        "status": "pending_human"
+      }
+    }
+  ]
+}

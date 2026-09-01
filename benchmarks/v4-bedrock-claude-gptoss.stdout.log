@@ -1,0 +1,1498 @@
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-01: 1 passed, 1 failed
+Repository agent returned no tool call and was reminded to submit
+Repository answer failed deterministic citation validation
+Repository answer failed deterministic citation validation
+v4-wp-02: 2 passed, 0 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-03: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-04: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-05: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent returned no tool call and was reminded to submit
+Repository answer failed deterministic citation validation
+Repository answer failed deterministic citation validation
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-06: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-07: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-08: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-09: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent returned no tool call and was reminded to submit
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-10: 1 passed, 1 failed
+Repository agent tool failed
+Repository answer failed deterministic citation validation
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-11: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent returned no tool call and was reminded to submit
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-12: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-13: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-14: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-15: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+v4-wp-16: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-17: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-18: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+v4-wp-19: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-wp-20: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent returned no tool call and was reminded to submit
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-01: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-02: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-03: 1 passed, 1 failed
+Repository agent returned no tool call and was reminded to submit
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-04: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-05: 1 passed, 1 failed
+Repository agent returned no tool call and was reminded to submit
+Repository answer failed deterministic citation validation
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-06: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-07: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-08: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-09: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent returned no tool call and was reminded to submit
+Repository answer failed deterministic citation validation
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-fl-10: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-01: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-02: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-03: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-04: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-05: 1 passed, 1 failed
+Repository answer failed deterministic citation validation
+Repository answer failed deterministic citation validation
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-06: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+v4-pr-07: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-08: 1 passed, 1 failed
+Repository agent returned no tool call and was reminded to submit
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-09: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-pr-10: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-01: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 1332, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository agent exceeded the tool-schema correction limit (2)
+v4-on-02: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-03: 1 passed, 1 failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-04: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-05: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-06: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-07: 1 passed, 1 failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-08: 1 passed, 1 failed
+Repository agent tool failed
+Repository agent tool failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-09: 1 passed, 1 failed
+Repository-agent model request failed
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 917, in create
+    "inferenceConfig": {
+               ^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\client.py", line 1094, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ThrottlingException: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 964, in answer
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 87, in create
+    response = model_provider_router.create_for_endpoint(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 1225, in create_for_endpoint
+    infers the role (via `_infer_role` if not given) and delegates to
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 919, in create
+    "temperature": 0.1,
+backend.app.agent.provider.BedrockRequestError: Bedrock Converse request failed for model us.anthropic.claude-sonnet-4-6: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 986, in answer
+    raise AgentExecutionError(f"Model request failed: {exc}") from exc
+backend.app.agent.service.AgentExecutionError: Model request failed: Bedrock Converse request failed for model us.anthropic.claude-sonnet-4-6: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 917, in create
+    "inferenceConfig": {
+               ^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\.venv\Lib\site-packages\botocore\client.py", line 1094, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ThrottlingException: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 964, in answer
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 87, in create
+    response = model_provider_router.create_for_endpoint(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 1225, in create_for_endpoint
+    infers the role (via `_infer_role` if not given) and delegates to
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\provider.py", line 919, in create
+    "temperature": 0.1,
+backend.app.agent.provider.BedrockRequestError: Bedrock Converse request failed for model us.anthropic.claude-sonnet-4-6: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 986, in answer
+    raise AgentExecutionError(f"Model request failed: {exc}") from exc
+backend.app.agent.service.AgentExecutionError: Model request failed: Bedrock Converse request failed for model us.anthropic.claude-sonnet-4-6: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 4): Too many tokens per day, please wait before trying again.
+Function RepositoryAgentService.answer failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+Function AgenticRetrievalComparisonService._run_traced failed
+Full function failure stack
+Traceback (most recent call last):
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\agentic_comparison.py", line 126, in _run_traced
+    answer = agent.answer(
+             ^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\observability.py", line 423, in wrapper
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ammar\OneDrive\Desktop\personal\arbisoft\final_project_alternative\backend\app\agent\service.py", line 911, in answer
+    raise AgentExecutionError(
+backend.app.agent.service.AgentExecutionError: Repository synthesis exceeded 2 attempts
+v4-on-10: 0 passed, 2 failed
+{
+  "benchmark_version": "4.0",
+  "case_count": 50,
+  "successful_model_runs": 50,
+  "failed_model_runs": 50,
+  "summary": {
+    "bedrock:us.anthropic.claude-sonnet-4-6": {
+      "cases": 49,
+      "successful_cases": 49,
+      "mean_duration_ms": 100561.036,
+      "p50_duration_ms": 96708.506,
+      "p95_duration_ms": 131671.905,
+      "total_duration_ms": 4927490.765,
+      "mean_tool_calls": 11.633,
+      "mean_rounds": 5.959,
+      "mean_invalid_tool_calls": 0.061,
+      "mean_total_tokens": 218178.653,
+      "total_tokens": 10690754,
+      "tokens_per_tool_call": 18755.709,
+      "output_tokens_per_second": 48.219,
+      "mean_expected_concept_recall": 0.7289,
+      "mean_citations": 13.02,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 0.102,
+          "hit_at_10": 0.6122,
+          "precision_at_10": 0.0714,
+          "path_recall": 0.7782,
+          "required_group_recall": 0.9085,
+          "mrr": 0.1483,
+          "ndcg_at_10": 0.095,
+          "forbidden_hit_rate": 0.0046
+        },
+        "explicit_inspection": {
+          "hit_at_5": 0.9796,
+          "hit_at_10": 0.9796,
+          "precision_at_10": 0.7487,
+          "path_recall": 0.5629,
+          "required_group_recall": 0.7085,
+          "mrr": 0.9354,
+          "ndcg_at_10": 0.6462,
+          "forbidden_hit_rate": 0.007
+        },
+        "cited_retrieval": {
+          "hit_at_5": 0.9796,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.6731,
+          "path_recall": 0.629,
+          "required_group_recall": 0.7796,
+          "mrr": 0.9184,
+          "ndcg_at_10": 0.6845,
+          "forbidden_hit_rate": 0.0048
+        }
+      }
+    },
+    "bedrock:openai.gpt-oss-120b-1:0": {
+      "cases": 1,
+      "successful_cases": 1,
+      "mean_duration_ms": 62296.773,
+      "p50_duration_ms": 62296.773,
+      "p95_duration_ms": 62296.773,
+      "total_duration_ms": 62296.773,
+      "mean_tool_calls": 2,
+      "mean_rounds": 6,
+      "mean_invalid_tool_calls": 0,
+      "mean_total_tokens": 42651,
+      "total_tokens": 42651,
+      "tokens_per_tool_call": 21325.5,
+      "output_tokens_per_second": 106.314,
+      "mean_expected_concept_recall": 0.0,
+      "mean_citations": 2,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.5,
+          "path_recall": 0.25,
+          "required_group_recall": 0.3333,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.3904,
+          "forbidden_hit_rate": 0.0
+        },
+        "explicit_inspection": {
+          "hit_at_5": 0.0,
+          "hit_at_10": 0.0,
+          "precision_at_10": 0.0,
+          "path_recall": 0.0,
+          "required_group_recall": 0.0,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.0,
+          "forbidden_hit_rate": 0.0
+        },
+        "cited_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.5,
+          "path_recall": 0.25,
+          "required_group_recall": 0.3333,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.3904,
+          "forbidden_hit_rate": 0.0
+        }
+      }
+    }
+  }
+}

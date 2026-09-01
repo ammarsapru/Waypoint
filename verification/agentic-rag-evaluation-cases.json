@@ -1,0 +1,75 @@
+{
+  "version": "2.0",
+  "repositories": {
+    "waypoint": "This repository",
+    "flask": "pallets/flask (pinned local benchmark clone)",
+    "praw": "haxtheweb/praw (pinned local benchmark clone)"
+  },
+  "categories": {
+    "ask_retrieval_grounding": 12,
+    "multihop_reasoning": 8,
+    "onboarding": 8,
+    "issues": 6,
+    "polyglot_parsing": 6,
+    "memory_routing_limits": 6,
+    "frontend_e2e": 4
+  },
+  "cases": [
+    {"id":"ask-01","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"What is Waypoint and what are its main features?","assertions":["overview is repository-specific","major claims have citations","citation precision >= 0.60"]},
+    {"id":"ask-02","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"How is repository analysis dispatched and executed?","assertions":["API and analyzer evidence groups retrieved","no unrelated fixture citation","schema valid"]},
+    {"id":"ask-03","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"How are chunks built, stored, and ranked?","assertions":["chunking and retrieval evidence retrieved","required group recall >= 0.75","answer describes hybrid ranking"]},
+    {"id":"ask-04","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"Where are agent tools registered and executed?","assertions":["tool schema and loop evidence retrieved","tool claims cited"]},
+    {"id":"ask-05","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"How is a GitHub repository cloned securely?","assertions":["validation and checkout evidence retrieved","security controls stated"]},
+    {"id":"ask-06","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"How is conversation memory persisted?","assertions":["write and read paths retrieved","scope semantics stated"]},
+    {"id":"ask-07","category":"ask_retrieval_grounding","repository":"flask","mode":"deterministic_and_live_model","prompt":"How does Flask's session architecture work and where is it replaceable?","assertions":["session interface evidence cited","open and save lifecycle explained"]},
+    {"id":"ask-08","category":"ask_retrieval_grounding","repository":"flask","mode":"deterministic_and_live_model","prompt":"What are blueprints and how are routes registered?","assertions":["blueprint implementation cited","deferred registration explained"]},
+    {"id":"ask-09","category":"ask_retrieval_grounding","repository":"flask","mode":"deterministic_and_live_model","prompt":"Trace the WSGI request lifecycle.","assertions":["entry, context, dispatch and response evidence","ordered lifecycle"]},
+    {"id":"ask-10","category":"ask_retrieval_grounding","repository":"praw","mode":"deterministic_and_live_model","prompt":"What is PRAW and which skill families does it contain?","assertions":["README and skill evidence retrieved","does not misclassify as Reddit API client"]},
+    {"id":"ask-11","category":"ask_retrieval_grounding","repository":"praw","mode":"deterministic_and_live_model","prompt":"How do the Office-document skills validate generated files?","assertions":["skill and validator implementation cited","validation flow explained"]},
+    {"id":"ask-12","category":"ask_retrieval_grounding","repository":"waypoint","mode":"deterministic_and_live_model","prompt":"Where are observability hooks emitted and persisted?","assertions":["pre/post/error hooks retrieved","trace destination explained"]},
+
+    {"id":"multi-01","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"Trace a GitHub URL from HTTP request through clone, analysis, indexing, persistence, and UI availability.","assertions":["at least four subsystems linked","ordered causal chain","each hop cited"]},
+    {"id":"multi-02","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"Trace an Ask question through retrieval, tool calls, synthesis, validation, memory, and response rendering.","assertions":["at least five stages linked","model and deterministic responsibilities separated"]},
+    {"id":"multi-03","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"Explain how a cross-file call becomes a graph edge and later evidence for an answer.","assertions":["parser, resolution, graph and retrieval linked","uncertainty represented"]},
+    {"id":"multi-04","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"How does a changed file invalidate its old chunks while preserving unchanged files?","assertions":["fingerprint, snapshot, deletion and upsert linked","no full rebuild falsely required"]},
+    {"id":"multi-05","category":"multihop_reasoning","repository":"flask","mode":"live_model","prompt":"Trace blueprint route declaration through registration to request dispatch.","assertions":["multiple files required","ordered implementation path"]},
+    {"id":"multi-06","category":"multihop_reasoning","repository":"praw","mode":"live_model","prompt":"Trace how an agent skill's instructions invoke and validate an Office transformation.","assertions":["instruction and executable evidence combined","validation step included"]},
+    {"id":"multi-07","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"Explain provider selection, fallback, retries, and failure reporting across both model backends.","assertions":["configuration and runtime evidence combined","bounded retry semantics stated"]},
+    {"id":"multi-08","category":"multihop_reasoning","repository":"waypoint","mode":"live_model","prompt":"How do analysis revisions support comparison without mixing repository identities?","assertions":["revision IDs, storage and comparison linked","identity boundaries stated"]},
+
+    {"id":"onboard-01","category":"onboarding","repository":"waypoint","mode":"http_live_model","prompt":"Create a 15-minute backend-newcomer route with no explicit objective.","assertions":["2-10 ordered steps","files exist","within 15-minute budget"]},
+    {"id":"onboard-02","category":"onboarding","repository":"waypoint","mode":"http_live_model","prompt":"Create a 120-minute route for improving retrieval quality.","assertions":["retrieval files prioritized","objective affects route","within maximum budget"]},
+    {"id":"onboard-03","category":"onboarding","repository":"waypoint","mode":"http_live_model","prompt":"Create a frontend route focused on graph exploration UX.","assertions":["frontend files selected","reasons grounded","ordered prerequisites"]},
+    {"id":"onboard-04","category":"onboarding","repository":"flask","mode":"http_live_model","prompt":"Create a route for a Python newcomer learning request handling.","assertions":["entry-to-context sequence","existing files only"]},
+    {"id":"onboard-05","category":"onboarding","repository":"praw","mode":"http_live_model","prompt":"Create a route for contributing a new agent skill.","assertions":["skill conventions and examples included","not limited to executable source"]},
+    {"id":"onboard-06","category":"onboarding","repository":"waypoint","mode":"http","prompt":"Submit a correct challenge response.","assertions":["score in 0..1","mastered concepts returned","evidence retained"]},
+    {"id":"onboard-07","category":"onboarding","repository":"waypoint","mode":"http","prompt":"Submit an incorrect challenge response.","assertions":["actionable correction","no false mastery","schema valid"]},
+    {"id":"onboard-08","category":"onboarding","repository":"waypoint","mode":"http_live_model","prompt":"Generate a safe first-contribution mission.","assertions":["risk, checklist and definition of done","target exists","validation steps included"]},
+
+    {"id":"issues-01","category":"issues","repository":"waypoint","mode":"http","prompt":"List open repository issues.","assertions":["issue fields normalized","pagination or limit respected","errors structured"]},
+    {"id":"issues-02","category":"issues","repository":"waypoint","mode":"http","prompt":"List closed repository issues.","assertions":["closed state honored","history fields available"]},
+    {"id":"issues-03","category":"issues","repository":"waypoint","mode":"http","prompt":"Load a GitHub issue timeline.","assertions":["events ordered","issue identity preserved","provider failure explicit"]},
+    {"id":"issues-04","category":"issues","repository":"waypoint","mode":"http_live_model","prompt":"Propose likely reliability issues grounded in the repository.","assertions":["each finding has evidence","severity and confidence bounded","no fabricated path"]},
+    {"id":"issues-05","category":"issues","repository":"waypoint","mode":"http_live_model","prompt":"Suggest an approach for one proposed issue.","assertions":["2-12 steps","affected files exist","does not claim code was changed"]},
+    {"id":"issues-06","category":"issues","repository":"waypoint","mode":"http","prompt":"Handle unavailable GitHub issue credentials or API.","assertions":["bounded timeout","actionable error","no server crash"]},
+
+    {"id":"parse-01","category":"polyglot_parsing","repository":"waypoint","mode":"deterministic","prompt":"Parse Python fixture symbols and edges.","assertions":["node precision and recall measured","edge precision and recall measured"]},
+    {"id":"parse-02","category":"polyglot_parsing","repository":"waypoint","mode":"deterministic","prompt":"Parse JavaScript fixture symbols, imports, and calls.","assertions":["functions/classes discovered","cross-file relations checked"]},
+    {"id":"parse-03","category":"polyglot_parsing","repository":"waypoint","mode":"deterministic","prompt":"Parse TypeScript fixture interfaces, classes, imports, and calls.","assertions":["TypeScript constructs discovered","edge labels checked"]},
+    {"id":"parse-04","category":"polyglot_parsing","repository":"waypoint","mode":"deterministic","prompt":"Parse Java fixture classes, methods, imports, and calls.","assertions":["Java constructs discovered","cross-file resolution checked"]},
+    {"id":"parse-05","category":"polyglot_parsing","repository":"praw","mode":"deterministic","prompt":"Index and display Markdown, JSON, XML, text, shell, PowerShell, CSV, HTML, and CSS context files.","assertions":["files visible and readable","text chunks produced","no false AST guarantee"]},
+    {"id":"parse-06","category":"polyglot_parsing","repository":"praw","mode":"deterministic","prompt":"Handle aliases and duplicate-content files without silently dropping originals.","assertions":["original paths visible","aliases identified","dependency directories excluded"]},
+
+    {"id":"system-01","category":"memory_routing_limits","repository":"waypoint","mode":"http_live_model","prompt":"Ask a follow-up using a pronoun from the previous answer.","assertions":["same conversation context used","past N-turn bound honored","messages persist after reload"]},
+    {"id":"system-02","category":"memory_routing_limits","repository":"waypoint","mode":"http","prompt":"Isolate two conversation scopes for the same repository.","assertions":["no cross-scope leakage","both transcripts recoverable"]},
+    {"id":"system-03","category":"memory_routing_limits","repository":"waypoint","mode":"live_two_model","prompt":"Run the same repository question through Claude Code and OpenRouter.","assertions":["same question and candidate evidence","latency/tokens/tool calls/output recorded","failures retained"]},
+    {"id":"system-04","category":"memory_routing_limits","repository":"waypoint","mode":"live_two_model","prompt":"Run the same task through two distinct OpenRouter models.","assertions":["model IDs distinct","same retrieval context","per-model metrics recorded"]},
+    {"id":"system-05","category":"memory_routing_limits","repository":"waypoint","mode":"http","prompt":"Submit a question over 500 characters and evidence limit over 15.","assertions":["validation rejects input","documented 4xx response","model not called"]},
+    {"id":"system-06","category":"memory_routing_limits","repository":"waypoint","mode":"live_model","prompt":"Force excessive tool rounds or oversized structured output.","assertions":["8-round and 6000-token defaults enforced","bounded retry/failure","partial failure observable"]},
+
+    {"id":"ui-01","category":"frontend_e2e","repository":"waypoint","mode":"browser","prompt":"Analyze a local repository and open a source-backed symbol.","assertions":["analysis completes","graph/card selectable","source viewer opens"]},
+    {"id":"ui-02","category":"frontend_e2e","repository":"praw","mode":"browser","prompt":"Reload and reopen a recent repository session.","assertions":["recent session selectable","tree restored","no re-clone required"]},
+    {"id":"ui-03","category":"frontend_e2e","repository":"waypoint","mode":"browser_live_model","prompt":"Send two Ask messages and inspect cited evidence.","assertions":["input clears after send","messages render as text not object","evidence files open"]},
+    {"id":"ui-04","category":"frontend_e2e","repository":"waypoint","mode":"browser_live_model","prompt":"Generate onboarding and navigate to Issues.","assertions":["loading/error/empty states","route renders","issues view remains usable"]}
+  ]
+}

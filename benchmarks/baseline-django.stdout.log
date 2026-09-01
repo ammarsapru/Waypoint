@@ -1,0 +1,24 @@
+2026-07-18T23:54:17.902Z ERROR    event=parser.file_failed pid=36416 process=MainProcess thread=MainThread:36128 trace=external-repository-benchmark span=4d646bf0af824678 at=backend.app.graph.analyzer._parse_file:568 message="Python file could not be parsed" fields={"exception_message": "invalid decimal literal (tests/test_runner_apps/tagged/tests_syntax_error.py, line 11)", "exception_type": "SyntaxError", "line": 11, "path": "tests/test_runner_apps/tagged/tests_syntax_error.py"}
+2026-07-18T23:54:49.477Z ERROR    event=benchmark.repository_completed pid=36416 process=MainProcess thread=MainThread:36128 trace=external-repository-benchmark span=4d646bf0af824678 at=benchmarks.benchmark:380 message="External repository benchmark completed" fields={"elapsed_seconds": 43.66, "failed_checks": ["first_party_import_resolution"], "passed": false, "peak_memory_mib": 0.0, "repository": "Django", "stats": {"duration_ms": 43098.714, "edge_count": 82649, "files_discovered": 2927, "files_parsed": 2926, "files_skipped": 1, "node_count": 46437, "parse_failures": 1, "unresolved_count": 164219}}
+# Analyzer external-repository benchmark
+
+Generated: 2026-07-18T23:54:50.077224+00:00
+
+| Repository | Size | Commit | Files | Nodes | Edges | Time | Peak memory | Result |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Django | large | 3d34265 | 2927 | 46437 | 82649 | 43.66s | 0.00 MiB | FAIL |
+
+## Django
+
+- PASS — repository_size: Discovered 2927 Python files
+- PASS — parse_success: Parse failure ratio 0.034%
+- PASS — unique_node_ids: All node IDs are unique
+- PASS — unique_edge_ids: All edge IDs are unique
+- PASS — valid_edge_endpoints: Every edge endpoint resolves to a node
+- PASS — valid_source_spans: Every source-backed node has a valid span
+- PASS — evidence_invariants: Edge kinds use the expected evidence status
+- PASS — architectural_modules: All expected architectural modules were found
+- PASS — architectural_symbols: All expected architectural symbols were found
+- PASS — source_layout: Package names do not leak the source-directory prefix
+- FAIL — first_party_import_resolution: 1 obvious first-party imports remain unresolved, e.g. ['from do_django_release import create_checksum_file, find_release_artifacts, parse_major_version']
+

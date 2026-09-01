@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "waypoint": {
+      "command": ".venv\\Scripts\\python.exe",
+      "args": ["-m", "backend.app.mcp_server", "--transport", "stdio"],
+      "cwd": "."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-07-18T23:54:50.076221+00:00",
+  "passed": false,
+  "results": [
+    {
+      "repository": "Django",
+      "size": "large",
+      "commit": "3d34265",
+      "generated_at": "2026-07-18T23:54:49.269291+00:00",
+      "elapsed_seconds": 43.66,
+      "peak_memory_mib": 0.0,
+      "stats": {
+        "files_discovered": 2927,
+        "files_parsed": 2926,
+        "files_skipped": 1,
+        "parse_failures": 1,
+        "node_count": 46437,
+        "edge_count": 82649,
+        "unresolved_count": 164219,
+        "duration_ms": 43098.714
+      },
+      "node_counts": {
+        "class": 11028,
+        "method": 29494,
+        "module": 2926,
+        "function": 2988,
+        "repository": 1
+      },
+      "edge_counts": {
+        "contains": 46436,
+        "may_call": 26877,
+        "imports": 9336
+      },
+      "evidence_counts": {
+        "verified": 55772,
+        "inferred": 26877
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 2927 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.034%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": true,
+          "detail": "All expected architectural modules were found"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": true,
+          "detail": "All expected architectural symbols were found"
+        },
+        {
+          "name": "source_layout",
+          "passed": true,
+          "detail": "Package names do not leak the source-directory prefix"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": false,
+          "detail": "1 obvious first-party imports remain unresolved, e.g. ['from do_django_release import create_checksum_file, find_release_artifacts, parse_major_version']"
+        }
+      ],
+      "missing_modules": [],
+      "missing_symbols": [],
+      "suspicious_first_party_imports": [
+        "from do_django_release import create_checksum_file, find_release_artifacts, parse_major_version"
+      ],
+      "passed": false
+    }
+  ]
+}

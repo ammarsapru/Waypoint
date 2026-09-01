@@ -1,0 +1,57 @@
+{
+  "benchmark_version": "4.0",
+  "protocol": "independent_agent_retrieval",
+  "cases_manifests": [
+    "benchmarks\\retrieval_cases_v4_cases.json"
+  ],
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "v4-wp-01"
+  ],
+  "endpoints": [
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free"
+    }
+  ],
+  "case_count": 1,
+  "successful_model_runs": 0,
+  "failed_model_runs": 2,
+  "completed_model_attempts": 2,
+  "expected_model_attempts": 2,
+  "success_rate": 0.0,
+  "summary": {},
+  "runs": [],
+  "failures": [
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free",
+      "trace_id": "agentic-d51da4c5609b4680ad0c0537c2948879",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: OpenRouter returned HTTP 429: {\"code\": 429, \"message\": \"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\"}",
+      "duration_ms": 19547.126,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free",
+      "trace_id": "agentic-c78dbdb172c74c8abfc70441c3d05cc5",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: OpenRouter returned HTTP 429: {\"code\": 429, \"message\": \"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\"}",
+      "duration_ms": 37848.74,
+      "validation_status": "failed"
+    }
+  ],
+  "hook_artifacts": {
+    "events_jsonl": "benchmarks\\results\\agentic-v4-poolside-diagnostic-4.hooks.jsonl",
+    "aggregate_json": "benchmarks\\results\\agentic-v4-poolside-diagnostic-4.hooks.json"
+  }
+}

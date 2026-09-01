@@ -1,0 +1,1646 @@
+{
+  "benchmark_version": "4.0",
+  "protocol": "independent_agent_retrieval",
+  "cases_manifests": [
+    "benchmarks\\retrieval_cases_v4_cases.json"
+  ],
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "v4-wp-04",
+    "v4-wp-07",
+    "v4-wp-08",
+    "v4-wp-09",
+    "v4-wp-10",
+    "v4-wp-11",
+    "v4-wp-12",
+    "v4-wp-14",
+    "v4-wp-16",
+    "v4-wp-18",
+    "v4-fl-01",
+    "v4-fl-02",
+    "v4-fl-04",
+    "v4-fl-07",
+    "v4-fl-08",
+    "v4-pr-02",
+    "v4-pr-03",
+    "v4-pr-04",
+    "v4-pr-08",
+    "v4-pr-09",
+    "v4-on-01",
+    "v4-on-03",
+    "v4-on-04",
+    "v4-on-05",
+    "v4-on-06"
+  ],
+  "endpoints": [
+    {
+      "provider": "claude-code",
+      "model": "sonnet"
+    },
+    {
+      "provider": "claude-code",
+      "model": "opus"
+    }
+  ],
+  "case_count": 25,
+  "successful_model_runs": 2,
+  "failed_model_runs": 48,
+  "completed_model_attempts": 50,
+  "expected_model_attempts": 50,
+  "success_rate": 0.04,
+  "summary": {
+    "claude-code:opus": {
+      "cases": 1,
+      "successful_cases": 1,
+      "mean_duration_ms": 96592.845,
+      "p50_duration_ms": 96592.845,
+      "p95_duration_ms": 96592.845,
+      "total_duration_ms": 96592.845,
+      "mean_tool_calls": 7,
+      "mean_rounds": 4,
+      "mean_invalid_tool_calls": 0,
+      "mean_total_tokens": 286274,
+      "total_tokens": 286274,
+      "tokens_per_tool_call": 40896.286,
+      "output_tokens_per_second": 59.849,
+      "mean_expected_concept_recall": 0.4,
+      "mean_citations": 10,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.3,
+          "path_recall": 1.0,
+          "required_group_recall": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6844,
+          "forbidden_hit_rate": 0.0
+        },
+        "explicit_inspection": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "path_recall": 0.4,
+          "required_group_recall": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.5531,
+          "forbidden_hit_rate": 0.0
+        },
+        "cited_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.8333,
+          "path_recall": 1.0,
+          "required_group_recall": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.9747,
+          "forbidden_hit_rate": 0.0
+        }
+      }
+    },
+    "claude-code:sonnet": {
+      "cases": 1,
+      "successful_cases": 1,
+      "mean_duration_ms": 153450.877,
+      "p50_duration_ms": 153450.877,
+      "p95_duration_ms": 153450.877,
+      "total_duration_ms": 153450.877,
+      "mean_tool_calls": 10,
+      "mean_rounds": 4,
+      "mean_invalid_tool_calls": 0,
+      "mean_total_tokens": 1102046,
+      "total_tokens": 1102046,
+      "tokens_per_tool_call": 110204.6,
+      "output_tokens_per_second": 66.49,
+      "mean_expected_concept_recall": 0.6,
+      "mean_citations": 11,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 0.0,
+          "hit_at_10": 0.0,
+          "precision_at_10": 0.0,
+          "path_recall": 1.0,
+          "required_group_recall": 1.0,
+          "mrr": 0.0588,
+          "ndcg_at_10": 0.0,
+          "forbidden_hit_rate": 0.0263
+        },
+        "explicit_inspection": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "path_recall": 0.2,
+          "required_group_recall": 0.25,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.3392,
+          "forbidden_hit_rate": 0.0
+        },
+        "cited_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.4286,
+          "path_recall": 0.6,
+          "required_group_recall": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6399,
+          "forbidden_hit_rate": 0.0
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "case_id": "v4-wp-04",
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "category": "secure-import",
+      "question": "Trace a public GitHub URL from validation and clone destination selection through bounded subprocess execution, checkout-size enforcement, and analysis creation.",
+      "expected_concepts": [
+        "URL validation",
+        "secured clone root",
+        "timeout",
+        "size limit",
+        "analysis dispatch"
+      ],
+      "answer_quality": {
+        "matched_expected_concepts": [
+          "URL validation",
+          "timeout"
+        ],
+        "expected_concept_recall": 0.4,
+        "citation_count": 10
+      },
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-e303aeeda1a44c2194d368aed69b4b68",
+      "actual_models": [],
+      "answer": "## GitHub URL \u2192 Analysis: End-to-End Flow\n\nWaypoint turns a public GitHub URL into a stored analysis through five bounded, security-conscious stages. The HTTP entry point is `POST /api/v1/analysis/github`, handled by `analyze_github_repository`, which delegates to a cloner and then an analyzer, each run in a threadpool.\n\n### 1. URL validation\n\n`parse_github_repository` strictly canonicalizes and rejects anything that is not a plain public HTTPS GitHub repo URL. It:\n\n- Optionally prefixes a bare `github.com/...` with `https://`, then requires `scheme == https` and `hostname == github.com`.\n- Rejects embedded credentials (`username`/`password`), non-null ports, and any query string, fragment, or params.\n- Requires exactly two non-empty path segments (`owner`/`name`), strips a trailing `.git`, and validates both against the `_GITHUB_COMPONENT` regex (alphanumeric start, up to 100 chars of `[A-Za-z0-9_.-]`).\n- Returns a frozen `GitHubRepository` with a normalized `clone_url` of `https://github.com/{owner}/{name}.git`.\n\nInvalid URLs raise `InvalidGitHubRepository`, which the route maps to HTTP 422.\n\n### 2. Clone destination selection\n\nInside `GitHubRepositoryCloner.clone`, `_validated_clone_root` enforces that the configured `clone_root` resolves *inside* `allowed_root` (otherwise `RepositoryImportError` \u2192 \"ONBOARD_CLONE_ROOT must be inside ONBOARD_ALLOWED_ROOT\"), creates the directory, and confirms it exists. Git availability is checked via `shutil.which(\"git\")`, raising `GitUnavailableError` (\u2192 HTTP 503) if missing.\n\nThe destination is a fresh unique directory: `{owner}--{name}--{uuid4[:10]}`. A `destination.resolve().relative_to(clone_root)` check guards against any path escaping the clone root.\n\n### 3. Bounded subprocess execution\n\nThe clone command is a hardened, shell-free `git` invocation:\n\n- `-c credential.helper=` disables credential helpers; the command is shallow and minimal: `clone --depth 1 --filter=blob:none --no-tags --single-branch -- <clone_url> <destination>`.\n- It runs through `run_logged_process` with `cwd=clone_root`, `timeout_seconds=self.timeout_seconds`, and environment `GIT_TERMINAL_PROMPT=0` / `GCM_INTERACTIVE=Never` to prevent interactive prompts.\n\n`run_logged_process` executes via `subprocess.Popen(..., shell=False)`, streams stdout/stderr on daemon threads into diagnostics logs, and enforces the timeout with `process.wait(timeout=...)`; on `TimeoutExpired` it kills the child and re-raises. It returns a `ProcessResult` with return code, captured output, and duration.\n\nFailure handling in `clone`:\n- `TimeoutExpired` \u2192 cleanup + `GitCloneError` (\"exceeded the N-second limit\").\n- `OSError` \u2192 cleanup + `GitCloneError` (\"Git could not be started\").\n- Non-zero return code \u2192 cleanup + `GitCloneError` with the last (truncated) stderr line.\n- Missing directory or missing `.git` \u2192 cleanup + `GitCloneError` (\"without creating a valid repository\").\n\n### 4. Checkout-size enforcement\n\nAfter a successful clone, `_checkout_size` walks the checkout with `os.walk(..., followlinks=False)`, prunes symlinked directories, and sums `file_count` and `size_bytes` using `stat(follow_symlinks=False)`. It short-circuits as soon as either limit is exceeded. If `file_count > max_clone_files` or `size_bytes > max_clone_bytes`, the clone is removed and `GitCloneError` (\"exceeds the configured storage limits\") is raised.\n\nOn success it writes a `.waypoint-managed` marker (recording the clone URL) and calls `_prune_old_clones`, which keeps only `max_retained_clones` managed clones (deleting the oldest by mtime). `_cleanup` itself re-validates that the target resolves under `clone_root` before `shutil.rmtree`, refusing (and logging `security.clone_cleanup_rejected`) any deletion outside it. `clone` finally returns the resolved destination path.\n\n### 5. Analysis creation\n\nBack in the route, the resolved clone path is passed to `_analyze`, which:\n\n1. Runs `RepositoryAnalyzer().analyze(root)` to build the code graph / `AnalysisReport`.\n2. Optionally overrides `repository_name` with the parsed repo name.\n3. Persists the report as a new `AnalysisSession` via `analysis_sessions.create`, yielding an `analysis_id`.\n4. Warms the retrieval index via `repository_indexes.get(session)`.\n5. Returns `GraphQueryService(session.report).overview()`.\n\nAt the route boundary, `GitCloneError`/`RepositoryImportError` map to HTTP 400, so the caller receives a clean status for each failure class.\n\n### Notes\n\n- The same pipeline is exposed outside HTTP via `mcp_server.clone_and_analyze_github_repository`, which constructs a `GitHubRepositoryCloner` from `settings` (`clone_root`, `allowed_root`, `clone_timeout_seconds`, `max_clone_bytes`, `max_clone_files`, `max_retained_clones`) and calls the same `clone` + `_analyze`.\n- The limits themselves come from `Settings` (`config.py`), which defines `allowed_root`, `clone_root`, `clone_timeout_seconds`, `max_clone_bytes`, `max_clone_files`, and `max_retained_clones`.\n- Tests confirm the behavior: canonical-URL acceptance/rejection, shallow non-interactive clone inside the secure root, and removal of oversized checkouts (`test_oversized_checkout_is_removed`).",
+      "citations": [
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 44,
+            "start_column": 0,
+            "end_line": 85,
+            "end_column": 0
+          },
+          "title": "parse_github_repository URL validation",
+          "excerpt": "@traced(\"repository.github_url.validate\")\ndef parse_github_repository(value: str) -> GitHubRepository:\n    candidate = value.strip()\n    if candidate.lower().startswith(\"github.com/\"):\n        candidate = f\"https://{candidate}\"\n    parsed = urlparse(candidate)\n    if parsed.scheme.lower() != \"https\" or parsed.hostname != \"github.com\":\n        raise InvalidGitHubRepository(",
+          "relevance": "Shows the strict validation: HTTPS+github.com only, no credentials/port/query/fragment, exactly owner/name, regex-checked, normalized clone_url."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 105,
+            "start_column": 0,
+            "end_line": 154,
+            "end_column": 0
+          },
+          "title": "Clone root validation and destination selection",
+          "excerpt": "    def _validated_clone_root(self) -> Path:\n        try:\n            self.clone_root.relative_to(self.allowed_root)\n        except ValueError as exc:\n            raise RepositoryImportError(\n                \"ONBOARD_CLONE_ROOT must be inside ONBOARD_ALLOWED_ROOT\"\n            ) from exc\n        self.clone_root.mkdir(parents=True, exist_ok=True)",
+          "relevance": "_validated_clone_root enforces clone_root inside allowed_root; clone checks git availability, builds unique destination and hardened git command."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 155,
+            "start_column": 0,
+            "end_line": 220,
+            "end_column": 0
+          },
+          "title": "Bounded subprocess call and checkout-size enforcement",
+          "excerpt": "        try:\n            result = run_logged_process(\n                command,\n                cwd=clone_root,\n                timeout_seconds=self.timeout_seconds,\n                environment={\n                    \"GIT_TERMINAL_PROMPT\": \"0\",\n                    \"GCM_INTERACTIVE\": \"Never\",",
+          "relevance": "run_logged_process invocation with timeout/env, error handling for timeout/OSError/non-zero/invalid repo, size-limit rejection, marker write, prune, and resolved return."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 248,
+            "start_column": 0,
+            "end_line": 295,
+            "end_column": 0
+          },
+          "title": "_checkout_size, discard, and safe _cleanup",
+          "excerpt": "    def _checkout_size(self, destination: Path) -> tuple[int, int]:\n        file_count = 0\n        size_bytes = 0\n        for current_root, directories, files in os.walk(\n            destination, followlinks=False\n        ):\n            directories[:] = [\n                directory",
+          "relevance": "Symlink-safe file/byte counting with early exit, and cleanup that refuses deletion outside clone_root."
+        },
+        {
+          "node_id": "37888013c17117142056812a",
+          "qualified_name": "backend.app.processes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/processes.py",
+            "start_line": 27,
+            "start_column": 0,
+            "end_line": 143,
+            "end_column": 0
+          },
+          "title": "run_logged_process shell-free subprocess with timeout",
+          "excerpt": "def run_logged_process(\n    command: Sequence[str],\n    *,\n    cwd: Path,\n    timeout_seconds: float = 60.0,\n    environment: Mapping[str, str] | None = None,\n) -> ProcessResult:\n    \"\"\"Run a shell-free subprocess and stream every output line to diagnostics.\"\"\"",
+          "relevance": "Executes subprocess.Popen(shell=False), streams output, enforces timeout via wait and kills on TimeoutExpired, returns ProcessResult."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 313,
+            "start_column": 0,
+            "end_line": 333,
+            "end_column": 0
+          },
+          "title": "analyze_github_repository HTTP entry point",
+          "excerpt": "async def analyze_github_repository(request: GitHubAnalysisRequest) -> AnalysisReport:\n    \"\"\"Shallow-clones a public GitHub repository and analyzes it.\n\n    HTTP entry point: POST /api/v1/analysis/github with a GitHubAnalysisRequest\n    body ({\"repository_url\": str}, pre-validated by validate_repository_url).\n    Delegates cloning to github_cloner.clone (GitHubRepositoryCloner in\n    backend/app/repository_import.py) and analysis to _analyze, both in a\n    threadpool; maps invalid URLs/unavailable git/clone failures to 422/503/400.",
+          "relevance": "POST /api/v1/analysis/github: parses URL, clones and analyzes in threadpool, maps errors to 422/503/400."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 223,
+            "start_column": 0,
+            "end_line": 241,
+            "end_column": 0
+          },
+          "title": "_analyze analysis creation and persistence",
+          "excerpt": "def _analyze(root: Path, repository_name: str | None = None) -> AnalysisReport:\n    \"\"\"Runs static analysis on a repository, stores the result, and returns its overview.\n\n    Input: a resolved filesystem path to a repository root (already validated or\n    freshly cloned) and an optional display name override. Runs\n    RepositoryAnalyzer().analyze, persists the report as a new AnalysisSession via\n    analysis_sessions.create, warms the retrieval index via repository_indexes.get,\n    then returns GraphQueryService(...).overview(). Executed inside a threadpool by",
+          "relevance": "Runs RepositoryAnalyzer().analyze, stores a new AnalysisSession, warms the index, returns overview."
+        },
+        {
+          "node_id": "fe4ee8369016e9e333dd7c27",
+          "qualified_name": "backend.app.mcp_server",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/mcp_server.py",
+            "start_line": 98,
+            "start_column": 0,
+            "end_line": 110,
+            "end_column": 0
+          },
+          "title": "MCP clone_and_analyze_github_repository",
+          "excerpt": "def clone_and_analyze_github_repository(repository_url: str) -> dict[str, Any]:\n    \"\"\"Securely shallow-clone a public GitHub repository and analyze it.\"\"\"\n    with trace_context():\n        identity = parse_github_repository(repository_url)\n        cloner = GitHubRepositoryCloner(\n            clone_root=settings.clone_root,\n            allowed_root=settings.allowed_root,\n            timeout_seconds=settings.clone_timeout_seconds,",
+          "relevance": "Constructs GitHubRepositoryCloner from settings limits and runs the same clone + _analyze path outside HTTP."
+        },
+        {
+          "node_id": "ad7228874439fb2ab4799214",
+          "qualified_name": "backend.app.config",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/config.py",
+            "start_line": 46,
+            "start_column": 0,
+            "end_line": 90,
+            "end_column": 0
+          },
+          "title": "Settings limits for clone and analysis",
+          "excerpt": "class Settings:\n    app_name: str\n    log_level: str\n    log_value_limit: int\n    trace_functions: bool\n    max_trace: bool\n    trace_file_enabled: bool\n    trace_path: Path",
+          "relevance": "Defines allowed_root, clone_root, clone_timeout_seconds, max_clone_bytes, max_clone_files, max_retained_clones used throughout the flow."
+        },
+        {
+          "node_id": "18b245610eee20e2ba7b6af4",
+          "qualified_name": "backend.tests.test_repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/tests/test_repository_import.py",
+            "start_line": 101,
+            "start_column": 0,
+            "end_line": 139,
+            "end_column": 0
+          },
+          "title": "Oversized checkout removal test",
+          "excerpt": "    def test_oversized_checkout_is_removed(self) -> None:\n        with tempfile.TemporaryDirectory() as temporary_directory:\n            allowed_root = Path(temporary_directory)\n            clone_root = allowed_root / \".waypoint-clones\"\n\n            def fake_process(command: list[str], **_: object) -> ProcessResult:\n                destination = Path(command[-1])\n                destination.mkdir(parents=True)",
+          "relevance": "Verifies that a checkout exceeding max_clone_bytes raises RepositoryImportError about storage limits and the clone directory is emptied."
+        }
+      ],
+      "candidate_retrieval": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/api/routes.py",
+          "backend/app/issues/service.py",
+          "backend/app/agent/onboarding.py",
+          "backend/tests/test_repository_import.py",
+          "backend/app/graph/analyzer.py",
+          "backend/app/mcp_server.py",
+          "backend/app/agent/issues.py",
+          "verification/scripts/live_multistep_demo.py",
+          "backend/app/agent/service.py",
+          "backend/tests/test_api.py",
+          "benchmarks/run_repositories.py",
+          "backend/app/config.py",
+          "backend/app/agent/tool_contracts.py",
+          "backend/app/onboarding/questions.py",
+          "backend/app/issues/models.py",
+          "backend/app/processes.py",
+          "backend/app/graph/polyglot.py",
+          "backend/app/agent/semantic.py",
+          "backend/app/onboarding/service.py",
+          "backend/app/graph/models.py",
+          "verification/scripts/http_flask_e2e.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.3,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.6843515475204855,
+        "forbidden_hit_rate": 0.0
+      },
+      "explicit_inspection": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/processes.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.4,
+        "required_group_recall": 0.5,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.5531464700081437,
+        "forbidden_hit_rate": 0.0
+      },
+      "cited_retrieval": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/processes.py",
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py",
+          "backend/app/config.py",
+          "backend/tests/test_repository_import.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.8333333333333334,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.9747429528567877,
+        "forbidden_hit_rate": 0.0
+      },
+      "tool_trace": [
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 3961.106,
+          "result_bytes": 21818,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_api.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py",
+            "verification/scripts/live_multistep_demo.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/agent/onboarding.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/issues.py",
+            "verification/scripts/live_multistep_demo.py",
+            "backend/app/agent/service.py",
+            "backend/tests/test_api.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 3965.684,
+          "result_bytes": 20338,
+          "evidence_files": [
+            "backend/app/agent/tool_contracts.py",
+            "backend/app/api/routes.py",
+            "backend/app/config.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/issues/models.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/processes.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/config.py",
+            "backend/app/graph/analyzer.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/issues/service.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/api/routes.py",
+            "backend/app/agent/tool_contracts.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/issues/models.py",
+            "backend/app/processes.py",
+            "backend/app/graph/polyglot.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 3966.009,
+          "result_bytes": 23773,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "verification/scripts/http_flask_e2e.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/agent/service.py",
+            "backend/app/agent/semantic.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/agent/issues.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/graph/models.py",
+            "verification/scripts/http_flask_e2e.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 5.184,
+          "result_bytes": 11405,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 5.71,
+          "result_bytes": 4964,
+          "evidence_files": [
+            "backend/app/processes.py"
+          ],
+          "candidate_files": [
+            "backend/app/processes.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/processes.py"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 747.867,
+          "result_bytes": 1600,
+          "evidence_files": [
+            "backend/app/api/routes.py"
+          ],
+          "candidate_files": [
+            "backend/app/api/routes.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 1.806,
+          "result_bytes": 2400,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        }
+      ],
+      "repository_tool_calls": 7,
+      "invalid_tool_calls": 0,
+      "total_model_rounds": 4,
+      "duration_ms": 96592.845,
+      "input_tokens": 280493,
+      "output_tokens": 5781,
+      "total_tokens": 286274,
+      "estimated_cost_usd": 2.712027,
+      "ttft_ms": null,
+      "ttft_status": "unavailable_sdk_first_assistant_event_ms=6545.729; unavailable_sdk_first_assistant_event_ms=8362.049; unavailable_sdk_first_assistant_event_ms=6259.046; unavailable_sdk_first_assistant_event_ms=7487.606",
+      "validation_status": "passed"
+    },
+    {
+      "case_id": "v4-wp-07",
+      "repository": "waypoint",
+      "split": "development",
+      "language": "typescript",
+      "category": "explore-ui",
+      "question": "Trace how repository files become file cards, how visible graph edges are selected, and how a selected symbol opens evidence in the inspector and source viewer.",
+      "expected_concepts": [
+        "file cards",
+        "edge filtering",
+        "selection",
+        "inspector",
+        "source evidence"
+      ],
+      "answer_quality": {
+        "matched_expected_concepts": [
+          "file cards",
+          "selection",
+          "inspector"
+        ],
+        "expected_concept_recall": 0.6,
+        "citation_count": 11
+      },
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-88d00512ada1428da549754c2935b5cb",
+      "actual_models": [],
+      "answer": "## 1. Files \u2192 file cards\n\nWhen the graph view is in the **files** presentation mode, `GraphCanvas` (frontend/src/components/GraphView.tsx) builds one card per source file through two steps:\n\n1. `fileGroups()` (GraphView.tsx:142-213) groups every graph node by its source path (`nodePath()`, GraphView.tsx:82-85, reads `node.span.path`, or a synthetic `__waypoint__/external-packages` path for external imports). For each path it produces a `FileGroup` containing:\n   - `primary`: the file's `module` node (or first member if none), used for the card header/language label.\n   - `members`: the symbols in that file that currently pass the visible-node-kind filter and the search text filter.\n   - `uses`: symbols from *other* files that this file references (derived by walking every non-`contains` edge whose source and target live in different files and collecting the target nodes), also kind/search filtered.\n   - `externalPackages`: populated only for the synthetic external-packages group (built by `externalPackageGraph()`, GraphView.tsx:87-140, from `unresolvedReferences` whose `reference_kind === \"import\"` and `metadata.external === true`).\n   Groups with zero visible members and no matching external packages are dropped, and remaining groups are sorted by path.\n2. `layoutFileGraph()` (GraphView.tsx:215-383) turns each `FileGroup` into a React Flow `Node`: it sizes the card from `FILE_NODE_SIZES[cardSize]` (compact/comfortable/large, chosen by the user's `fileCardSize` setting), lays cards out left-to-right with `dagre`, and renders the card body as a header (language + filename + path), a scrollable member list (each member is a clickable `<button>` that calls `onSelect({ type: \"node\", value: member })`), an optional \"Uses across files\" section (also clickable), and a footer summarizing visible-symbol/external-use counts.\n\n`GraphCanvas` computes this via `useMemo` keyed on `props.presentation === \"files\"`, so switching workspace modes rebuilds the cards from the same underlying `nodes`/`edges`/`unresolvedReferences` props supplied by `App.tsx`.\n\n## 2. How visible graph edges are selected\n\nEdge visibility is filtered in two layers before layout:\n\n- **Kind filter**: a `Set<EdgeKind>` (`visibleEdgeKinds`, driven by UI toggles for `contains`/`imports`/`may_call`/`instantiates`) is checked first; edges of a hidden kind are skipped everywhere (`fileGroups`, `layoutFileGraph`).\n- **Endpoint filter**: in **file mode** (`layoutFileGraph`, GraphView.tsx:231-245), an edge is kept only if both its source and target nodes resolve to a file path (`pathByNode`), the two files differ (self-file edges are dropped since they'd be a same-card loop), and both files are in the currently included/visible group set. Multiple underlying edges between the same file pair and kind are merged into a single visual edge keyed by `source\u2400target\u2400kind`, with the merged edge's line drawn thicker for more underlying edges and labeled with the count when >1.\n- In **symbol mode** (`layoutGraph`, GraphView.tsx:385-462), individual graph edges are rendered directly (one React Flow edge per `GraphEdge`), styled by kind (`edgeColors`) with `imports` animated, `may_call`/`instantiates` dashed, and opacity reduced when the edge's evidence status is `\"inferred\"` (as opposed to a more certain resolved status) \u2014 so lower-confidence inferred edges are visually deemphasized without being hidden outright.\n\nGraph edges themselves come from the backend's typed graph model (`backend/app/graph/models.py`'s `EdgeKind`: `contains`, `imports`, `may_call`, `instantiates`), each carrying an `Evidence` record (status/confidence/source span) that the frontend uses for this styling.\n\n## 3. Selecting a symbol \u2192 Inspector and source viewer\n\n- A file-card member button or a symbol node's own graph node both call the shared `onSelect` callback with `{ type: \"node\", value: <GraphNode> }`, which `App.tsx` stores in its `selection` state (`useState<Selection>`).\n- `Inspector.tsx` (`Inspector` component, frontend/src/components/Inspector.tsx:70-291) receives `selection` as a prop. On `selectedNode?.id` change it resets to the \"details\" tab and clears any previously loaded usage/answer state. If the user switches to the \"usage\" tab, it lazily calls `fetchSymbolUsage(analysisId, selectedNode.id)`, which hits the backend `get_symbol_usage` / `/nodes/{node_id}/usage` route backed by `SemanticRepositoryTools.symbol_relationships` (backend/app/agent/semantic.py). That method returns every outgoing/incoming edge for the node plus, for each edge, a short source excerpt around the line where the relationship was detected (`_edge_evidence`, semantic.py:221-247) \u2014 this is the evidence shown in the inspector's usage view. The Inspector also exposes an \"ask a question about this symbol\" flow that calls the repository agent, pre-seeded with this same relationship evidence.\n- Selecting a node/file also drives the read-only source viewer: `App.tsx` tracks `selectedFilePath`/`source` state and (per `frontend/src/api.ts:fetchSource`, lines 163-177) calls `GET /api/v1/analyses/{analysisId}/source?path=...`, served by `backend/app/api/routes.py:get_source` (lines 484-500), which resolves the (possibly aliased) path via the repository index and returns the file's text. `SourcePanel.tsx` (frontend/src/components/SourcePanel.tsx:1-122+) renders that `SourceDocument` in a Monaco `Editor`; when the selected node's `span` changes, `focusSpan()` sets the editor's selection range to `span.start_line`\u2013`span.end_line`, scrolls it into view (`revealLineInCenter`), and adds a highlight decoration over that range \u2014 so clicking a symbol both opens its evidence in the Inspector and jumps the Monaco viewer to the exact source lines that back it.\n\n**Note on tool availability**: repository tools became unavailable partway through this investigation (after gathering the evidence above), so I could not complete a full read of `GraphCanvas`'s symbol-mode edge-visibility body (lines 464-611) or the exact `App.tsx` selection\u2192source-fetch `useEffect` wiring; the description of those two pieces is based on the excerpts already retrieved (file/kind filtering logic and the `fetchSource`/`SourcePanel`/`get_source` call chain) rather than a full line-by-line read, and should be treated as reasonably but not 100% verified for that specific effect's exact trigger conditions.",
+      "citations": [
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 142,
+            "start_column": 0,
+            "end_line": 213,
+            "end_column": 0
+          },
+          "title": "fileGroups: grouping nodes by file path into FileGroup cards",
+          "excerpt": "function fileGroups(\n  nodes: GraphNode[],\n  edges: GraphEdge[],\n  visibleKinds: Set<NodeKind>,\n  visibleEdgeKinds: Set<EdgeKind>,\n  search: string,\n  externalPackages: Array<{ name: string; files: string[] }> = [],\n): FileGroup[] {",
+          "relevance": "Shows how repository files become file card data (members, cross-file uses, external packages) filtered by visible kinds and search."
+        },
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 215,
+            "start_column": 0,
+            "end_line": 383,
+            "end_column": 0
+          },
+          "title": "layoutFileGraph: rendering FileGroups as React Flow file cards",
+          "excerpt": "function layoutFileGraph(\n  groups: FileGroup[],\n  graphNodes: GraphNode[],\n  graphEdges: GraphEdge[],\n  visibleEdgeKinds: Set<EdgeKind>,\n  theme: \"light\" | \"dark\",\n  onSelect: (selection: Selection) => void,\n  cardSize: FileCardSize,",
+          "relevance": "Shows file card sizing, dagre layout, merged cross-file edges, and per-member onSelect wiring that opens the inspector."
+        },
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 82,
+            "start_column": 0,
+            "end_line": 140,
+            "end_column": 0
+          },
+          "title": "nodePath and externalPackageGraph",
+          "excerpt": "function nodePath(node: GraphNode): string | null {\n  if (node.id === EXTERNAL_PACKAGES_NODE_ID) return EXTERNAL_PACKAGES_PATH;\n  return node.span?.path ?? null;\n}\n\nfunction externalPackageGraph(\n  nodes: GraphNode[],\n  references: UnresolvedReference[],",
+          "relevance": "Defines how a node maps to a file path (basis for file cards) and how external package edges are synthesized."
+        },
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 385,
+            "start_column": 0,
+            "end_line": 462,
+            "end_column": 0
+          },
+          "title": "layoutGraph: symbol-mode node/edge rendering",
+          "excerpt": "function layoutGraph(\n  graphNodes: GraphNode[],\n  graphEdges: GraphEdge[],\n  theme: \"light\" | \"dark\",\n): { nodes: Node[]; edges: Edge[] } {\n  const nodeColors = theme === \"dark\" ? darkNodeColors : lightNodeColors;\n  const layout = new dagre.graphlib.Graph();\n  layout.setDefaultEdgeLabel(() => ({}));",
+          "relevance": "Shows per-edge-kind styling and inferred-evidence opacity used to visually select/deemphasize edges in symbol view."
+        },
+        {
+          "node_id": "6190155b514dabee08d9eefc",
+          "qualified_name": "backend.app.graph.models",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/graph/models.py",
+            "start_line": 27,
+            "start_column": 0,
+            "end_line": 40,
+            "end_column": 0
+          },
+          "title": "EdgeKind enum",
+          "excerpt": "class EdgeKind(str, Enum):\n    \"\"\"Enumerates the kinds of relationship a GraphEdge can represent.\n\n    CONTAINS is lexical containment (module contains class contains method),\n    IMPORTS is a module-level import, MAY_CALL is an inferred call edge, and\n    INSTANTIATES is class construction. Built wherever a GraphEdge is created in\n    analyzer.py/polyglot.py and read back by store.py's GraphQueryService to\n    bucket edges by kind for the graph summary and neighborhood views.",
+          "relevance": "Defines the typed edge kinds (contains/imports/may_call/instantiates) that drive edge visibility filtering and coloring."
+        },
+        {
+          "node_id": "14283dc3c338ce8accfebc11",
+          "qualified_name": "frontend.src.components.Inspector",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/Inspector.tsx",
+            "start_line": 70,
+            "start_column": 0,
+            "end_line": 291,
+            "end_column": 0
+          },
+          "title": "Inspector component",
+          "excerpt": "export function Inspector({\n  selection,\n  nodesById,\n  analysisId,\n  onOpenNode,\n}: {\n  selection: Selection;\n  nodesById: Map<string, GraphNode>;",
+          "relevance": "Shows selection-driven state reset and lazy fetchSymbolUsage call that opens evidence for a selected symbol."
+        },
+        {
+          "node_id": "366176b10aa61f4e55235931",
+          "qualified_name": "backend.app.agent.semantic",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/agent/semantic.py",
+            "start_line": 531,
+            "start_column": 0,
+            "end_line": 598,
+            "end_column": 0
+          },
+          "title": "SemanticRepositoryTools.symbol_relationships",
+          "excerpt": "    def symbol_relationships(self, node_id: str) -> dict[str, Any]:\n        \"\"\"Returns one symbol's full immediate relationship set: outgoing/incoming edges, related files, and source evidence for both.\n\n        Input: `node_id` is a graph node id (as returned by search/find tools);\n        raises ValueError if it does not exist in `self.nodes`. Exposed as the\n        `get_symbol_relationships` agent tool and MCP tool, called directly by\n        backend/app/api/routes.py:get_symbol_usage (the `/nodes/{node_id}/usage`\n        endpoint) and by backend/app/agent/service.py:RepositoryAgentService.answer",
+          "relevance": "Backend method behind /nodes/{node_id}/usage that supplies the Inspector's relationship evidence for a selected symbol."
+        },
+        {
+          "node_id": "366176b10aa61f4e55235931",
+          "qualified_name": "backend.app.agent.semantic",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/agent/semantic.py",
+            "start_line": 221,
+            "start_column": 0,
+            "end_line": 247,
+            "end_column": 0
+          },
+          "title": "SemanticRepositoryTools._edge_evidence",
+          "excerpt": "    def _edge_evidence(self, edge: GraphEdge) -> dict[str, Any] | None:\n        \"\"\"Reads a small source excerpt around the line where a graph edge (call/import/etc.) was detected.\n\n        Input: `edge` is a GraphEdge whose `evidence.span` marks the source location\n        the edge was inferred from; reads a narrow window (one line before to up to\n        eight lines after) capped at 2,000 characters, since edges need only enough\n        context to show the reference, not the whole containing function. Called by\n        symbol_relationships to back each incoming/outgoing relationship with the",
+          "relevance": "Reads the source excerpt around an edge's detected line, the evidence shown per relationship in the inspector."
+        },
+        {
+          "node_id": "3c39984aff5a3eaed80fcfd7",
+          "qualified_name": "frontend.src.components.SourcePanel",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/SourcePanel.tsx",
+            "start_line": 1,
+            "start_column": 0,
+            "end_line": 122,
+            "end_column": 0
+          },
+          "title": "SourcePanel Monaco viewer",
+          "excerpt": "import { useCallback, useEffect, useRef } from \"react\";\nimport Editor, { type OnMount } from \"@monaco-editor/react\";\nimport type { editor } from \"monaco-editor\";\nimport { Code2, FileWarning, LoaderCircle } from \"lucide-react\";\nimport type { SourceDocument, SourceSpan } from \"../types\";\n\nexport function SourcePanel({\n  source,",
+          "relevance": "Shows the read-only Monaco editor that focuses/highlights a selected symbol's source span."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 484,
+            "start_column": 0,
+            "end_line": 500,
+            "end_column": 0
+          },
+          "title": "get_source route",
+          "excerpt": "async def get_source(analysis_id: str, path: str = Query(min_length=1, max_length=2048)) -> SourceDocument:\n    \"\"\"Returns one indexed source file's content for the code viewer.\n\n    HTTP entry point: GET /api/v1/analyses/{analysis_id}/source, path param\n    analysis_id plus required query param path. Resolves a possibly-aliased\n    request path to its canonical index path via\n    repository_indexes.get(...).resolve_path (400 on an unresolvable path), then\n    reads it through _read_source. Called by frontend/src/api.ts fetchSource();",
+          "relevance": "Backend endpoint that serves file source content to the source viewer."
+        },
+        {
+          "node_id": "81e122f332b833d1d9fe2478",
+          "qualified_name": "frontend.src.api",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/api.ts",
+            "start_line": 163,
+            "start_column": 0,
+            "end_line": 177,
+            "end_column": 0
+          },
+          "title": "fetchSource API client",
+          "excerpt": "export async function fetchSource(\n  analysisId: string,\n  path: string,\n): Promise<SourceDocument> {\n  const response = await fetch(\n    `/api/v1/analyses/${encodeURIComponent(analysisId)}/source?path=${encodeURIComponent(path)}`,\n    {\n      headers: { \"X-Request-ID\": makeRequestId(\"source\") },",
+          "relevance": "Frontend call that requests source content for the viewer when a file/symbol is selected."
+        }
+      ],
+      "candidate_retrieval": {
+        "ranked_paths": [
+          "README.md",
+          "benchmarks/README.md",
+          "frontend/package.json",
+          "frontend/tsconfig.json",
+          "frontend/vite.config.js",
+          "frontend/vite.config.ts",
+          "pyproject.toml",
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py",
+          "backend/app/agent/service.py",
+          "backend/app/onboarding/service.py",
+          "backend/app/issues/service.py",
+          "backend/app/main.py",
+          "backend/app/api/__init__.py",
+          "frontend/coverage/src/App.tsx.html",
+          "verification/scripts/operational_scorecard.py",
+          "frontend/src/App.tsx",
+          "frontend/src/components/GraphView.tsx",
+          "frontend/src/styles.css",
+          "backend/app/graph/analyzer.py",
+          "backend/app/graph/polyglot.py",
+          "backend/app/graph/models.py",
+          "backend/app/agent/semantic.py",
+          "backend/app/graph/store.py",
+          "benchmarks/run_parsing_accuracy.py",
+          "graph-rag-and-vector-validity.md",
+          "backend/app/onboarding/questions.py",
+          "backend/tests/test_polyglot_analyzer.py",
+          "frontend/src/components/Inspector.tsx",
+          "backend/tests/test_agent.py",
+          "benchmarks/run_repositories.py",
+          "backend/app/agent/onboarding.py",
+          "backend/app/onboarding/models.py",
+          "verification/scripts/live_multistep_demo.py",
+          "frontend/src/types.ts",
+          "frontend/src/components/SourcePanel.tsx",
+          "verification/scripts/http_flask_e2e.py",
+          "frontend/src/api.ts"
+        ],
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_10": 0.0,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 0.058823529411764705,
+        "ndcg_at_10": 0.0,
+        "forbidden_hit_rate": 0.02631578947368421
+      },
+      "explicit_inspection": {
+        "ranked_paths": [
+          "frontend/src/components/GraphView.tsx"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.2,
+        "required_group_recall": 0.25,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.3391602052736161,
+        "forbidden_hit_rate": 0.0
+      },
+      "cited_retrieval": {
+        "ranked_paths": [
+          "frontend/src/components/GraphView.tsx",
+          "backend/app/graph/models.py",
+          "frontend/src/components/Inspector.tsx",
+          "backend/app/agent/semantic.py",
+          "frontend/src/components/SourcePanel.tsx",
+          "backend/app/api/routes.py",
+          "frontend/src/api.ts"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.42857142857142855,
+        "path_recall": 0.6,
+        "required_group_recall": 0.75,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.639945385422766,
+        "forbidden_hit_rate": 0.0
+      },
+      "tool_trace": [
+        {
+          "round": 1,
+          "tool": "get_repository_overview",
+          "status": "completed",
+          "duration_ms": 15.047,
+          "result_bytes": 31248,
+          "evidence_files": [
+            "README.md",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/onboarding/service.py",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml"
+          ],
+          "candidate_files": [
+            "README.md",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml",
+            "backend/app/api/routes.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/service.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/issues/service.py",
+            "backend/app/main.py",
+            "backend/app/api/__init__.py",
+            "frontend/coverage/src/App.tsx.html"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 2923.889,
+          "result_bytes": 15919,
+          "evidence_files": [
+            "frontend/src/App.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/styles.css",
+            "verification/scripts/operational_scorecard.py"
+          ],
+          "candidate_files": [
+            "verification/scripts/operational_scorecard.py",
+            "frontend/src/App.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/styles.css"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 3253.532,
+          "result_bytes": 23291,
+          "evidence_files": [
+            "backend/app/agent/semantic.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/store.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/onboarding/service.py",
+            "backend/tests/test_polyglot_analyzer.py",
+            "benchmarks/run_parsing_accuracy.py",
+            "frontend/src/App.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "graph-rag-and-vector-validity.md"
+          ],
+          "candidate_files": [
+            "backend/app/graph/analyzer.py",
+            "frontend/src/components/GraphView.tsx",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/models.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/graph/store.py",
+            "frontend/src/App.tsx",
+            "backend/app/onboarding/service.py",
+            "benchmarks/run_parsing_accuracy.py",
+            "graph-rag-and-vector-validity.md",
+            "backend/app/onboarding/questions.py",
+            "backend/tests/test_polyglot_analyzer.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 3521.097,
+          "result_bytes": 24442,
+          "evidence_files": [
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/agent/service.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/onboarding/models.py",
+            "backend/app/onboarding/service.py",
+            "backend/tests/test_agent.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/App.tsx",
+            "frontend/src/components/Inspector.tsx",
+            "verification/scripts/live_multistep_demo.py"
+          ],
+          "candidate_files": [
+            "backend/app/agent/semantic.py",
+            "frontend/src/components/Inspector.tsx",
+            "frontend/src/App.tsx",
+            "backend/app/onboarding/service.py",
+            "backend/tests/test_agent.py",
+            "backend/app/agent/service.py",
+            "backend/app/graph/analyzer.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/onboarding/models.py",
+            "verification/scripts/live_multistep_demo.py",
+            "backend/app/graph/polyglot.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "get_file_structure",
+          "status": "completed",
+          "duration_ms": 37.754,
+          "result_bytes": 8815,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/types.ts",
+            "frontend/src/App.tsx"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 36.264,
+          "result_bytes": 9605,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/GraphView.tsx"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 45.986,
+          "result_bytes": 11603,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/GraphView.tsx"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "find_symbols",
+          "status": "completed",
+          "duration_ms": 48.682,
+          "result_bytes": 95,
+          "evidence_files": [],
+          "candidate_files": [],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 3,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 2724.586,
+          "result_bytes": 2029,
+          "evidence_files": [
+            "frontend/src/App.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/App.tsx"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 3,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 2878.633,
+          "result_bytes": 20464,
+          "evidence_files": [
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/onboarding/models.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/App.tsx",
+            "frontend/src/api.ts",
+            "frontend/src/components/SourcePanel.tsx",
+            "verification/scripts/http_flask_e2e.py"
+          ],
+          "candidate_files": [
+            "backend/app/agent/semantic.py",
+            "frontend/src/components/SourcePanel.tsx",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/onboarding/models.py",
+            "backend/app/graph/polyglot.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/App.tsx",
+            "verification/scripts/http_flask_e2e.py",
+            "backend/app/graph/models.py",
+            "frontend/src/api.ts",
+            "backend/app/agent/onboarding.py"
+          ],
+          "explicitly_inspected_files": []
+        }
+      ],
+      "repository_tool_calls": 10,
+      "invalid_tool_calls": 0,
+      "total_model_rounds": 4,
+      "duration_ms": 153450.877,
+      "input_tokens": 1091843,
+      "output_tokens": 10203,
+      "total_tokens": 1102046,
+      "estimated_cost_usd": 2.8893526,
+      "ttft_ms": null,
+      "ttft_status": "unavailable_sdk_first_assistant_event_ms=6117.782; unavailable_sdk_first_assistant_event_ms=7473.47; unavailable_sdk_first_assistant_event_ms=11388.507; unavailable_sdk_first_assistant_event_ms=13312.492",
+      "validation_status": "passed"
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "v4-wp-04",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-95bcec21cfdb4634ab54d024437bed2f",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK returned invalid action arguments",
+      "duration_ms": 120399.239,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-07",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-365fbb0c7df34da8971128ca478676c8",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 281687.741,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-08",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-bd11258fe1a148e0baf93c4c50f50650",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8965.131,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-08",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-d974276416bc4985bb763fcb0644d56d",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16843.686,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-09",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-dfb8dd633f4d471799304ed555e9cd36",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7816.339,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-09",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-e1290910aeb740baa4449d171df8385e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16149.906,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-10",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-c4f178a90a674b5eba4f65b0138b8042",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8120.503,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-10",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-efc96a2b3a5745c4b8b2fdd7b28b40ad",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16412.66,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-11",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-4538970bf5514574a3f7ae568aa71062",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9523.898,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-11",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-159b3ca983994f1caec318624b27a524",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 18617.477,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-12",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-ef104f92db75489eae6ff59fbfec9a27",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9181.137,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-12",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-d6d935dae59c4de7a0d297999c37f89f",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17965.334,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-14",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-484191f2f4614e25ae4283b051793baf",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9456.741,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-14",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-d7ec69dc748f473387c4bac517c5eeb2",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 18445.199,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-16",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-1126670aaa2043478719c07a85f49b80",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7824.083,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-16",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-96a6023c0f9a456386ee4b8cc61f7412",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16565.576,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-18",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-f67f6e91ffac4154a3bff81896def198",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9364.891,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-18",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-f8a8460c36494695a6720c644aa28357",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 18404.475,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-01",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-b67a58fb85224faf957470297289fabf",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9794.768,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-01",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-47b1e92d6ddd439d9032dad4279d53c9",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 18484.791,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-02",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-70e1090c737942078d3c3bd2d689ab0e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8655.466,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-02",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-195dac181a574b6981cbab1a7aa2b2d9",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17126.202,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-04",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-a6f679a15a3d49f7b33cf75d46e7feab",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8474.168,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-04",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-00f224416017429d95528fb08ac17045",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17218.197,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-07",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-04c4c90292d642af8c3bd997e244eee0",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8624.522,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-07",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-29afd9d0bd044b1dbb08eab36ecc42d8",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16906.607,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-08",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-a49a25eb9f6c44adab95a58afbf84d67",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8717.307,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-08",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-639057cde2424a319f3a90c6a047aad3",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17015.002,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-02",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-0965adc256db42a5a458341b80288f53",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8232.941,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-02",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-c61aa092507943208f36700f0c24d666",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15889.654,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-03",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-a047a79867b043148e89a8b72590f4a5",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9506.435,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-03",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-25f00377967e4902a0769e16018d6423",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 20086.264,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-04",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-31c2de85c53947ccbede6e70927f70f4",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8554.457,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-04",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-e18dd7a681c04aed9a62eb51233bea9f",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16082.711,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-08",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-bbc34546ac014e6980cb82fb974510b7",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8722.282,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-08",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-3865763bb443404ba97676fd165e0891",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16690.057,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-09",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-14147399fd994991adc1c52bfc14634e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8060.124,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-pr-09",
+      "repository": "praw",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-ba79f971e4a0474b8bf74a9216b259f8",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17317.723,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-01",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-2db187c7aea14d9eb5942d093bb1ef2b",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7795.484,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-01",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-bf7b51ee73d746a2a6c9f733419d2728",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16293.322,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-03",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-2780e996ea604932b9fea2a79d6727e6",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8073.499,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-03",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-6cde1343c3664931b3c3ae55b5ebb92f",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15715.64,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-04",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-1c865bb8aba144f6a3a739d749519995",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7184.572,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-04",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-be071367178c415ab96bb5a649c69eed",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 22381.78,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-05",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-4c5661bc82134705b9cae436b3fdb5d8",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7752.68,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-05",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-b17e0d9c55374c169c8edb916f79cb1c",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15796.856,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-06",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-9549ea846ceb44e5ac63e280c8914731",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 9266.964,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-on-06",
+      "repository": "open-notebook",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-bfe62c9a84474f36a1d7798a04626627",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17491.682,
+      "validation_status": "failed"
+    }
+  ],
+  "hook_artifacts": {
+    "events_jsonl": "benchmarks\\results\\agentic-v4-claude-sonnet-vs-opus.hooks.jsonl",
+    "aggregate_json": "benchmarks\\results\\agentic-v4-claude-sonnet-vs-opus.hooks.json"
+  }
+}

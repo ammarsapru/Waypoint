@@ -1,0 +1,61 @@
+{
+  "event_count": 32,
+  "trace_count": 2,
+  "phase_counts": {
+    "pre": 4,
+    "error": 4
+  },
+  "structured_log_event_count": 24,
+  "structured_event_counts": {
+    "agent.agentic_retrieval_comparison.endpoint.entry": 2,
+    "agent.repository.answer.entry": 2,
+    "model.agent_started": 2,
+    "model.agent_round_started": 2,
+    "model.request_started": 2,
+    "model.comparison_routed": 2,
+    "model.openrouter_retry": 6,
+    "model.request_failed": 2,
+    "agent.repository.answer.exception": 2,
+    "agent.agentic_retrieval_comparison.endpoint.exception": 2
+  },
+  "error_counts": {
+    "AgentExecutionError": 4
+  },
+  "quality": {
+    "trace_correlation_rate": 1.0,
+    "pre_terminal_pairing_rate": 1.0,
+    "started_spans": 4,
+    "paired_spans": 4,
+    "orphan_terminal_spans": 0,
+    "incomplete_spans": 0,
+    "possible_secret_leaks": 0,
+    "redaction_markers": 0
+  },
+  "volume": {
+    "serialized_bytes": 22654,
+    "bytes_per_event": 707.938,
+    "events_per_trace": 16.0,
+    "hook_callback_total_ms": 28.28,
+    "hook_callback_mean_ms": 0.883763
+  },
+  "events_by_trace": {
+    "agentic-d51da4c5609b4680ad0c0537c2948879": 16,
+    "agentic-c78dbdb172c74c8abfc70441c3d05cc5": 16
+  },
+  "functions": {
+    "backend.app.agent.agentic_comparison.AgenticRetrievalComparisonService._run_traced": {
+      "events": 4,
+      "completed_durations": 2,
+      "mean_duration_ms": 18919.718,
+      "p50_duration_ms": 18297.284,
+      "p95_duration_ms": 19542.153
+    },
+    "backend.app.agent.service.RepositoryAgentService.answer": {
+      "events": 4,
+      "completed_durations": 2,
+      "mean_duration_ms": 18910.033,
+      "p50_duration_ms": 18289.561,
+      "p95_duration_ms": 19530.505
+    }
+  }
+}

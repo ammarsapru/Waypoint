@@ -1,0 +1,1887 @@
+{
+  "benchmark_version": "4.0",
+  "protocol": "independent_agent_retrieval",
+  "cases_manifests": [
+    "benchmarks\\retrieval_cases_v4_cases.json"
+  ],
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "v4-wp-04",
+    "v4-wp-07",
+    "v4-wp-08",
+    "v4-wp-09",
+    "v4-wp-10",
+    "v4-wp-11",
+    "v4-wp-12",
+    "v4-wp-14",
+    "v4-wp-16",
+    "v4-wp-18",
+    "v4-fl-01",
+    "v4-fl-02",
+    "v4-fl-04",
+    "v4-fl-07",
+    "v4-fl-08",
+    "v4-pr-02",
+    "v4-pr-03",
+    "v4-pr-04",
+    "v4-pr-08",
+    "v4-pr-09",
+    "v4-on-01",
+    "v4-on-03",
+    "v4-on-04",
+    "v4-on-05",
+    "v4-on-06"
+  ],
+  "endpoints": [
+    {
+      "provider": "claude-code",
+      "model": "sonnet"
+    },
+    {
+      "provider": "claude-code",
+      "model": "opus"
+    }
+  ],
+  "case_count": 25,
+  "successful_model_runs": 3,
+  "failed_model_runs": 27,
+  "completed_model_attempts": 30,
+  "expected_model_attempts": 50,
+  "success_rate": 0.1,
+  "summary": {
+    "claude-code:sonnet": {
+      "cases": 2,
+      "successful_cases": 2,
+      "mean_duration_ms": 142290.924,
+      "p50_duration_ms": 106506.493,
+      "p95_duration_ms": 178075.354,
+      "total_duration_ms": 284581.847,
+      "mean_tool_calls": 10,
+      "mean_rounds": 5.5,
+      "mean_invalid_tool_calls": 0,
+      "mean_total_tokens": 705425.5,
+      "total_tokens": 1410851,
+      "tokens_per_tool_call": 70542.55,
+      "output_tokens_per_second": 79.503,
+      "mean_expected_concept_recall": 0.6,
+      "mean_citations": 8,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.5,
+          "precision_at_10": 0.15,
+          "path_recall": 1.0,
+          "required_group_recall": 1.0,
+          "mrr": 0.5278,
+          "ndcg_at_10": 0.3422,
+          "forbidden_hit_rate": 0.0116
+        },
+        "explicit_inspection": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "path_recall": 0.5,
+          "required_group_recall": 0.625,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.604,
+          "forbidden_hit_rate": 0.0
+        },
+        "cited_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.8333,
+          "path_recall": 0.7,
+          "required_group_recall": 0.875,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7958,
+          "forbidden_hit_rate": 0.0
+        }
+      }
+    },
+    "claude-code:opus": {
+      "cases": 1,
+      "successful_cases": 1,
+      "mean_duration_ms": 90254.047,
+      "p50_duration_ms": 90254.047,
+      "p95_duration_ms": 90254.047,
+      "total_duration_ms": 90254.047,
+      "mean_tool_calls": 8,
+      "mean_rounds": 4,
+      "mean_invalid_tool_calls": 0,
+      "mean_total_tokens": 362238,
+      "total_tokens": 362238,
+      "tokens_per_tool_call": 45279.75,
+      "output_tokens_per_second": 65.98,
+      "mean_expected_concept_recall": 0.4,
+      "mean_citations": 9,
+      "stages": {
+        "candidate_retrieval": {
+          "hit_at_5": 0.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.1,
+          "path_recall": 1.0,
+          "required_group_recall": 1.0,
+          "mrr": 0.125,
+          "ndcg_at_10": 0.107,
+          "forbidden_hit_rate": 0.0
+        },
+        "explicit_inspection": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "path_recall": 0.6,
+          "required_group_recall": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7227,
+          "forbidden_hit_rate": 0.0
+        },
+        "cited_retrieval": {
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 0.8,
+          "path_recall": 0.8,
+          "required_group_recall": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.8688,
+          "forbidden_hit_rate": 0.0
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "case_id": "v4-wp-04",
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "category": "secure-import",
+      "question": "Trace a public GitHub URL from validation and clone destination selection through bounded subprocess execution, checkout-size enforcement, and analysis creation.",
+      "expected_concepts": [
+        "URL validation",
+        "secured clone root",
+        "timeout",
+        "size limit",
+        "analysis dispatch"
+      ],
+      "answer_quality": {
+        "matched_expected_concepts": [
+          "URL validation",
+          "timeout"
+        ],
+        "expected_concept_recall": 0.4,
+        "citation_count": 7
+      },
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-04e4f6cb654e4eb9856d4451717f7e48",
+      "actual_models": [],
+      "answer": "Here is the full trace from a submitted public GitHub URL to a stored analysis, all in `backend/app/repository_import.py` (validation + cloning) and `backend/app/api/routes.py` (HTTP entry point + analysis creation), with subprocess execution delegated to `backend/app/processes.py`.\n\n## 1. HTTP entry point\n`POST /api/v1/analysis/github` is handled by `analyze_github_repository` (`backend/app/api/routes.py`, lines 313-333). It first calls `parse_github_repository(request.repository_url)` (just to fail fast on a bad URL), then runs `github_cloner.clone(...)` and `_analyze(...)` in a threadpool, translating `InvalidGitHubRepository` \u2192 422, `GitUnavailableError` \u2192 503, and `GitCloneError`/`RepositoryImportError` \u2192 400.\n\n## 2. URL validation \u2013 `parse_github_repository`\n`backend/app/repository_import.py` lines 45-85. This is a strict allow-list parser, not a generic URL check:\n- Accepts a bare `github.com/...` prefix by upgrading it to `https://`.\n- Rejects anything whose scheme isn't exactly `https` or whose host isn't exactly `github.com`.\n- Rejects embedded credentials (`user:pass@`), explicit ports, query strings, and fragments.\n- Requires the path to resolve to exactly two segments (`owner/repository`); strips a trailing `.git`.\n- Validates `owner` and `name` against `_GITHUB_COMPONENT` (a conservative `[A-Za-z0-9][A-Za-z0-9_.-]{0,99}` pattern) to block path traversal or shell-unsafe characters.\n- Returns a `GitHubRepository(owner, name, clone_url)` where `clone_url` is always rebuilt as `https://github.com/{owner}/{name}.git`, so nothing from the caller's raw string ever reaches the shell/URL used later.\n\n## 3. Clone destination selection\n`GitHubRepositoryCloner.clone()` (lines 118-220):\n- Re-validates the URL via `parse_github_repository` again (defense in depth).\n- Calls `_validated_clone_root()` (lines 105-115), which enforces that the configured `clone_root` is a subpath of `allowed_root` (`ONBOARD_CLONE_ROOT` must be inside `ONBOARD_ALLOWED_ROOT`), creating the directory if needed.\n- Builds a destination path as `clone_root / \"{owner}--{name}--{random 10-hex uuid suffix}\"` and immediately asserts `destination.resolve().relative_to(clone_root)` (line 129) so the generated name can't escape the clone root.\n- Confirms `git` is on `PATH` via `shutil.which`, raising `GitUnavailableError` otherwise.\n\n## 4. Bounded subprocess execution\nThe clone command is assembled as an argv list (never a shell string): `git -c credential.helper= clone --depth 1 --filter=blob:none --no-tags --single-branch -- <clone_url> <destination>` (lines 141-154). It is executed through `run_logged_process` (`backend/app/processes.py`, lines 27-143), which:\n- Refuses an empty command and sanitizes it for logging.\n- Runs via `subprocess.Popen(..., shell=False, ...)`, streaming stdout/stderr line-by-line into diagnostics rather than buffering unboundedly.\n- Is invoked with `cwd=clone_root`, `timeout_seconds=self.timeout_seconds`, and an environment overlay of `GIT_TERMINAL_PROMPT=0` / `GCM_INTERACTIVE=Never` to guarantee the clone can never block on an interactive credential prompt.\nBack in `clone()`, a `subprocess.TimeoutExpired` or `OSError` triggers `_cleanup(destination)` and raises `GitCloneError`; a non-zero return code likewise cleans up and raises with a truncated (500-char) stderr tail; and a missing `.git` directory after a \"successful\" run is treated as a failure too.\n\n## 5. Checkout-size enforcement\nAfter a structurally valid clone, `_checkout_size(destination)` (lines 248-268) walks the checkout with `os.walk(..., followlinks=False)`, skipping symlinked subdirectories, and accumulates `file_count`/`size_bytes` using `stat(follow_symlinks=False)`, short-circuiting as soon as either configured limit (`max_clone_files`, `max_clone_bytes`) is exceeded. Back in `clone()` (lines 188-196), if either limit is breached the destination is deleted via `_cleanup` and a `GitCloneError` naming the offending counts is raised \u2014 so an oversized or exploit-shaped checkout never reaches the analyzer. `_cleanup` itself (lines 273-288) re-checks that the path being deleted resolves inside `clone_root` before calling `shutil.rmtree`, refusing (and logging) any cleanup attempt outside that root.\n\nOn success, a `.waypoint-managed` marker file containing the clone URL is written (used later by `repository_identity()` to recover the GitHub origin for the issues feature), and `_prune_old_clones` removes managed clones beyond `max_retained_clones` before the resolved destination path is returned to the caller.\n\n## 6. Analysis creation\nBack in `analyze_github_repository`, the returned `root` path and the validated repository `name` are passed to `_analyze(root, identity.name)` (`backend/app/api/routes.py`, lines 223-241), which:\n- Runs `RepositoryAnalyzer().analyze(root)` to build the full code graph.\n- Overrides `repository_name` on the report if one was supplied (the GitHub repo's short name).\n- Persists the report as a new `AnalysisSession` via `analysis_sessions.create(root, report)`.\n- Warms the retrieval index via `repository_indexes.get(session)`.\n- Returns `GraphQueryService(session.report).overview()` as the HTTP response, which is the `AnalysisReport`/overview the frontend uses to obtain an `analysis_id` for all subsequent endpoints.\n\nThe same `GitHubRepositoryCloner.clone` \u2192 `_analyze` sequence is reused verbatim by the MCP tool `clone_and_analyze_github_repository` in `backend/app/mcp_server.py`, confirming this pipeline (validate \u2192 select destination \u2192 bounded git subprocess \u2192 size enforcement \u2192 analysis creation) is the single code path for turning a public GitHub URL into an analyzed repository, regardless of whether it's invoked over HTTP or MCP.",
+      "citations": [
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 44,
+            "start_column": 0,
+            "end_line": 85,
+            "end_column": 0
+          },
+          "title": "parse_github_repository: strict GitHub URL validation",
+          "excerpt": "@traced(\"repository.github_url.validate\")\ndef parse_github_repository(value: str) -> GitHubRepository:\n    candidate = value.strip()\n    if candidate.lower().startswith(\"github.com/\"):\n        candidate = f\"https://{candidate}\"\n    parsed = urlparse(candidate)\n    if parsed.scheme.lower() != \"https\" or parsed.hostname != \"github.com\":\n        raise InvalidGitHubRepository(",
+          "relevance": "Shows the allow-list validation (https-only, github.com host, no credentials/port/query/fragment, exactly owner/repo path, safe-character regex) before any clone is attempted."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 88,
+            "start_column": 0,
+            "end_line": 129,
+            "end_column": 0
+          },
+          "title": "GitHubRepositoryCloner: clone-root validation and destination selection",
+          "excerpt": "class GitHubRepositoryCloner:\n    def __init__(\n        self,\n        clone_root: Path,\n        allowed_root: Path,\n        timeout_seconds: int,\n        max_clone_bytes: int = 1_000_000_000,\n        max_clone_files: int = 100_000,",
+          "relevance": "Shows _validated_clone_root enforcing clone_root is inside allowed_root and clone() building a UUID-suffixed destination path re-validated to stay inside clone_root."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 141,
+            "start_column": 0,
+            "end_line": 220,
+            "end_column": 0
+          },
+          "title": "Shallow clone command, error handling, and size check gate",
+          "excerpt": "        command = [\n            git,\n            \"-c\",\n            \"credential.helper=\",\n            \"clone\",\n            \"--depth\",\n            \"1\",\n            \"--filter=blob:none\",",
+          "relevance": "Shows the exact argv-based git command, invocation via run_logged_process with a timeout and non-interactive environment, and the checkout-size gate that deletes and rejects oversized clones before returning the destination."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 248,
+            "start_column": 0,
+            "end_line": 288,
+            "end_column": 0
+          },
+          "title": "_checkout_size and _cleanup: bounded walk and safe deletion",
+          "excerpt": "    def _checkout_size(self, destination: Path) -> tuple[int, int]:\n        file_count = 0\n        size_bytes = 0\n        for current_root, directories, files in os.walk(\n            destination, followlinks=False\n        ):\n            directories[:] = [\n                directory",
+          "relevance": "Shows how checkout size/file-count is measured (symlink-safe os.walk with early exit) and how cleanup refuses to delete anything outside the configured clone root."
+        },
+        {
+          "node_id": "37888013c17117142056812a",
+          "qualified_name": "backend.app.processes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/processes.py",
+            "start_line": 27,
+            "start_column": 0,
+            "end_line": 60,
+            "end_column": 0
+          },
+          "title": "run_logged_process: shell-free bounded subprocess execution",
+          "excerpt": "def run_logged_process(\n    command: Sequence[str],\n    *,\n    cwd: Path,\n    timeout_seconds: float = 60.0,\n    environment: Mapping[str, str] | None = None,\n) -> ProcessResult:\n    \"\"\"Run a shell-free subprocess and stream every output line to diagnostics.\"\"\"",
+          "relevance": "Shows the shared subprocess helper used for the git clone: shell=False, explicit cwd/timeout, environment overlay, and streamed logging."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 313,
+            "start_column": 0,
+            "end_line": 333,
+            "end_column": 0
+          },
+          "title": "analyze_github_repository HTTP entry point",
+          "excerpt": "async def analyze_github_repository(request: GitHubAnalysisRequest) -> AnalysisReport:\n    \"\"\"Shallow-clones a public GitHub repository and analyzes it.\n\n    HTTP entry point: POST /api/v1/analysis/github with a GitHubAnalysisRequest\n    body ({\"repository_url\": str}, pre-validated by validate_repository_url).\n    Delegates cloning to github_cloner.clone (GitHubRepositoryCloner in\n    backend/app/repository_import.py) and analysis to _analyze, both in a\n    threadpool; maps invalid URLs/unavailable git/clone failures to 422/503/400.",
+          "relevance": "Shows the POST /api/v1/analysis/github handler that validates the URL, calls the cloner, then calls _analyze, mapping exceptions to HTTP status codes."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 223,
+            "start_column": 0,
+            "end_line": 241,
+            "end_column": 0
+          },
+          "title": "_analyze: analysis creation and session persistence",
+          "excerpt": "def _analyze(root: Path, repository_name: str | None = None) -> AnalysisReport:\n    \"\"\"Runs static analysis on a repository, stores the result, and returns its overview.\n\n    Input: a resolved filesystem path to a repository root (already validated or\n    freshly cloned) and an optional display name override. Runs\n    RepositoryAnalyzer().analyze, persists the report as a new AnalysisSession via\n    analysis_sessions.create, warms the retrieval index via repository_indexes.get,\n    then returns GraphQueryService(...).overview(). Executed inside a threadpool by",
+          "relevance": "Shows how the cloned repository root is analyzed, stored as an AnalysisSession, indexed, and returned as the overview response that yields the analysis_id."
+        }
+      ],
+      "candidate_retrieval": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/api/routes.py",
+          "backend/app/issues/service.py",
+          "backend/app/agent/onboarding.py",
+          "backend/tests/test_repository_import.py",
+          "backend/app/graph/analyzer.py",
+          "backend/app/mcp_server.py",
+          "backend/app/agent/issues.py",
+          "verification/scripts/live_multistep_demo.py",
+          "backend/app/agent/service.py",
+          "backend/tests/test_api.py",
+          "benchmarks/run_repositories.py",
+          "backend/app/processes.py",
+          "backend/app/issues/models.py",
+          "backend/app/onboarding/service.py",
+          "backend/tests/test_issues.py",
+          "benchmarks/run_parsing_accuracy.py",
+          "backend/app/config.py",
+          "backend/app/onboarding/questions.py",
+          "backend/app/agent/semantic.py",
+          "backend/app/graph/polyglot.py",
+          "backend/app/agent/tool_contracts.py",
+          "backend/app/graph/store.py",
+          "backend/app/graph/models.py",
+          "backend/tests/test_analyzer.py",
+          "backend/app/agent/retrieval.py",
+          "benchmarks/run_agentic_retrieval_v4.py",
+          "backend/tests/test_polyglot_analyzer.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.3,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.6843515475204855,
+        "forbidden_hit_rate": 0.0
+      },
+      "explicit_inspection": {
+        "ranked_paths": [
+          "backend/app/repository_import.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.2,
+        "required_group_recall": 0.25,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.3391602052736161,
+        "forbidden_hit_rate": 0.0
+      },
+      "cited_retrieval": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/processes.py",
+          "backend/app/api/routes.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.6,
+        "required_group_recall": 0.75,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.7227265726449519,
+        "forbidden_hit_rate": 0.0
+      },
+      "tool_trace": [
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 5460.47,
+          "result_bytes": 21818,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_api.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py",
+            "verification/scripts/live_multistep_demo.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/agent/onboarding.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/issues.py",
+            "verification/scripts/live_multistep_demo.py",
+            "backend/app/agent/service.py",
+            "backend/tests/test_api.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 5459.484,
+          "result_bytes": 21394,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/models.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/processes.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_issues.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_parsing_accuracy.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/service.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/agent/issues.py",
+            "backend/app/processes.py",
+            "backend/app/issues/models.py",
+            "backend/app/onboarding/service.py",
+            "backend/tests/test_issues.py",
+            "benchmarks/run_parsing_accuracy.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 5454.814,
+          "result_bytes": 21293,
+          "evidence_files": [
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/agent/service.py",
+            "backend/app/agent/tool_contracts.py",
+            "backend/app/config.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/config.py",
+            "backend/app/onboarding/questions.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/agent/service.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/issues/service.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/agent/tool_contracts.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 5457.768,
+          "result_bytes": 22624,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/store.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/agent/service.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/graph/store.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/issues/service.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/agent/issues.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/repository_import.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/models.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 3.568,
+          "result_bytes": 11405,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 699.833,
+          "result_bytes": 19135,
+          "evidence_files": [
+            "backend/app/agent/retrieval.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/store.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/tests/test_analyzer.py",
+            "backend/tests/test_polyglot_analyzer.py",
+            "benchmarks/run_agentic_retrieval_v4.py"
+          ],
+          "candidate_files": [
+            "backend/app/graph/analyzer.py",
+            "backend/app/api/routes.py",
+            "backend/app/mcp_server.py",
+            "backend/tests/test_analyzer.py",
+            "backend/app/agent/retrieval.py",
+            "backend/app/graph/store.py",
+            "benchmarks/run_agentic_retrieval_v4.py",
+            "backend/tests/test_polyglot_analyzer.py",
+            "backend/app/issues/service.py",
+            "backend/app/graph/polyglot.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 1.609,
+          "result_bytes": 2400,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        }
+      ],
+      "repository_tool_calls": 7,
+      "invalid_tool_calls": 0,
+      "total_model_rounds": 4,
+      "duration_ms": 106506.493,
+      "input_tokens": 564861,
+      "output_tokens": 7885,
+      "total_tokens": 572746,
+      "estimated_cost_usd": 2.2507961,
+      "ttft_ms": null,
+      "ttft_status": "unavailable_sdk_first_assistant_event_ms=5773.397; unavailable_sdk_first_assistant_event_ms=6033.498; unavailable_sdk_first_assistant_event_ms=10201.254; unavailable_sdk_first_assistant_event_ms=6299.912",
+      "validation_status": "passed"
+    },
+    {
+      "case_id": "v4-wp-04",
+      "repository": "waypoint",
+      "split": "development",
+      "language": "python",
+      "category": "secure-import",
+      "question": "Trace a public GitHub URL from validation and clone destination selection through bounded subprocess execution, checkout-size enforcement, and analysis creation.",
+      "expected_concepts": [
+        "URL validation",
+        "secured clone root",
+        "timeout",
+        "size limit",
+        "analysis dispatch"
+      ],
+      "answer_quality": {
+        "matched_expected_concepts": [
+          "URL validation",
+          "timeout"
+        ],
+        "expected_concept_recall": 0.4,
+        "citation_count": 9
+      },
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-1684417b35db4e4fb4c5948fe889f053",
+      "actual_models": [],
+      "answer": "## Public GitHub URL lifecycle\n\nWaypoint runs a submitted GitHub URL through six ordered stages: URL validation, secure destination selection, a bounded shell-free `git clone`, timeout handling, checkout-size enforcement, and finally analysis-session creation. The flow starts at the FastAPI endpoint `analyze_github_repository` and is largely implemented in `backend/app/repository_import.py`.\n\n### 1. HTTP entry and URL validation\n\nThe POST `/api/v1/analysis/github` route receives a `GitHubAnalysisRequest`, then calls `parse_github_repository(request.repository_url)` and delegates cloning + analysis to a threadpool, mapping failures to HTTP 422/503/400 (`analyze_github_repository`, routes.py 313-333).\n\n`parse_github_repository` (repository_import.py 44-85) is the validator. It:\n\n- Normalizes bare `github.com/...` input to an `https://` URL, then requires the scheme to be exactly `https` and the host to be exactly `github.com`.\n- Rejects embedded credentials (`username`/`password`), any explicit port, and any query string, fragment, or params.\n- Requires the path to be exactly two segments (`owner`/`repository`), strips a trailing `.git`, and enforces each component against the `_GITHUB_COMPONENT` character regex.\n- Returns a frozen `GitHubRepository(owner, name, clone_url=\"https://github.com/{owner}/{name}.git\")`.\n\n### 2. Clone destination selection\n\n`GitHubRepositoryCloner.clone` (repository_import.py 117-220) re-parses the URL and calls `_validated_clone_root()` (105-115), which confirms `clone_root` is inside `allowed_root` (raising `RepositoryImportError` otherwise), creates it, and verifies it is a directory. The destination is a unique per-clone directory named `{owner}--{name}--{uuid hex[:10]}`, and line 129 asserts the resolved destination stays under `clone_root` (a path-escape guard) before logging `repository.clone_requested`.\n\n### 3. Bounded, shell-free subprocess execution\n\nGit is located via `shutil.which(\"git\")`; if absent, a `GitUnavailableError` is raised (503). The clone command is a fixed argument list \u2014 `git -c credential.helper= clone --depth 1 --filter=blob:none --no-tags --single-branch -- <clone_url> <destination>` (141-154) \u2014 i.e. a shallow, blobless, single-branch, non-interactive clone with the `--` separator preventing option injection.\n\nExecution goes through `run_logged_process` (processes.py 27-143), which:\n\n- Runs `subprocess.Popen(..., shell=False, ...)` \u2014 no shell interpolation \u2014 with `GIT_TERMINAL_PROMPT=0` and `GCM_INTERACTIVE=Never` in the environment to prevent credential prompts.\n- Streams stdout/stderr on daemon threads into diagnostics logs.\n- Enforces the timeout via `process.wait(timeout=timeout_seconds)`; on `TimeoutExpired` it kills and reaps the process, logs `subprocess.timeout`, and re-raises.\n- Returns a `ProcessResult` (return code, captured output, duration).\n\n### 4. Timeout and failure handling\n\nBack in `clone`, a `TimeoutExpired` becomes a `GitCloneError` about exceeding the configured second limit (after cleanup); an `OSError` becomes a start-failure `GitCloneError`; a non-zero return code raises `GitCloneError` with the last (truncated) stderr line; and a missing `.git`/directory yields \"Git completed without creating a valid repository.\" Every failure path calls `_cleanup`, which refuses to delete anything outside `clone_root` before `shutil.rmtree` (166-180, 273-295).\n\n### 5. Checkout-size enforcement\n\nAfter a successful clone, `_checkout_size(destination)` (248-268) walks the tree with `followlinks=False`, prunes symlinked directories, and sums file counts and `stat(follow_symlinks=False).st_size`, short-circuiting as soon as either `max_clone_files` or `max_clone_bytes` is exceeded. If `file_count > max_clone_files` or `size_bytes > max_clone_bytes`, the clone is deleted and a `GitCloneError` reports the overage (182-196). The clone is then registered by writing a `.waypoint-managed` marker containing the clone URL, and `_prune_old_clones` enforces `max_retained_clones` by removing the oldest managed clones (197-246). These limits come from `settings` (config.py `Settings`: `clone_root`, `allowed_root`, `clone_timeout_seconds`, `max_clone_bytes`, `max_clone_files`, `max_retained_clones`).\n\n### 6. Analysis creation\n\nThe resolved clone path is returned to the route, which calls `_analyze(root, identity.name)` (routes.py 223-241). `_analyze` runs `RepositoryAnalyzer().analyze(root)`, optionally overrides the repository display name, persists the report as a new session via `analysis_sessions.create`, warms the retrieval index with `repository_indexes.get(session)`, and returns `GraphQueryService(session.report).overview()` \u2014 producing the `analysis_id` that every other endpoint uses. Note that the analyzer's own `discover_source_files` independently re-guards against symlink/clone escapes when it walks the checked-out tree.\n\nThe MCP tool `clone_and_analyze_github_repository` (mcp_server.py 98-110) mirrors this same sequence, constructing a `GitHubRepositoryCloner` from the same settings and calling `_analyze`.",
+      "citations": [
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 311,
+            "start_column": 0,
+            "end_line": 333,
+            "end_column": 0
+          },
+          "title": "analyze_github_repository HTTP entry point",
+          "excerpt": "@router.post(\"/analysis/github\", response_model=AnalysisReport)\n@traced(\"http.analysis_github\")\nasync def analyze_github_repository(request: GitHubAnalysisRequest) -> AnalysisReport:\n    \"\"\"Shallow-clones a public GitHub repository and analyzes it.\n\n    HTTP entry point: POST /api/v1/analysis/github with a GitHubAnalysisRequest\n    body ({\"repository_url\": str}, pre-validated by validate_repository_url).\n    Delegates cloning to github_cloner.clone (GitHubRepositoryCloner in",
+          "relevance": "POST /analysis/github validates the URL, clones in a threadpool, and maps import errors to 422/503/400."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 44,
+            "start_column": 0,
+            "end_line": 85,
+            "end_column": 0
+          },
+          "title": "parse_github_repository URL validation",
+          "excerpt": "@traced(\"repository.github_url.validate\")\ndef parse_github_repository(value: str) -> GitHubRepository:\n    candidate = value.strip()\n    if candidate.lower().startswith(\"github.com/\"):\n        candidate = f\"https://{candidate}\"\n    parsed = urlparse(candidate)\n    if parsed.scheme.lower() != \"https\" or parsed.hostname != \"github.com\":\n        raise InvalidGitHubRepository(",
+          "relevance": "Enforces https/github.com host, no credentials/port/query/fragment, two path segments, character regex, and builds the canonical clone_url."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 88,
+            "start_column": 0,
+            "end_line": 129,
+            "end_column": 0
+          },
+          "title": "Cloner init and destination selection",
+          "excerpt": "class GitHubRepositoryCloner:\n    def __init__(\n        self,\n        clone_root: Path,\n        allowed_root: Path,\n        timeout_seconds: int,\n        max_clone_bytes: int = 1_000_000_000,\n        max_clone_files: int = 100_000,",
+          "relevance": "Validates clone_root inside allowed_root, locates git, and builds a unique uuid-suffixed destination guarded against path escape."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 141,
+            "start_column": 0,
+            "end_line": 220,
+            "end_column": 0
+          },
+          "title": "Bounded clone command, error handling, size gate, registration",
+          "excerpt": "        command = [\n            git,\n            \"-c\",\n            \"credential.helper=\",\n            \"clone\",\n            \"--depth\",\n            \"1\",\n            \"--filter=blob:none\",",
+          "relevance": "Fixed shallow/blobless/single-branch git argument list, timeout/OSError/non-zero handling with cleanup, checkout-size enforcement, .waypoint-managed marker, and pruning."
+        },
+        {
+          "node_id": "86d978fcf0c1ec3bcee872c0",
+          "qualified_name": "backend.app.repository_import",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/repository_import.py",
+            "start_line": 248,
+            "start_column": 0,
+            "end_line": 295,
+            "end_column": 0
+          },
+          "title": "_checkout_size and _cleanup",
+          "excerpt": "    def _checkout_size(self, destination: Path) -> tuple[int, int]:\n        file_count = 0\n        size_bytes = 0\n        for current_root, directories, files in os.walk(\n            destination, followlinks=False\n        ):\n            directories[:] = [\n                directory",
+          "relevance": "Symlink-safe walk summing file counts and bytes with short-circuit on limits, and cleanup restricted to clone_root."
+        },
+        {
+          "node_id": "37888013c17117142056812a",
+          "qualified_name": "backend.app.processes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/processes.py",
+            "start_line": 27,
+            "start_column": 0,
+            "end_line": 143,
+            "end_column": 0
+          },
+          "title": "run_logged_process bounded subprocess",
+          "excerpt": "def run_logged_process(\n    command: Sequence[str],\n    *,\n    cwd: Path,\n    timeout_seconds: float = 60.0,\n    environment: Mapping[str, str] | None = None,\n) -> ProcessResult:\n    \"\"\"Run a shell-free subprocess and stream every output line to diagnostics.\"\"\"",
+          "relevance": "shell=False Popen with sanitized command, streamed output, and process.wait timeout that kills and re-raises on TimeoutExpired."
+        },
+        {
+          "node_id": "7dd0bc42e3a0b6038ad8e21b",
+          "qualified_name": "backend.app.api.routes",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/api/routes.py",
+            "start_line": 223,
+            "start_column": 0,
+            "end_line": 241,
+            "end_column": 0
+          },
+          "title": "_analyze creates the analysis session",
+          "excerpt": "def _analyze(root: Path, repository_name: str | None = None) -> AnalysisReport:\n    \"\"\"Runs static analysis on a repository, stores the result, and returns its overview.\n\n    Input: a resolved filesystem path to a repository root (already validated or\n    freshly cloned) and an optional display name override. Runs\n    RepositoryAnalyzer().analyze, persists the report as a new AnalysisSession via\n    analysis_sessions.create, warms the retrieval index via repository_indexes.get,\n    then returns GraphQueryService(...).overview(). Executed inside a threadpool by",
+          "relevance": "Runs RepositoryAnalyzer().analyze, persists via analysis_sessions.create, warms retrieval index, returns overview."
+        },
+        {
+          "node_id": "ad7228874439fb2ab4799214",
+          "qualified_name": "backend.app.config",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/config.py",
+            "start_line": 46,
+            "start_column": 0,
+            "end_line": 90,
+            "end_column": 0
+          },
+          "title": "Settings clone limits",
+          "excerpt": "class Settings:\n    app_name: str\n    log_level: str\n    log_value_limit: int\n    trace_functions: bool\n    max_trace: bool\n    trace_file_enabled: bool\n    trace_path: Path",
+          "relevance": "Defines clone_root, allowed_root, clone_timeout_seconds, max_clone_bytes, max_clone_files, max_retained_clones used by the cloner."
+        },
+        {
+          "node_id": "fe4ee8369016e9e333dd7c27",
+          "qualified_name": "backend.app.mcp_server",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/mcp_server.py",
+            "start_line": 98,
+            "start_column": 0,
+            "end_line": 110,
+            "end_column": 0
+          },
+          "title": "MCP clone_and_analyze variant",
+          "excerpt": "def clone_and_analyze_github_repository(repository_url: str) -> dict[str, Any]:\n    \"\"\"Securely shallow-clone a public GitHub repository and analyze it.\"\"\"\n    with trace_context():\n        identity = parse_github_repository(repository_url)\n        cloner = GitHubRepositoryCloner(\n            clone_root=settings.clone_root,\n            allowed_root=settings.allowed_root,\n            timeout_seconds=settings.clone_timeout_seconds,",
+          "relevance": "Mirror of the same clone+analyze pipeline exposed as an MCP tool using the same settings."
+        }
+      ],
+      "candidate_retrieval": {
+        "ranked_paths": [
+          "README.md",
+          "benchmarks/README.md",
+          "frontend/package.json",
+          "frontend/tsconfig.json",
+          "frontend/vite.config.js",
+          "frontend/vite.config.ts",
+          "pyproject.toml",
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py",
+          "backend/app/agent/service.py",
+          "backend/app/onboarding/service.py",
+          "backend/app/issues/service.py",
+          "backend/app/main.py",
+          "backend/app/api/__init__.py",
+          "frontend/coverage/src/App.tsx.html",
+          "backend/app/repository_import.py",
+          "backend/tests/test_repository_import.py",
+          "backend/app/agent/onboarding.py",
+          "backend/app/graph/analyzer.py",
+          "backend/app/agent/issues.py",
+          "verification/scripts/live_multistep_demo.py",
+          "benchmarks/run_repositories.py",
+          "frontend/src/api.ts",
+          "backend/app/config.py",
+          "backend/app/agent/tool_contracts.py",
+          "backend/app/processes.py",
+          "backend/app/onboarding/questions.py",
+          "backend/app/issues/models.py"
+        ],
+        "hit_at_5": 0.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.1,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 0.125,
+        "ndcg_at_10": 0.10699313236726378,
+        "forbidden_hit_rate": 0.0
+      },
+      "explicit_inspection": {
+        "ranked_paths": [
+          "backend/app/repository_import.py",
+          "backend/app/processes.py",
+          "backend/app/api/routes.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.6,
+        "required_group_recall": 0.75,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.7227265726449519,
+        "forbidden_hit_rate": 0.0
+      },
+      "cited_retrieval": {
+        "ranked_paths": [
+          "backend/app/api/routes.py",
+          "backend/app/repository_import.py",
+          "backend/app/processes.py",
+          "backend/app/config.py",
+          "backend/app/mcp_server.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.8,
+        "path_recall": 0.8,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.8687949224876582,
+        "forbidden_hit_rate": 0.0
+      },
+      "tool_trace": [
+        {
+          "round": 1,
+          "tool": "get_repository_overview",
+          "status": "completed",
+          "duration_ms": 28.761,
+          "result_bytes": 31248,
+          "evidence_files": [
+            "README.md",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/onboarding/service.py",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml"
+          ],
+          "candidate_files": [
+            "README.md",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml",
+            "backend/app/api/routes.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/service.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/issues/service.py",
+            "backend/app/main.py",
+            "backend/app/api/__init__.py",
+            "frontend/coverage/src/App.tsx.html"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 1386.347,
+          "result_bytes": 21066,
+          "evidence_files": [
+            "backend/app/agent/issues.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/api.ts",
+            "verification/scripts/live_multistep_demo.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/agent/onboarding.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/agent/issues.py",
+            "verification/scripts/live_multistep_demo.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/service.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/api.ts"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 1389.057,
+          "result_bytes": 19360,
+          "evidence_files": [
+            "backend/app/agent/tool_contracts.py",
+            "backend/app/api/routes.py",
+            "backend/app/config.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/issues/models.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/processes.py",
+            "backend/app/repository_import.py",
+            "backend/tests/test_repository_import.py",
+            "benchmarks/run_repositories.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py",
+            "backend/app/config.py",
+            "backend/app/issues/service.py",
+            "backend/tests/test_repository_import.py",
+            "backend/app/graph/analyzer.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/agent/tool_contracts.py",
+            "backend/app/api/routes.py",
+            "backend/app/processes.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/mcp_server.py",
+            "backend/app/issues/models.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 3.49,
+          "result_bytes": 11405,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 4.653,
+          "result_bytes": 5726,
+          "evidence_files": [
+            "backend/app/processes.py"
+          ],
+          "candidate_files": [
+            "backend/app/processes.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/processes.py"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 5.065,
+          "result_bytes": 5480,
+          "evidence_files": [
+            "backend/app/api/routes.py"
+          ],
+          "candidate_files": [
+            "backend/app/api/routes.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/api/routes.py"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 2.19,
+          "result_bytes": 2400,
+          "evidence_files": [
+            "backend/app/repository_import.py"
+          ],
+          "candidate_files": [
+            "backend/app/repository_import.py"
+          ],
+          "explicitly_inspected_files": [
+            "backend/app/repository_import.py"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 393.459,
+          "result_bytes": 1600,
+          "evidence_files": [
+            "backend/app/api/routes.py"
+          ],
+          "candidate_files": [
+            "backend/app/api/routes.py"
+          ],
+          "explicitly_inspected_files": []
+        }
+      ],
+      "repository_tool_calls": 8,
+      "invalid_tool_calls": 0,
+      "total_model_rounds": 4,
+      "duration_ms": 90254.047,
+      "input_tokens": 356283,
+      "output_tokens": 5955,
+      "total_tokens": 362238,
+      "estimated_cost_usd": 3.109464,
+      "ttft_ms": null,
+      "ttft_status": "unavailable_sdk_first_assistant_event_ms=5289.034; unavailable_sdk_first_assistant_event_ms=6369.755; unavailable_sdk_first_assistant_event_ms=5889.657; unavailable_sdk_first_assistant_event_ms=6390.155",
+      "validation_status": "passed"
+    },
+    {
+      "case_id": "v4-wp-07",
+      "repository": "waypoint",
+      "split": "development",
+      "language": "typescript",
+      "category": "explore-ui",
+      "question": "Trace how repository files become file cards, how visible graph edges are selected, and how a selected symbol opens evidence in the inspector and source viewer.",
+      "expected_concepts": [
+        "file cards",
+        "edge filtering",
+        "selection",
+        "inspector",
+        "source evidence"
+      ],
+      "answer_quality": {
+        "matched_expected_concepts": [
+          "file cards",
+          "edge filtering",
+          "selection",
+          "inspector"
+        ],
+        "expected_concept_recall": 0.8,
+        "citation_count": 9
+      },
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-00f7d5647b4d4185881eaa4abc377f75",
+      "actual_models": [],
+      "answer": "Waypoint's explore workspace is built from three linked pieces of frontend state \u2014 the analyzed `AnalysisReport` (nodes/edges), a `Selection` (a chosen node or edge), and a fetched `SourceDocument` \u2014 all owned by `App` (`frontend/src/App.tsx`) and passed down to `GraphView`, `Inspector`, and `SourcePanel`.\n\n## 1. Files becoming file cards\n\nWhen the graph presentation mode is `\"files\"`, `GraphCanvas` (inside `frontend/src/components/GraphView.tsx`) calls `fileGroups()` on every render pass:\n\n- `fileGroups()` groups all graph nodes by their source file path (via `nodePath`, which reads `node.span.path`), skipping the synthetic `repository` node.\n- For each path it picks a `primary` node (the `module` node if present, otherwise the first member), keeps `members` filtered by the currently visible node kinds and the search box text, and computes `uses` \u2014 other-file symbols referenced from this file via non-`contains` edges (imports/calls/instantiations), so a card can show \"uses across files\".\n- An `externalPackageGraph()` pass first synthesizes one extra pseudo-node (`__waypoint_external_packages__`) from unresolved-import references whose metadata marks them `external`, so third-party dependencies get their own card instead of being silently dropped.\n- The resulting `FileGroup[]` (capped at 250 groups) is handed to `layoutFileGraph()`, which lays out one dagre node per file path and renders each as a `file-graph-card`: a heading with detected language/filename/path, a member list (each member is a clickable button that calls `onSelect({type:'node', value: member})`), a \"Uses across files\" section, and a footer summarizing visible-symbol/external-use counts. These become React Flow `Node` objects sized per the user's chosen `FileCardSize` (compact/comfortable/large).\n\nSo a \"file card\" is not a raw file \u2014 it's a computed group of the file's graph nodes plus its outward relationships, rendered as one React Flow node.\n\n## 2. How visible graph edges are selected\n\nEdge visibility is filtered at two levels:\n\n- **User toggle**: `App` keeps a `visibleEdgeKinds: Set<EdgeKind>` (default: contains, imports, may_call, instantiates) and a `visibleNodeKinds` set, toggled via `toggleEdgeKind`/`toggleNodeKind`.\n- **File presentation**: inside `layoutFileGraph`, every edge is checked against `visibleEdgeKinds.has(edge.kind)`, then both endpoints are mapped back to their file paths; edges are dropped if either endpoint has no path, both endpoints are the same file (intra-file edges are implicit in \"members\"), or either file isn't in the currently rendered group set. Surviving edges are grouped by `(sourcePath, targetPath, kind)` so repeated symbol-level edges between two files collapse into one visual edge labeled with a count.\n- **Symbol presentation**: in `GraphCanvas`, node candidates are first filtered by kind + search text, then (if over 400 nodes) truncated to the 400 highest-degree nodes; only edges whose kind is visible AND whose both endpoints survived that node truncation are kept as `visibleEdges`.\n- A bottom-left panel reports \"`N` of `total` nodes \u00b7 `M` edges visible\" so users can see when the view is truncated.\n\nExpanding the graph (`App.expandNode`, on node double-click) calls `fetchNeighborhood(analysisId, node.id, 1)`, which hits `GraphQueryService.neighborhood` on the backend (`backend/app/graph/store.py`) \u2014 a breadth-first search over an undirected adjacency map built from all edges, returning every node/edge within the requested hop depth \u2014 and merges the results into `report.nodes`/`report.edges`, then force-shows all node kinds so the newly revealed neighbors are visible.\n\n## 3. Selecting a symbol \u2192 Inspector and Source viewer\n\nClicking a node/edge (in either presentation, or a member button inside a file card) calls the shared `onSelect` callback, which sets React state `selection: Selection` in `App` (`{type:'node', value: GraphNode}` or `{type:'edge', value: GraphEdge}`).\n\n- `selectedSpan(selection)` derives a `SourceSpan` from the selection (`selection.value.span` for a node, `selection.value.evidence.span` for an edge \u2014 edges carry the source line where the reference/call was actually detected). This becomes `activeSpan`, which the app uses both to highlight the file in `FileTree` and to know what to fetch from the source endpoint.\n- `SourcePanel` (`frontend/src/components/SourcePanel.tsx`) receives `source` (the fetched file content) and `span`; on mount and whenever `span`/`source` change, `focusSpan()` sets the Monaco editor's selection range to `[span.start_line, span.end_line]`, scrolls it into view (`revealLineInCenter`), and applies a `focused-source-line`/`focused-source-gutter` decoration \u2014 this is the visual highlight seen when a symbol or edge is opened in the read-only Monaco viewer. The editor itself is created with `readOnly: true`, matching the project's static-analysis-only guarantee.\n- `Inspector` (`frontend/src/components/Inspector.tsx`) receives the same `selection` plus `analysisId`. It resets its `usage`/`answer` state whenever the selected node's id changes, and \u2014 only when the user switches to the \"usage\" tab \u2014 calls `fetchSymbolUsage(analysisId, selectedNode.id)`. That hits the `/nodes/{node_id}/usage` route, which calls `SemanticRepositoryTools.symbol_relationships(node_id)` (`backend/app/agent/semantic.py`): for the selected node this returns every outgoing/incoming edge as a `{relationship, symbol, status, confidence, resolution, evidence}` entry, with `_edge_evidence` reading a small source excerpt around each edge's detected line so the Inspector's usage list can show real code evidence, not just an edge label. `RelationshipList` renders each relationship as a button; clicking one calls `onOpenNode(nodeId)`, which in `App` (`openNodeFromWorkspace`) looks the node up in `report.nodes`, sets it as the new `selection`, and switches back to the \"explore\" workspace \u2014 so following a relationship in the Inspector re-triggers the same select \u2192 highlight-in-source flow.\n- The Inspector also has an \"ask\" tab that posts a question via `askRepository`, seeding the agent with this node as `focus_node_id` so the model's investigation starts from the same relationship evidence.\n\nTaken together: file grouping and edge filtering happen entirely client-side over the already-fetched `AnalysisReport`; only neighborhood expansion and symbol usage/relationships require a follow-up API call, both backed by the same typed graph (`GraphQueryService`/`SemanticRepositoryTools`) that the analyzer originally built.",
+      "citations": [
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 142,
+            "start_column": 0,
+            "end_line": 213,
+            "end_column": 0
+          },
+          "title": "fileGroups: files become file-card groups",
+          "excerpt": "function fileGroups(\n  nodes: GraphNode[],\n  edges: GraphEdge[],\n  visibleKinds: Set<NodeKind>,\n  visibleEdgeKinds: Set<EdgeKind>,\n  search: string,\n  externalPackages: Array<{ name: string; files: string[] }> = [],\n): FileGroup[] {",
+          "relevance": "Groups graph nodes by file path, computes members and cross-file 'uses' per file for the file-card presentation."
+        },
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 215,
+            "start_column": 0,
+            "end_line": 383,
+            "end_column": 0
+          },
+          "title": "layoutFileGraph: rendering file cards and their edges",
+          "excerpt": "function layoutFileGraph(\n  groups: FileGroup[],\n  graphNodes: GraphNode[],\n  graphEdges: GraphEdge[],\n  visibleEdgeKinds: Set<EdgeKind>,\n  theme: \"light\" | \"dark\",\n  onSelect: (selection: Selection) => void,\n  cardSize: FileCardSize,",
+          "relevance": "Filters visible edge kinds, collapses symbol-level edges between two files, and renders each file group as a file-graph-card with clickable members/uses."
+        },
+        {
+          "node_id": "4734e330dc9d96a3f596b6c3",
+          "qualified_name": "frontend.src.components.GraphView",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/GraphView.tsx",
+            "start_line": 464,
+            "start_column": 0,
+            "end_line": 611,
+            "end_column": 0
+          },
+          "title": "GraphCanvas: node/edge visibility limits and selection handlers",
+          "excerpt": "function GraphCanvas(props: GraphViewProps) {\n  const rendered = useMemo(() => {\n    if (props.presentation === \"files\") {\n      const external = externalPackageGraph(\n        props.nodes,\n        props.unresolvedReferences,\n      );\n      const graphNodes = external.node",
+          "relevance": "Shows how node/edge kind filters, search, and the 400-node cap determine which edges are visible, and how onNodeClick/onEdgeClick set the Selection."
+        },
+        {
+          "node_id": "4c5e6e9635945bd3c46c021c",
+          "qualified_name": "frontend.src.App",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/App.tsx",
+            "start_line": 100,
+            "start_column": 0,
+            "end_line": 105,
+            "end_column": 0
+          },
+          "title": "selectedSpan derives the active source span from a Selection",
+          "excerpt": "function selectedSpan(selection: Selection): SourceSpan | null {\n  if (!selection) return null;\n  return selection.type === \"node\"\n    ? selection.value.span\n    : selection.value.evidence.span;\n}",
+          "relevance": "Shows how a selected node or edge is converted into the SourceSpan used to drive the source viewer."
+        },
+        {
+          "node_id": "4c5e6e9635945bd3c46c021c",
+          "qualified_name": "frontend.src.App",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/App.tsx",
+            "start_line": 367,
+            "start_column": 0,
+            "end_line": 426,
+            "end_column": 0
+          },
+          "title": "handleFileSelect, expandNode, openNodeFromWorkspace",
+          "excerpt": "  const handleFileSelect = (node: GraphNode) => {\n    setSelectedFilePath(null);\n    setSelection({ type: \"node\", value: node });\n    if (!visibleNodeKinds.has(\"module\")) {\n      setVisibleNodeKinds((current) => new Set([...current, \"module\"]));\n    }\n  };\n",
+          "relevance": "Shows how selecting a file/node updates Selection state, how double-click expansion fetches a neighborhood, and how Inspector relationship clicks re-select a node."
+        },
+        {
+          "node_id": "3c39984aff5a3eaed80fcfd7",
+          "qualified_name": "frontend.src.components.SourcePanel",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/SourcePanel.tsx",
+            "start_line": 1,
+            "start_column": 0,
+            "end_line": 122,
+            "end_column": 0
+          },
+          "title": "SourcePanel: read-only Monaco viewer focusing a span",
+          "excerpt": "import { useCallback, useEffect, useRef } from \"react\";\nimport Editor, { type OnMount } from \"@monaco-editor/react\";\nimport type { editor } from \"monaco-editor\";\nimport { Code2, FileWarning, LoaderCircle } from \"lucide-react\";\nimport type { SourceDocument, SourceSpan } from \"../types\";\n\nexport function SourcePanel({\n  source,",
+          "relevance": "Shows the read-only Monaco editor highlighting and scrolling to the selected node/edge's source span."
+        },
+        {
+          "node_id": "14283dc3c338ce8accfebc11",
+          "qualified_name": "frontend.src.components.Inspector",
+          "kind": "module",
+          "span": {
+            "path": "frontend/src/components/Inspector.tsx",
+            "start_line": 1,
+            "start_column": 0,
+            "end_line": 250,
+            "end_column": 0
+          },
+          "title": "Inspector: usage tab and relationship navigation",
+          "excerpt": "import { useEffect, useState } from \"react\";\nimport {\n  ArrowDownLeft,\n  ArrowUpRight,\n  Braces,\n  CheckCircle2,\n  GitBranch,\n  LoaderCircle,",
+          "relevance": "Shows the Inspector fetching symbol usage on tab switch and rendering relationships that call onOpenNode to re-select a symbol."
+        },
+        {
+          "node_id": "366176b10aa61f4e55235931",
+          "qualified_name": "backend.app.agent.semantic",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/agent/semantic.py",
+            "start_line": 221,
+            "start_column": 0,
+            "end_line": 247,
+            "end_column": 0
+          },
+          "title": "_edge_evidence: source excerpt behind an edge",
+          "excerpt": "    def _edge_evidence(self, edge: GraphEdge) -> dict[str, Any] | None:\n        \"\"\"Reads a small source excerpt around the line where a graph edge (call/import/etc.) was detected.\n\n        Input: `edge` is a GraphEdge whose `evidence.span` marks the source location\n        the edge was inferred from; reads a narrow window (one line before to up to\n        eight lines after) capped at 2,000 characters, since edges need only enough\n        context to show the reference, not the whole containing function. Called by\n        symbol_relationships to back each incoming/outgoing relationship with the",
+          "relevance": "Backend logic that reads the real source line behind each relationship shown in the Inspector's usage list."
+        },
+        {
+          "node_id": "f867ab279f06b16ae16d7978",
+          "qualified_name": "backend.app.graph.store",
+          "kind": "module",
+          "span": {
+            "path": "backend/app/graph/store.py",
+            "start_line": 446,
+            "start_column": 0,
+            "end_line": 483,
+            "end_column": 0
+          },
+          "title": "GraphQueryService.neighborhood: BFS expansion",
+          "excerpt": "    def neighborhood(self, node_id: str, depth: int) -> GraphNeighborhood:\n        \"\"\"Breadth-first-searches the undirected graph out to `depth` hops from `node_id` and returns that induced subgraph.\n\n        Input: a `node_id` that must exist in `self.nodes` (raises `KeyError`\n        otherwise) and a non-negative `depth`. Builds an undirected adjacency\n        map from all edges, then BFS-expands the visited set hop by hop, and\n        returns every node reached plus every edge whose both endpoints were\n        reached. Called by backend/app/api/routes.py's neighborhood endpoint and",
+          "relevance": "Backend logic behind double-click graph expansion that adds newly revealed nodes/edges into the frontend report state."
+        }
+      ],
+      "candidate_retrieval": {
+        "ranked_paths": [
+          "README.md",
+          "benchmarks/README.md",
+          "frontend/package.json",
+          "frontend/tsconfig.json",
+          "frontend/vite.config.js",
+          "frontend/vite.config.ts",
+          "pyproject.toml",
+          "backend/app/api/routes.py",
+          "backend/app/mcp_server.py",
+          "backend/app/agent/service.py",
+          "backend/app/onboarding/service.py",
+          "backend/app/issues/service.py",
+          "backend/app/main.py",
+          "backend/app/api/__init__.py",
+          "frontend/coverage/src/App.tsx.html",
+          "frontend/src/components/FileTree.tsx",
+          "verification/scripts/operational_scorecard.py",
+          "frontend/src/components/GraphView.tsx",
+          "frontend/src/components/OnboardingWorkspace.tsx",
+          "frontend/src/styles.css",
+          "frontend/src/components/InsightsWorkspace.tsx",
+          "frontend/src/components/SourcePanel.tsx",
+          "frontend/src/components/AskWorkspace.tsx",
+          "frontend/src/components/Inspector.tsx",
+          "frontend/src/components/LazyMarkdownContent.tsx",
+          "backend/app/agent/onboarding.py",
+          "backend/app/graph/analyzer.py",
+          "backend/app/graph/polyglot.py",
+          "backend/app/graph/models.py",
+          "backend/app/agent/semantic.py",
+          "backend/app/graph/store.py",
+          "frontend/src/App.tsx",
+          "benchmarks/run_parsing_accuracy.py",
+          "graph-rag-and-vector-validity.md",
+          "backend/app/onboarding/questions.py",
+          "backend/tests/test_polyglot_analyzer.py",
+          "backend/app/onboarding/models.py",
+          "benchmarks/run_repositories.py",
+          "verification/scripts/http_flask_e2e.py",
+          "frontend/src/api.ts",
+          "frontend/src/types.ts",
+          "frontend/src/main.tsx",
+          "frontend/src/components/IssuesWorkspace.tsx"
+        ],
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_10": 0.0,
+        "path_recall": 1.0,
+        "required_group_recall": 1.0,
+        "mrr": 0.05555555555555555,
+        "ndcg_at_10": 0.0,
+        "forbidden_hit_rate": 0.023255813953488372
+      },
+      "explicit_inspection": {
+        "ranked_paths": [
+          "frontend/src/components/GraphView.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Inspector.tsx",
+          "frontend/src/components/SourcePanel.tsx"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 1.0,
+        "path_recall": 0.8,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.8687949224876582,
+        "forbidden_hit_rate": 0.0
+      },
+      "cited_retrieval": {
+        "ranked_paths": [
+          "frontend/src/components/GraphView.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/SourcePanel.tsx",
+          "frontend/src/components/Inspector.tsx",
+          "backend/app/agent/semantic.py",
+          "backend/app/graph/store.py"
+        ],
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_10": 0.6666666666666666,
+        "path_recall": 0.8,
+        "required_group_recall": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.8687949224876582,
+        "forbidden_hit_rate": 0.0
+      },
+      "tool_trace": [
+        {
+          "round": 1,
+          "tool": "get_repository_overview",
+          "status": "completed",
+          "duration_ms": 7.393,
+          "result_bytes": 31248,
+          "evidence_files": [
+            "README.md",
+            "backend/app/agent/service.py",
+            "backend/app/api/routes.py",
+            "backend/app/issues/service.py",
+            "backend/app/mcp_server.py",
+            "backend/app/onboarding/service.py",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml"
+          ],
+          "candidate_files": [
+            "README.md",
+            "benchmarks/README.md",
+            "frontend/package.json",
+            "frontend/tsconfig.json",
+            "frontend/vite.config.js",
+            "frontend/vite.config.ts",
+            "pyproject.toml",
+            "backend/app/api/routes.py",
+            "backend/app/mcp_server.py",
+            "backend/app/agent/service.py",
+            "backend/app/onboarding/service.py",
+            "backend/app/issues/service.py",
+            "backend/app/main.py",
+            "backend/app/api/__init__.py",
+            "frontend/coverage/src/App.tsx.html"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 1415.044,
+          "result_bytes": 18274,
+          "evidence_files": [
+            "backend/app/agent/onboarding.py",
+            "backend/app/onboarding/service.py",
+            "frontend/src/components/AskWorkspace.tsx",
+            "frontend/src/components/FileTree.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/components/InsightsWorkspace.tsx",
+            "frontend/src/components/Inspector.tsx",
+            "frontend/src/components/LazyMarkdownContent.tsx",
+            "frontend/src/components/OnboardingWorkspace.tsx",
+            "frontend/src/components/SourcePanel.tsx",
+            "frontend/src/styles.css",
+            "verification/scripts/operational_scorecard.py"
+          ],
+          "candidate_files": [
+            "frontend/src/components/FileTree.tsx",
+            "verification/scripts/operational_scorecard.py",
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/components/OnboardingWorkspace.tsx",
+            "frontend/src/styles.css",
+            "frontend/src/components/InsightsWorkspace.tsx",
+            "frontend/src/components/SourcePanel.tsx",
+            "frontend/src/components/AskWorkspace.tsx",
+            "frontend/src/components/Inspector.tsx",
+            "frontend/src/components/LazyMarkdownContent.tsx",
+            "backend/app/onboarding/service.py",
+            "backend/app/agent/onboarding.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 1417.247,
+          "result_bytes": 23292,
+          "evidence_files": [
+            "backend/app/agent/semantic.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/store.py",
+            "backend/app/onboarding/questions.py",
+            "backend/app/onboarding/service.py",
+            "backend/tests/test_polyglot_analyzer.py",
+            "benchmarks/run_parsing_accuracy.py",
+            "frontend/src/App.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "graph-rag-and-vector-validity.md"
+          ],
+          "candidate_files": [
+            "backend/app/graph/analyzer.py",
+            "frontend/src/components/GraphView.tsx",
+            "backend/app/graph/polyglot.py",
+            "backend/app/graph/models.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/graph/store.py",
+            "frontend/src/App.tsx",
+            "backend/app/onboarding/service.py",
+            "benchmarks/run_parsing_accuracy.py",
+            "graph-rag-and-vector-validity.md",
+            "backend/app/onboarding/questions.py",
+            "backend/tests/test_polyglot_analyzer.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 1,
+          "tool": "search_repository",
+          "status": "completed",
+          "duration_ms": 1417.925,
+          "result_bytes": 21549,
+          "evidence_files": [
+            "README.md",
+            "backend/app/agent/onboarding.py",
+            "backend/app/agent/semantic.py",
+            "backend/app/api/routes.py",
+            "backend/app/graph/analyzer.py",
+            "backend/app/graph/models.py",
+            "backend/app/graph/polyglot.py",
+            "backend/app/onboarding/models.py",
+            "benchmarks/run_repositories.py",
+            "frontend/src/App.tsx",
+            "frontend/src/components/Inspector.tsx",
+            "verification/scripts/http_flask_e2e.py"
+          ],
+          "candidate_files": [
+            "backend/app/agent/semantic.py",
+            "frontend/src/components/Inspector.tsx",
+            "frontend/src/App.tsx",
+            "backend/app/graph/analyzer.py",
+            "backend/app/api/routes.py",
+            "backend/app/onboarding/models.py",
+            "benchmarks/run_repositories.py",
+            "backend/app/graph/polyglot.py",
+            "verification/scripts/http_flask_e2e.py",
+            "backend/app/graph/models.py",
+            "README.md",
+            "backend/app/agent/onboarding.py"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 2,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 23.483,
+          "result_bytes": 9605,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/GraphView.tsx"
+          ]
+        },
+        {
+          "round": 2,
+          "tool": "get_file_structure",
+          "status": "completed",
+          "duration_ms": 27.41,
+          "result_bytes": 17136,
+          "evidence_files": [
+            "frontend/src/App.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/App.tsx",
+            "frontend/src/components/SourcePanel.tsx",
+            "frontend/src/api.ts",
+            "frontend/src/components/FileTree.tsx",
+            "frontend/src/types.ts",
+            "frontend/src/main.tsx",
+            "frontend/src/components/GraphView.tsx",
+            "frontend/src/components/Inspector.tsx",
+            "frontend/src/components/OnboardingWorkspace.tsx",
+            "frontend/src/components/AskWorkspace.tsx",
+            "frontend/src/components/IssuesWorkspace.tsx"
+          ],
+          "explicitly_inspected_files": []
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 9.152,
+          "result_bytes": 8646,
+          "evidence_files": [
+            "frontend/src/App.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/App.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/App.tsx"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 9.929,
+          "result_bytes": 11576,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/GraphView.tsx"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 10.296,
+          "result_bytes": 2730,
+          "evidence_files": [
+            "frontend/src/components/Inspector.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/Inspector.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/Inspector.tsx"
+          ]
+        },
+        {
+          "round": 3,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 10.619,
+          "result_bytes": 4825,
+          "evidence_files": [
+            "frontend/src/components/SourcePanel.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/SourcePanel.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/SourcePanel.tsx"
+          ]
+        },
+        {
+          "round": 4,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 3.23,
+          "result_bytes": 6726,
+          "evidence_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/components/GraphView.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/components/GraphView.tsx"
+          ]
+        },
+        {
+          "round": 4,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 3.48,
+          "result_bytes": 7111,
+          "evidence_files": [
+            "frontend/src/App.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/App.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/App.tsx"
+          ]
+        },
+        {
+          "round": 5,
+          "tool": "read_source",
+          "status": "completed",
+          "duration_ms": 2.345,
+          "result_bytes": 5198,
+          "evidence_files": [
+            "frontend/src/App.tsx"
+          ],
+          "candidate_files": [
+            "frontend/src/App.tsx"
+          ],
+          "explicitly_inspected_files": [
+            "frontend/src/App.tsx"
+          ]
+        }
+      ],
+      "repository_tool_calls": 13,
+      "invalid_tool_calls": 0,
+      "total_model_rounds": 7,
+      "duration_ms": 178075.354,
+      "input_tokens": 823365,
+      "output_tokens": 14740,
+      "total_tokens": 838105,
+      "estimated_cost_usd": 4.6534222,
+      "ttft_ms": null,
+      "ttft_status": "unavailable_sdk_first_assistant_event_ms=6097.575; unavailable_sdk_first_assistant_event_ms=7881.589; unavailable_sdk_first_assistant_event_ms=13946.375; unavailable_sdk_first_assistant_event_ms=7998.191; unavailable_sdk_first_assistant_event_ms=11681.872; unavailable_sdk_first_assistant_event_ms=11139.887; unavailable_sdk_first_assistant_event_ms=7831.108",
+      "validation_status": "passed"
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "v4-wp-07",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-713dc8c434094c07b77cdb9bb473dd33",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 251460.209,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-08",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-07f2d9af75354e1da2e0acc1af3cefbc",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7639.089,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-08",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-97fdc57cf703434bbebf8bb6b8c5e4bf",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15419.782,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-09",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-64210964face4e4d9d3a9d4c1f33661d",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7832.453,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-09",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-51ac7f5d14554330bab4cea831b34411",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15168.901,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-10",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-9545f742581b4cb78e1813dde3b61fa2",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 11409.503,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-10",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-9e6b86d91d0940cc879580187f070e67",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 19138.271,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-11",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-89384be67b9b4681b112bdf4b9e597ae",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8100.781,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-11",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-5e3e71070c6e462b955a9ede161215f8",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15540.146,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-12",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-922c3b7a8d6d4bd7a44108515fa6cf4f",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 8968.992,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-12",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-354e52da64f549ca92920e6fa855d4f7",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 17301.251,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-14",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-24a4b68dd7dc4889bcd51c3bd29a114a",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7528.761,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-14",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-0214417b76144a9d85456d37f50aa80e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 14895.219,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-16",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-868763f344134a139254c113f5517601",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7353.927,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-16",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-daad0b11d6f24db187c14244096fbe12",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 14413.532,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-18",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-3254f05010294883813f3f4ac6c71207",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7638.479,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-18",
+      "repository": "waypoint",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-0d89aed7808c4d57b2cdd569a3bc5802",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15430.06,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-01",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-93224b8c06174b539b564a14d703d0cd",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7373.683,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-01",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-7281af17affb4fdabc9e01f8a5dc7c6e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15350.954,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-02",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-8f8df81afa7c42db87edcb995746de71",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7596.932,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-02",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-9dff6f9b808a4774ae6089fee97fb5f1",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15391.251,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-04",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-aa976e300be64af193ab5cfb1d7e94da",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7713.451,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-04",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-f25ce3025d244eeca1e89960d1c4cc2e",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 15500.86,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-07",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-edf2190e5de1491798f5cdd90e0dedab",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7766.58,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-07",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-eed49365e73042acbe08e93f0db30f9b",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16172.078,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-08",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "sonnet",
+      "trace_id": "agentic-5da7de022d4a41889caf2b990476aed6",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 7805.332,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-fl-08",
+      "repository": "flask",
+      "provider": "claude-code",
+      "model": "opus",
+      "trace_id": "agentic-bd946904f5d442dda3c55918ccdcc996",
+      "error_type": "AgentExecutionError",
+      "detail": "Model request failed: Claude Agent SDK emitted contradictory success/error protocol messages on both attempts",
+      "duration_ms": 16521.033,
+      "validation_status": "failed"
+    }
+  ],
+  "hook_artifacts": {
+    "events_jsonl": "benchmarks\\results\\agentic-v4-claude-sonnet-vs-opus-standalone.hooks.jsonl",
+    "aggregate_json": "benchmarks\\results\\agentic-v4-claude-sonnet-vs-opus-standalone.hooks.json"
+  }
+}

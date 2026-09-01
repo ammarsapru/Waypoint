@@ -1,0 +1,85 @@
+{
+  "threshold": 70.0,
+  "methodology": "Combined executable-line and branch-outcome coverage from Cobertura XML",
+  "features": [
+    {
+      "id": "repository_analysis",
+      "name": "Repository analysis and graph construction",
+      "why_core": "Creates the evidence graph that every Explore, Ask, Onboarding, Issues, and MCP workflow consumes.",
+      "modules": [
+        "backend/app/graph/models.py",
+        "backend/app/graph/analyzer.py",
+        "backend/app/graph/polyglot.py"
+      ]
+    },
+    {
+      "id": "retrieval_and_indexing",
+      "name": "Revision-aware indexing and graph retrieval",
+      "why_core": "Keeps repository evidence current and supplies bounded lexical, vector, symbol, and graph context to agents.",
+      "modules": [
+        "backend/app/indexing.py",
+        "backend/app/graph/store.py",
+        "backend/app/agent/retrieval.py",
+        "backend/app/agent/semantic.py"
+      ]
+    },
+    {
+      "id": "grounded_agent_answering",
+      "name": "Grounded agent answering, validation, and memory",
+      "why_core": "Implements multi-round repository investigation, structured answers, citation validation, comparison, and conversation memory.",
+      "modules": [
+        "backend/app/agent/memory.py",
+        "backend/app/agent/service.py",
+        "backend/app/agent/comparison.py",
+        "backend/app/agent/agentic_comparison.py",
+        "backend/app/agent/tool_contracts.py"
+      ]
+    },
+    {
+      "id": "adaptive_onboarding",
+      "name": "Adaptive onboarding routes and missions",
+      "why_core": "Turns repository evidence into role-, objective-, experience-, and time-specific learning routes and contribution missions.",
+      "modules": [
+        "backend/app/agent/onboarding.py",
+        "backend/app/onboarding/models.py",
+        "backend/app/onboarding/questions.py",
+        "backend/app/onboarding/service.py"
+      ]
+    },
+    {
+      "id": "secure_repository_import",
+      "name": "Secure repository import",
+      "why_core": "Places a local path or public GitHub repository inside the analyzed workspace while enforcing repository security limits.",
+      "modules": [
+        "backend/app/repository_import.py"
+      ]
+    }
+  ],
+  "supporting_subsystems": [
+    {
+      "name": "Provider and SDK adapters",
+      "reason": "Vendor transport integration; exercised by adapter unit tests and live evaluations but excluded from the core business-logic denominator.",
+      "modules": ["backend/app/agent/provider.py"]
+    },
+    {
+      "name": "HTTP and MCP delivery adapters",
+      "reason": "Interface wiring around core services; covered separately by integration and E2E tests.",
+      "modules": ["backend/app/main.py", "backend/app/api/routes.py", "backend/app/mcp_server.py"]
+    },
+    {
+      "name": "Subprocess execution infrastructure",
+      "reason": "Generic bounded process runner used by secure import, not the repository-import policy itself.",
+      "modules": ["backend/app/processes.py"]
+    },
+    {
+      "name": "Issues secondary feature",
+      "reason": "Week 7 secondary feature rather than the primary onboarding/grounded-RAG business path; still included in whole-backend coverage.",
+      "modules": ["backend/app/agent/issues.py", "backend/app/issues/models.py", "backend/app/issues/service.py"]
+    },
+    {
+      "name": "Observability infrastructure",
+      "reason": "Cross-cutting trace instrumentation; verified separately through hook tests and live JSONL evidence.",
+      "modules": ["backend/app/observability.py"]
+    }
+  ]
+}

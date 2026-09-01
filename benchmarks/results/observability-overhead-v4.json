@@ -1,0 +1,130 @@
+{
+  "schema_version": "v4",
+  "generated_at": "2026-07-27T08:32:48.907825+00:00",
+  "benchmark_type": "isolated function-hook microbenchmark",
+  "scope_note": "Measures @traced argument/result sanitization, trace correlation, hook dispatch, and in-memory JSON serialization. Terminal and rotating-file logging are disabled; this is not end-to-end request latency.",
+  "iterations_per_sample": 2000,
+  "reported_samples": 7,
+  "baseline": {
+    "median_ms": 0.6032,
+    "p95_ms": 0.8214,
+    "peak_bytes": 953
+  },
+  "hooks_enabled": {
+    "median_ms": 380.1497,
+    "p95_ms": 550.909,
+    "peak_bytes": 141537,
+    "events_per_sample": 4000,
+    "bytes_per_sample": 913571
+  },
+  "incremental": {
+    "median_ms": 379.5465,
+    "overhead_percent": 62922.164,
+    "microseconds_per_hook_event": 94.886625
+  },
+  "memory_probe_iterations": 250,
+  "raw_samples": {
+    "baseline": [
+      {
+        "elapsed_ms": 0.6003000016789883,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.6027000054018572,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.5844999977853149,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.6083000043872744,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.821399997221306,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.6032000092091039,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 0.7898000039858744,
+        "peak_bytes": 0,
+        "event_count": 0,
+        "serialized_bytes": 0,
+        "checksum": 2001000
+      }
+    ],
+    "hooks_enabled": [
+      {
+        "elapsed_ms": 416.6743000096176,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913557,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 374.708900009864,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913585,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 369.07880000944715,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913564,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 380.1497000094969,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913571,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 346.78639999765437,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913573,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 394.57560000300873,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913578,
+        "checksum": 2001000
+      },
+      {
+        "elapsed_ms": 550.9089999977732,
+        "peak_bytes": 0,
+        "event_count": 4000,
+        "serialized_bytes": 913558,
+        "checksum": 2001000
+      }
+    ]
+  }
+}

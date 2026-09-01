@@ -1,0 +1,293 @@
+{
+  "generated_at": "2026-07-18T23:56:41.562600+00:00",
+  "passed": false,
+  "results": [
+    {
+      "repository": "Flask",
+      "size": "medium",
+      "commit": "36e4a82",
+      "generated_at": "2026-07-18T23:56:40.631651+00:00",
+      "elapsed_seconds": 1.197,
+      "peak_memory_mib": 72.61,
+      "stats": {
+        "files_discovered": 83,
+        "files_parsed": 83,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 1704,
+        "edge_count": 2336,
+        "unresolved_count": 4010,
+        "duration_ms": 1180.483
+      },
+      "node_counts": {
+        "function": 1059,
+        "method": 401,
+        "module": 83,
+        "class": 160,
+        "repository": 1
+      },
+      "edge_counts": {
+        "contains": 1703,
+        "may_call": 334,
+        "imports": 299
+      },
+      "evidence_counts": {
+        "verified": 2002,
+        "inferred": 334
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 83 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": true,
+          "detail": "All expected architectural modules were found"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": true,
+          "detail": "All expected architectural symbols were found"
+        },
+        {
+          "name": "source_layout",
+          "passed": true,
+          "detail": "Package names do not leak the source-directory prefix"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": true,
+          "detail": "No obvious first-party imports remain unresolved"
+        }
+      ],
+      "missing_modules": [],
+      "missing_symbols": [],
+      "suspicious_first_party_imports": [],
+      "passed": true
+    },
+    {
+      "repository": "Requests",
+      "size": "small-medium",
+      "commit": "f361ead",
+      "generated_at": "2026-07-18T23:56:41.384866+00:00",
+      "elapsed_seconds": 0.673,
+      "peak_memory_mib": 79.13,
+      "stats": {
+        "files_discovered": 37,
+        "files_parsed": 37,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 845,
+        "edge_count": 1424,
+        "unresolved_count": 2522,
+        "duration_ms": 662.732
+      },
+      "node_counts": {
+        "function": 187,
+        "module": 37,
+        "method": 524,
+        "class": 96,
+        "repository": 1
+      },
+      "edge_counts": {
+        "imports": 118,
+        "may_call": 462,
+        "contains": 844
+      },
+      "evidence_counts": {
+        "verified": 962,
+        "inferred": 462
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 37 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": true,
+          "detail": "All expected architectural modules were found"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": true,
+          "detail": "All expected architectural symbols were found"
+        },
+        {
+          "name": "source_layout",
+          "passed": true,
+          "detail": "Package names do not leak the source-directory prefix"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": false,
+          "detail": "1 obvious first-party imports remain unresolved, e.g. ['from requests.packages.urllib3.poolmanager import PoolManager']"
+        }
+      ],
+      "missing_modules": [],
+      "missing_symbols": [],
+      "suspicious_first_party_imports": [
+        "from requests.packages.urllib3.poolmanager import PoolManager"
+      ],
+      "passed": false
+    },
+    {
+      "repository": "ItsDangerous",
+      "size": "small",
+      "commit": "672971d",
+      "generated_at": "2026-07-18T23:56:41.560551+00:00",
+      "elapsed_seconds": 0.107,
+      "peak_memory_mib": 79.13,
+      "stats": {
+        "files_discovered": 15,
+        "files_parsed": 15,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 160,
+        "edge_count": 324,
+        "unresolved_count": 340,
+        "duration_ms": 105.871
+      },
+      "node_counts": {
+        "method": 98,
+        "class": 29,
+        "function": 17,
+        "module": 15,
+        "repository": 1
+      },
+      "edge_counts": {
+        "contains": 159,
+        "imports": 69,
+        "may_call": 96
+      },
+      "evidence_counts": {
+        "verified": 228,
+        "inferred": 96
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 15 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": true,
+          "detail": "All expected architectural modules were found"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": true,
+          "detail": "All expected architectural symbols were found"
+        },
+        {
+          "name": "source_layout",
+          "passed": true,
+          "detail": "Package names do not leak the source-directory prefix"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": true,
+          "detail": "No obvious first-party imports remain unresolved"
+        }
+      ],
+      "missing_modules": [],
+      "missing_symbols": [],
+      "suspicious_first_party_imports": [],
+      "passed": true
+    }
+  ]
+}

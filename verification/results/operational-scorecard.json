@@ -1,0 +1,70 @@
+{
+  "name": "Waypoint operational service evaluation",
+  "definition": "Equal-weight mean of parsing accuracy, retrieval quality, two-model answer quality, frontend quality, and performance. This is separate from code coverage.",
+  "threshold": 0.7,
+  "complete": true,
+  "missing_categories": [],
+  "overall_score": 0.7362,
+  "passed": false,
+  "categories": {
+    "parsing_accuracy": {
+      "score": 1.0,
+      "parse_success_rate": 1.0,
+      "node_f1": 1.0,
+      "edge_f1": 1.0,
+      "threshold": 0.7,
+      "passed": true
+    },
+    "retrieval_quality": {
+      "score": 0.6748,
+      "hit_rate_at_5": 1.0,
+      "hit_rate_at_10": 1.0,
+      "mrr": 0.8438,
+      "ndcg_at_10": 0.6861,
+      "map_at_10": 0.5193,
+      "required_group_recall_at_10": 0.875,
+      "strict_case_pass_rate": 0.375,
+      "forbidden_hit_rate_at_10": 0.25,
+      "scoring_version": "strict-v2",
+      "threshold": 0.7,
+      "passed": false
+    },
+    "model_answer_quality": {
+      "score": 0.8316,
+      "mean_task_success": 0.75,
+      "mean_concept_recall": 0.9322,
+      "mean_expected_path_recall": 0.8125,
+      "models": 2,
+      "minimum_model_task_success": 0.5,
+      "threshold": 0.7,
+      "passed": false
+    },
+    "performance": {
+      "score": 0.6667,
+      "service_success_rate": 1.0,
+      "slo_passed": false,
+      "frontend_web_vitals_passed": true,
+      "peak_observed_rss_mib": 264.18,
+      "threshold": 0.7,
+      "passed": false
+    },
+    "frontend_quality": {
+      "score": 0.5078,
+      "e2e_success_rate": 1.0,
+      "frontend_line_coverage": 0.0155,
+      "executed_tests": 1,
+      "skipped_tests": 1,
+      "threshold": 0.7,
+      "passed": false
+    }
+  },
+  "artifacts": {
+    "parsing": "benchmarks\\results\\parsing-accuracy.json",
+    "retrieval": "benchmarks\\results\\retrieval-v2.json",
+    "performance": "verification\\results\\service-performance.json",
+    "model": "verification\\results\\model-quality-claude-code-openrouter.json",
+    "playwright": "frontend\\test-results\\results.json",
+    "frontend_coverage": "frontend\\coverage\\coverage-summary.json",
+    "frontend_performance": "verification\\results\\frontend-performance.json"
+  }
+}

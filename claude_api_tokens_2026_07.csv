@@ -1,0 +1,12 @@
+usage_date_utc,model_version,api_key,workspace,usage_type,context_window,usage_input_tokens_no_cache,usage_input_tokens_cache_write_5m,usage_input_tokens_cache_write_1h,usage_input_tokens_cache_read,usage_output_tokens,web_search_count,inference_geo,speed
+2026-07-05,claude-fable-5,Week4ProjectKey,Default,standard,≤ 200k,5294,58228,0,242774,4585,0,global,
+2026-07-05,claude-haiku-4-5-20251001,Week4ProjectKey,Default,standard,≤ 200k,1026,0,0,0,34,0,not_available,
+2026-07-09,claude-haiku-4-5-20251001,week5_practise,Default,standard,≤ 200k,3354,0,0,0,2298,0,not_available,
+2026-07-09,claude-sonnet-5,week5_practise,Default,standard,≤ 200k,51594,0,0,0,16782,0,global,
+2026-07-13,claude-haiku-4-5-20251001,week5_practise,Default,standard,≤ 200k,626,0,0,0,401,0,not_available,
+2026-07-13,claude-sonnet-5,week5_practise,Default,standard,≤ 200k,7921,0,0,0,2570,0,global,
+2026-07-14,claude-haiku-4-5-20251001,week5_practise,Default,standard,≤ 200k,720,0,0,0,394,0,not_available,
+2026-07-14,claude-sonnet-5,week5_practise,Default,standard,≤ 200k,91119,0,0,0,12110,0,global,
+2026-07-18,claude-opus-4-6,handwritten-OCR,Default,standard,≤ 200k,627,0,0,0,484,0,global,
+2026-07-21,claude-sonnet-5,final_projecT_alternative secret,Default,standard,≤ 200k,977315,0,0,0,34140,0,global,
+2026-07-22,claude-sonnet-5,final_projecT_alternative secret,Default,standard,≤ 200k,390812,0,0,0,35306,0,global,

@@ -1,0 +1,102 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "analysis_id": "21507751dd9a4933b6c209a3da334085",
+  "paths": [
+    "/api/v1/health",
+    "/api/v1/analyses/21507751dd9a4933b6c209a3da334085",
+    "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/summary",
+    "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/index",
+    "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/tree?limit=500",
+    "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/conversation/latest?scope=ask"
+  ],
+  "requests_per_level": 30,
+  "service_success_rate": 1.0,
+  "cache_timings": [
+    {
+      "path": "/api/v1/health",
+      "cold_ms": 1099.287,
+      "warm_mean_ms": 352.221,
+      "all_successful": true
+    },
+    {
+      "path": "/api/v1/analyses/21507751dd9a4933b6c209a3da334085",
+      "cold_ms": 560.022,
+      "warm_mean_ms": 598.953,
+      "all_successful": true
+    },
+    {
+      "path": "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/summary",
+      "cold_ms": 546.356,
+      "warm_mean_ms": 452.82,
+      "all_successful": true
+    },
+    {
+      "path": "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/index",
+      "cold_ms": 724.878,
+      "warm_mean_ms": 780.379,
+      "all_successful": true
+    },
+    {
+      "path": "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/tree?limit=500",
+      "cold_ms": 773.688,
+      "warm_mean_ms": 762.655,
+      "all_successful": true
+    },
+    {
+      "path": "/api/v1/analyses/21507751dd9a4933b6c209a3da334085/conversation/latest?scope=ask",
+      "cold_ms": 409.608,
+      "warm_mean_ms": 510.417,
+      "all_successful": true
+    }
+  ],
+  "load_levels": [
+    {
+      "concurrency": 1,
+      "requests": 30,
+      "succeeded": 30,
+      "failed": 0,
+      "success_rate": 1.0,
+      "throughput_requests_per_second": 1.802,
+      "latency_p50_ms": 546.16,
+      "latency_p95_ms": 799.424,
+      "latency_p99_ms": 913.716,
+      "max_latency_ms": 945.663
+    },
+    {
+      "concurrency": 4,
+      "requests": 30,
+      "succeeded": 30,
+      "failed": 0,
+      "success_rate": 1.0,
+      "throughput_requests_per_second": 4.578,
+      "latency_p50_ms": 801.639,
+      "latency_p95_ms": 1403.841,
+      "latency_p99_ms": 1459.243,
+      "max_latency_ms": 1477.062
+    },
+    {
+      "concurrency": 8,
+      "requests": 30,
+      "succeeded": 30,
+      "failed": 0,
+      "success_rate": 1.0,
+      "throughput_requests_per_second": 5.124,
+      "latency_p50_ms": 1096.513,
+      "latency_p95_ms": 3013.291,
+      "latency_p99_ms": 3045.428,
+      "max_latency_ms": 3051.04
+    }
+  ],
+  "memory": {
+    "server_pid": 12088,
+    "baseline_rss_mib": 256.965,
+    "peak_observed_rss_mib": 264.18,
+    "ending_rss_mib": 260.676,
+    "growth_mib": 3.711
+  },
+  "slo": {
+    "success_rate": 0.99,
+    "p95_latency_ms": 2000,
+    "passed": false
+  }
+}

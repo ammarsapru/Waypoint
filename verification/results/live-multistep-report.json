@@ -1,0 +1,793 @@
+{
+  "reference_repository": "https://github.com/pallets/flask",
+  "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+  "scenario": [
+    "analyze Flask",
+    "answer request-routing question with tools",
+    "answer memory-aware follow-up",
+    "generate role-specific onboarding route",
+    "generate validated first-contribution mission",
+    "compare the same question and frozen evidence across two models"
+  ],
+  "first_answer": {
+    "question": "How does Flask route an incoming HTTP request to a view function?",
+    "answer": "Flask routes an incoming HTTP request to a view function through its WSGI application interface. The Flask application object (an instance of `flask.Flask`) is a WSGI callable. When the WSGI server calls the application, it invokes `Flask.__call__`, which delegates to `Flask.wsgi_app`. This method creates a request context, matches the request URL to a URL rule using Werkzeug's routing system, and then calls the associated view function (the endpoint) with the matched view arguments. The process involves: 1) creating a request context and pushing it, 2) using Werkzeug's `MapAdapter` to match the URL path and HTTP method to a rule, 3) retrieving the endpoint (the view function name) and view arguments from the match, 4) looking up the view function in the app's view functions dictionary, and 5. calling the view function with those arguments, returning the response which is then converted to a WSGI response and returned to the server.",
+    "citations": [
+      {
+        "node_id": "206ed774caa8a5017f4a4842",
+        "qualified_name": "flask.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/app.py",
+          "start_line": 1,
+          "start_column": 0,
+          "end_line": 100,
+          "end_column": 0
+        },
+        "title": "Flask app module imports and setup",
+        "excerpt": "from __future__ import annotations\n\nimport collections.abc as cabc\nimport inspect\nimport os\nimport sys\nimport typing as t\nimport weakref",
+        "relevance": "Shows imports and setup for Flask class, showing that Flask inherits from sansio.app.App and uses Werkzeug routing."
+      },
+      {
+        "node_id": "206ed774caa8a5017f4a4842",
+        "qualified_name": "flask.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/app.py",
+          "start_line": 100,
+          "start_column": 0,
+          "end_line": 200,
+          "end_column": 0
+        },
+        "title": "Flask class definition and __call__ method",
+        "excerpt": "            args = (app_ctx._get_current_object(),)\n        elif not isinstance(args[0], AppContext):\n            args = (app_ctx._get_current_object(), *args)\n\n        return f(self, *args, **kwargs)\n\n    return update_wrapper(wrapper, f)  # type: ignore[return-value]\n",
+        "relevance": "Shows the __call__ method that delegates to wsgi_app, the WSGI entry point."
+      },
+      {
+        "node_id": "5dc63d4c5369ecf5f9981ae2",
+        "qualified_name": "flask.sansio.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/sansio/app.py",
+          "start_line": 1,
+          "start_column": 0,
+          "end_line": 100,
+          "end_column": 0
+        },
+        "title": "SansIO App class",
+        "excerpt": "from __future__ import annotations\n\nimport logging\nimport os\nimport sys\nimport typing as t\nfrom datetime import timedelta\nfrom itertools import chain",
+        "relevance": "Shows the core App class that handles request dispatching via Werkzeug routing."
+      }
+    ],
+    "refused": false,
+    "basis": "Flask's `Flask` class defines `__call__` that delegates to `wsgi_app` (see src/flask/app.py lines around the `__call__` method). The `wsgi_app` method creates a request context and calls the `full_dispatch_request` method, which handles routing via Werkzeug's routing system and dispatches to the view function. The routing is performed by Werkzeug's `MapAdapter` (imported from `werkzeug.routing` as `MapAdapter`) which matches the request path and method to a rule, returning the endpoint and arguments. The endpoint is then looked up in `app.view_functions` to obtain the view function to call.",
+    "answer_type": "agent",
+    "summary": null,
+    "features": [],
+    "suggested_questions": [
+      "How does Flask's request context work?",
+      "How does Werkzeug's routing map URLs to endpoints?",
+      "How are view functions registered with Flask routes?"
+    ],
+    "provider": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "conversation_id": "b5db64c8baf14ca3ab80aea5bc6b7719",
+    "inspected_file_count": 21,
+    "tool_trace": [
+      {
+        "round": 1,
+        "tool": "get_repository_overview",
+        "status": "completed",
+        "duration_ms": 27.347,
+        "result_bytes": 26404,
+        "evidence_files": [
+          "README.md",
+          "examples/celery/README.md",
+          "examples/celery/pyproject.toml",
+          "examples/celery/requirements.txt",
+          "examples/celery/src/task_app/__init__.py",
+          "examples/celery/src/task_app/views.py",
+          "examples/javascript/pyproject.toml",
+          "examples/tutorial/pyproject.toml",
+          "pyproject.toml",
+          "src/flask/app.py",
+          "src/flask/sansio/app.py",
+          "src/flask/wrappers.py"
+        ]
+      },
+      {
+        "round": 2,
+        "tool": "get_backend_architecture",
+        "status": "completed",
+        "duration_ms": 26.735,
+        "result_bytes": 36430,
+        "evidence_files": [
+          "examples/tutorial/flaskr/db.py",
+          "examples/tutorial/tests/test_db.py",
+          "src/flask/app.py",
+          "src/flask/config.py",
+          "src/flask/sansio/app.py",
+          "src/flask/wrappers.py",
+          "tests/test_apps/subdomaintestmodule/__init__.py",
+          "tests/test_config.py",
+          "tests/test_instance_config.py",
+          "tests/test_user_error_handler.py",
+          "tests/type_check/typing_error_handler.py",
+          "tests/type_check/typing_route.py"
+        ]
+      },
+      {
+        "round": 3,
+        "tool": "read_source",
+        "status": "completed",
+        "duration_ms": 1.76,
+        "result_bytes": 4495,
+        "evidence_files": [
+          "src/flask/app.py"
+        ]
+      }
+    ]
+  },
+  "follow_up": {
+    "question": "Which tests should I read next to verify that flow?",
+    "answer": "Flask routes an incoming HTTP request to a view function through its WSGI application interface. The Flask application object (an instance of `flask.Flask`, which inherits from `flask.sansio.app.App`) is a WSGI callable. When the WSGI server calls the application, it invokes `Flask.__call__`, which delegates to `Flask.wsgi_app`. This method creates a request context, matches the request URL to a URL rule using Werkzeug's routing system (`url_map.match`), retrieves the endpoint (the view function name) and any view arguments from the match, looks up the actual view function in the application's view functions dictionary, and finally calls the view function with those arguments. The response returned by the view function is then converted to a WSGI response and returned to the server.",
+    "citations": [
+      {
+        "node_id": "5dc63d4c5369ecf5f9981ae2",
+        "qualified_name": "flask.sansio.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/sansio/app.py",
+          "start_line": 600,
+          "start_column": 0,
+          "end_line": 650,
+          "end_column": 0
+        },
+        "title": "App.wsgi_app method",
+        "excerpt": "        .. versionadded:: 0.11\n        \"\"\"\n        return self.blueprints.values()\n\n    @setupmethod\n    def add_url_rule(\n        self,\n        rule: str,",
+        "relevance": "Shows the WSGI entry point that creates a request context and dispatches the request."
+      },
+      {
+        "node_id": "5dc63d4c5369ecf5f9981ae2",
+        "qualified_name": "flask.sansio.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/sansio/app.py",
+          "start_line": 650,
+          "start_column": 0,
+          "end_line": 720,
+          "end_column": 0
+        },
+        "title": "App.dispatch_request method",
+        "excerpt": "        rule_obj = self.url_rule_class(rule, methods=methods, **options)\n        rule_obj.provide_automatic_options = provide_automatic_options  # type: ignore[attr-defined]\n\n        self.url_map.add(rule_obj)\n        if view_func is not None:\n            old_func = self.view_functions.get(endpoint)\n            if old_func is not None and old_func != view_func:\n                raise AssertionError(",
+        "relevance": "Shows URL matching via url_map.match and lookup of the view function in view_functions."
+      },
+      {
+        "node_id": "5dc63d4c5369ecf5f9981ae2",
+        "qualified_name": "flask.sansio.app",
+        "kind": "module",
+        "span": {
+          "path": "src/flask/sansio/app.py",
+          "start_line": 720,
+          "start_column": 0,
+          "end_line": 750,
+          "end_column": 0
+        },
+        "title": "App.full_dispatch_request method",
+        "excerpt": "    def template_test(\n        self, name: T_template_test | str | None = None\n    ) -> T_template_test | t.Callable[[T_template_test], T_template_test]:\n        \"\"\"Decorate a function to register it as a custom Jinja test. The name\n        is optional. The decorator may be used without parentheses.\n\n        .. code-block:: python\n",
+        "relevance": "Shows calling the view function and converting its return value to a response."
+      },
+      {
+        "node_id": "0190c3a44e0e950bdb45b4eb",
+        "qualified_name": "tests.test_basic",
+        "kind": "module",
+        "span": {
+          "path": "tests/test_basic.py",
+          "start_line": 1739,
+          "start_column": 0,
+          "end_line": 1761,
+          "end_column": 0
+        },
+        "title": "test_route_decorator_custom_endpoint",
+        "excerpt": "def test_route_decorator_custom_endpoint(app, client):\n    app.debug = True\n\n    @app.route(\"/foo/\")\n    def foo():\n        return flask.request.endpoint\n\n    @app.route(\"/bar/\", endpoint=\"bar\")",
+        "relevance": "Demonstrates that registering routes with app.route leads to the view function being called on request."
+      }
+    ],
+    "refused": false,
+    "basis": "Flask's WSGI entry point is defined in `flask.sansio.app.App.__call__` which delegates to `wsgi_app` (see src/flask/sansio/app.py lines 600-650). Inside `wsgi_app`, a request context is pushed and `wsgi_app` calls `self.full_dispatch_request()` which in turn calls `self.dispatch_request()` that performs URL matching via `self.url_map.match()` and retrieves the view function via `self.view_functions[endpoint]` (see src/flask/sansio/app.py lines 650-720). The view function is then invoked with the matched view arguments, and its return value is converted to a response (see src/flask/sansio/app.py lines 720-750). This flow is demonstrated in tests such as `tests/test_basic.py::test_route_decorator_custom_endpoint` which registers routes with `app.add_url_rule` and `app.route` and verifies that requesting those URLs invokes the corresponding view functions (lines 1739-1761).",
+    "answer_type": "agent",
+    "summary": null,
+    "features": [],
+    "suggested_questions": [],
+    "provider": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "conversation_id": "b5db64c8baf14ca3ab80aea5bc6b7719",
+    "inspected_file_count": 7,
+    "tool_trace": [
+      {
+        "round": 1,
+        "tool": "find_related_tests",
+        "status": "completed",
+        "duration_ms": 14.809,
+        "result_bytes": 99,
+        "evidence_files": []
+      },
+      {
+        "round": 2,
+        "tool": "search_repository",
+        "status": "completed",
+        "duration_ms": 473.073,
+        "result_bytes": 14909,
+        "evidence_files": [
+          "src/flask/cli.py",
+          "src/flask/sansio/app.py",
+          "src/flask/sansio/scaffold.py",
+          "tests/test_basic.py",
+          "tests/test_blueprints.py",
+          "tests/test_cli.py",
+          "tests/type_check/typing_route.py"
+        ]
+      },
+      {
+        "round": 3,
+        "tool": "read_source",
+        "status": "completed",
+        "duration_ms": 1.868,
+        "result_bytes": 2835,
+        "evidence_files": [
+          "tests/test_basic.py"
+        ]
+      }
+    ]
+  },
+  "tour": {
+    "id": "5d8506f896214ea98fadf9c1db83d635",
+    "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+    "role": "backend",
+    "goal": "Understand request routing and prepare a safe first contribution",
+    "experience": "new",
+    "estimated_minutes": 30,
+    "steps": [
+      {
+        "index": 1,
+        "title": "Orientation: what this repository is and how a Flask app is born",
+        "node_id": "source:README.md",
+        "node_kind": "source",
+        "objective": "Understand that this repo is the Flask framework itself, and see how an application object is created and routes attached before diving into internals.",
+        "explanation": "The README shows the canonical usage: create `Flask(__name__)` and decorate a function with `@app.route(\"/\")` (README.md lines 22-36). The tutorial example's `create_app` factory (examples/tutorial/flaskr/__init__.py lines 6-48) shows real registration in practice: `@app.route(\"/hello\")` registers a view, `app.register_blueprint(...)` attaches grouped routes, and `app.add_url_rule(\"/\", endpoint=\"index\")` maps a URL to an existing endpoint. The `Flask` class docstring (src/flask/app.py lines 109-155) explains that the app object is a WSGI application acting as a central registry for view functions and URL rules. Read the README first, then the example factory, then the class docstring.",
+        "why_selected": "A new backend engineer needs the user-facing routing API before reading the framework internals; these three files are the shortest source-grounded path from 'hello world' to the central `Flask` object.",
+        "evidence": {
+          "path": "README.md",
+          "start_line": 20,
+          "start_column": 0,
+          "end_line": 36,
+          "end_column": 0
+        },
+        "challenge": {
+          "id": "19324861ece47233",
+          "prompt": "In the tutorial factory, what are the three different ways a URL becomes attached to the app, and which object ultimately stores them all?",
+          "options": [],
+          "question_type": "free_text"
+        },
+        "files": [
+          {
+            "path": "README.md",
+            "start_line": 20,
+            "end_line": 36,
+            "node_id": null,
+            "reason": "Minimal working example: app creation plus `@app.route` and `flask run`."
+          },
+          {
+            "path": "examples/tutorial/flaskr/__init__.py",
+            "start_line": 6,
+            "end_line": 48,
+            "node_id": "e36fa5d3b6c6de6472c930a5",
+            "reason": "Realistic app factory showing route decorators, blueprint registration, and add_url_rule."
+          },
+          {
+            "path": "src/flask/app.py",
+            "start_line": 109,
+            "end_line": 155,
+            "node_id": "206ed774caa8a5017f4a4842",
+            "reason": "`Flask` class docstring: the app is a WSGI application and central registry for view functions and URL rules."
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "title": "How routes are registered: Scaffold.route and add_url_rule",
+        "node_id": "a3dda31320f82d342405b0d0",
+        "node_kind": "module",
+        "objective": "Trace what actually happens when `@app.route` runs: decorator -> add_url_rule -> URL map + view_functions dict.",
+        "explanation": "`Scaffold` is the base shared by `Flask` and `Blueprint` (src/flask/sansio/scaffold.py lines 52-116): its `__init__` creates `self.view_functions`, the dict mapping endpoint names to view callables, and `setupmethod` (lines 42-49) guards registration so it only happens during setup. `route()` (lines 336-365) is just a thin decorator that calls `self.add_url_rule(rule, endpoint, f, **options)`; the abstract `add_url_rule` contract is at lines 368-433. The concrete implementation `App.add_url_rule` (src/flask/sansio/app.py lines 605-661) derives the endpoint from the view function name, builds a werkzeug `Rule`, adds it to `self.url_map`, and stores the function in `view_functions`. Read scaffold.py 42-116 first, then 336-433, then sansio/app.py 605-661.",
+        "why_selected": "This is the write-side of routing: understanding that `route` is a two-line wrapper over `add_url_rule` demystifies the framework and shows exactly where a new URL rule would be validated or extended.",
+        "evidence": {
+          "path": "src/flask/sansio/scaffold.py",
+          "start_line": 42,
+          "start_column": 0,
+          "end_line": 116,
+          "end_column": 0
+        },
+        "challenge": {
+          "id": "2942b20eee2762cd",
+          "prompt": "If two view functions are registered with the same endpoint name, where in this code path would that conflict be detected, and why does Flask separate the URL rule from the view function?",
+          "options": [],
+          "question_type": "free_text"
+        },
+        "files": [
+          {
+            "path": "src/flask/sansio/scaffold.py",
+            "start_line": 42,
+            "end_line": 116,
+            "node_id": "a3dda31320f82d342405b0d0",
+            "reason": "`setupmethod` guard and `Scaffold.__init__` creating the `view_functions` endpoint registry."
+          },
+          {
+            "path": "src/flask/sansio/scaffold.py",
+            "start_line": 336,
+            "end_line": 433,
+            "node_id": "a3dda31320f82d342405b0d0",
+            "reason": "`route()` decorator delegating to `add_url_rule`, plus the documented add_url_rule contract."
+          },
+          {
+            "path": "src/flask/sansio/app.py",
+            "start_line": 605,
+            "end_line": 661,
+            "node_id": "5dc63d4c5369ecf5f9981ae2",
+            "reason": "Concrete `App.add_url_rule`: builds the werkzeug Rule, updates url_map and view_functions."
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "title": "How a request is routed at runtime: __call__ -> wsgi_app -> dispatch",
+        "node_id": "206ed774caa8a5017f4a4842",
+        "node_kind": "module",
+        "objective": "Follow one HTTP request from the WSGI server into the matched view function.",
+        "explanation": "The WSGI server calls the app object; `Flask.__call__` (src/flask/app.py lines 1618-1625) simply forwards to `wsgi_app`, which is kept separate so middleware can wrap it. `wsgi_app` (lines 1566-1616) creates a request context, pushes it, and calls `full_dispatch_request`, converting any exception into an error response and always popping the context. `full_dispatch_request` (lines 992-1019) emits the `request_started` signal, runs `preprocess_request` (before_request hooks), then calls `dispatch_request` if no hook returned early, and finishes with `finalize_request`. `dispatch_request` (lines 966-990) reads `request.url_rule` (the rule matched earlier during URL matching), handles automatic OPTIONS responses, then looks up `self.view_functions[rule.endpoint]` and calls it with `request.view_args`. Read 1566-1625 first, then 966-1019.",
+        "why_selected": "This is the exact runtime routing path the objective asks about: the two ranges connect the registration data structures from step 2 (url_map, view_functions) to actual request handling.",
+        "evidence": {
+          "path": "src/flask/app.py",
+          "start_line": 1566,
+          "start_column": 0,
+          "end_line": 1625,
+          "end_column": 0
+        },
+        "challenge": {
+          "id": "76073a49e2651e2e",
+          "prompt": "Why is the request-handling logic in `wsgi_app` instead of `__call__`, and at what point is `view_functions[rule.endpoint]` actually invoked relative to before_request hooks?",
+          "options": [],
+          "question_type": "free_text"
+        },
+        "files": [
+          {
+            "path": "src/flask/app.py",
+            "start_line": 1566,
+            "end_line": 1625,
+            "node_id": "206ed774caa8a5017f4a4842",
+            "reason": "`wsgi_app` and `__call__`: WSGI entry point, context push/pop, error funneling."
+          },
+          {
+            "path": "src/flask/app.py",
+            "start_line": 966,
+            "end_line": 1019,
+            "node_id": "206ed774caa8a5017f4a4842",
+            "reason": "`dispatch_request` (endpoint lookup and view call) and `full_dispatch_request` (hooks + signals around it)."
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "title": "Where match results live and how responses are finalized",
+        "node_id": "977fda75428269b85dc6da05",
+        "node_kind": "module",
+        "objective": "See where the routing match is stored on the request object and how hooks shape the final response.",
+        "explanation": "Flask's `Request` (src/flask/wrappers.py lines 18-57) remembers the routing outcome: `url_rule` is the matched werkzeug Rule, `view_args` holds converted URL parameters, and `routing_exception` stores the 404/405 raised when matching failed. Around the view call, `preprocess_request` (src/flask/app.py lines 1366-1392) runs url_value_preprocessors and before_request functions\u2014if any returns a non-None value, the view is skipped; `process_response` (lines 1394-1418) runs after_request functions and lets the session interface save the session. `finalize_request` (lines 1021-1051) converts the view's return value via `make_response`, calls `process_response`, and emits `request_finished`. Read wrappers.py first, then app.py 1366-1418, then 1021-1051.",
+        "why_selected": "Understanding where match data is stored and where hooks run is essential context for any safe routing-related change\u2014most first contributions touch a hook, an attribute, or response finalization rather than the core matcher.",
+        "evidence": {
+          "path": "src/flask/wrappers.py",
+          "start_line": 18,
+          "start_column": 0,
+          "end_line": 57,
+          "end_column": 0
+        },
+        "challenge": {
+          "id": "3620f204debef7b8",
+          "prompt": "If URL matching fails, which Request attribute records it, and how could a before_request function short-circuit dispatch entirely?",
+          "options": [],
+          "question_type": "free_text"
+        },
+        "files": [
+          {
+            "path": "src/flask/wrappers.py",
+            "start_line": 18,
+            "end_line": 57,
+            "node_id": "977fda75428269b85dc6da05",
+            "reason": "Request attributes `url_rule`, `view_args`, `routing_exception` that carry the routing match."
+          },
+          {
+            "path": "src/flask/app.py",
+            "start_line": 1366,
+            "end_line": 1418,
+            "node_id": "206ed774caa8a5017f4a4842",
+            "reason": "`preprocess_request` and `process_response`: the before/after hook machinery around the view."
+          },
+          {
+            "path": "src/flask/app.py",
+            "start_line": 1021,
+            "end_line": 1051,
+            "node_id": "206ed774caa8a5017f4a4842",
+            "reason": "`finalize_request`: turning the view return value into a Response and firing request_finished."
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "title": "Preparing a safe first contribution: tests and PR expectations",
+        "node_id": "e8ee1ecc4da25a27b5dc7804",
+        "node_kind": "module",
+        "objective": "Learn how routing behavior is exercised in tests and what the project requires before opening a PR.",
+        "explanation": "tests/type_check/typing_route.py (lines 1-70) is a compact catalog of legal route/return-type patterns (`@app.route` returning str, bytes, dict, generators)\u2014useful as a reference for what a routing change must keep working. tests/test_user_error_handler.py (lines 1-59) shows the standard test idiom: register routes on the `app` fixture inside the test, then assert on `client.get(...)` responses\u2014this is the pattern you will copy for any routing test. The PR template (.github/pull_request_template.md lines 1-25) states the contribution checklist: open an issue first, add tests that fail without the change, update docs, and add a CHANGES.rst entry. A safe first contribution is a small, test-backed change that follows this checklist.",
+        "why_selected": "The objective explicitly includes preparing a first contribution; these files show both the test-writing convention used across the suite and the project's stated PR requirements, grounding process advice in repository content.",
+        "evidence": {
+          "path": "tests/type_check/typing_route.py",
+          "start_line": 1,
+          "start_column": 0,
+          "end_line": 70,
+          "end_column": 0
+        },
+        "challenge": {
+          "id": "62a2120e02f57114",
+          "prompt": "Sketch a test for a small routing change using the app/client fixture pattern, and list the three checklist items the PR template requires beyond the code change itself.",
+          "options": [],
+          "question_type": "free_text"
+        },
+        "files": [
+          {
+            "path": "tests/type_check/typing_route.py",
+            "start_line": 1,
+            "end_line": 70,
+            "node_id": "e8ee1ecc4da25a27b5dc7804",
+            "reason": "Catalog of supported route registration and return-type patterns to preserve."
+          },
+          {
+            "path": "tests/test_user_error_handler.py",
+            "start_line": 1,
+            "end_line": 59,
+            "node_id": "e99b1e36c1f80a16e5791415",
+            "reason": "Canonical test idiom: app fixture + inline routes + client assertions."
+          },
+          {
+            "path": ".github/pull_request_template.md",
+            "start_line": 1,
+            "end_line": 25,
+            "node_id": null,
+            "reason": "Concrete PR checklist: linked issue, failing-first tests, docs, CHANGES.rst entry."
+          }
+        ]
+      }
+    ],
+    "planning_basis": [
+      "Repository overview confirmed this is the Flask framework itself (src/flask), Python-only, with examples/ and tests/ packages.",
+      "Entry-point and architecture analysis identified flask.app.Flask.__call__/wsgi_app as the runtime entry and flask.sansio.app/scaffold as the registration layer.",
+      "get_file_structure on src/flask/app.py exposed the dispatch chain: __call__ (1618-1625) -> wsgi_app (1566-1616) -> full_dispatch_request (992-1019) -> dispatch_request (966-990) -> finalize_request (1021-1051).",
+      "get_file_structure on src/flask/sansio/scaffold.py exposed route (336-365) delegating to add_url_rule (368-433), with view_functions created in Scaffold.__init__ (75-215) and the concrete App.add_url_rule at sansio/app.py 605-661.",
+      "src/flask/wrappers.py evidence showed where routing match results (url_rule, view_args, routing_exception) are stored on the Request.",
+      "Documentation search surfaced the PR template checklist and README contributing pointer; tests evidence (typing_route.py, test_user_error_handler.py) showed the fixture-based test idiom for a first contribution.",
+      "Sized at 5 steps with beginner-depth explanations to fit a new engineer's 30-minute budget; every cited window is 200 lines or fewer and comes from tool-returned ranges."
+    ],
+    "provider": "claude-code:claude-fable-5"
+  },
+  "mission": {
+    "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+    "title": "Add regression test for add_url_rule rejecting string 'methods' with TypeError",
+    "risk": "low",
+    "target_node": {
+      "id": "dab92a71b63931f493ddcf20",
+      "kind": "method",
+      "name": "add_url_rule",
+      "qualified_name": "flask.sansio.app.App.add_url_rule",
+      "module": "flask.sansio.app",
+      "span": {
+        "path": "src/flask/sansio/app.py",
+        "start_line": 605,
+        "start_column": 4,
+        "end_line": 661,
+        "end_column": 53
+      },
+      "signature": "self, rule: str, endpoint: str | None=None, view_func: ft.RouteCallable | None=None, provide_automatic_options: bool | None=None, **options: t.Any",
+      "metadata": {
+        "language": "python"
+      }
+    },
+    "rationale": "App.add_url_rule in src/flask/sansio/app.py (lines 623-627) explicitly raises TypeError with the message 'Allowed methods must be a list of strings...' when the methods option is passed as a bare string (e.g. methods=\"POST\" instead of methods=[\"POST\"]). A repository-wide search for this error message (including tests) found only the production code in src/flask/sansio/app.py, so this common-mistake guard has no direct test coverage. Nearby routing tests in tests/test_basic.py (test_method_route at lines 56-64 and test_method_route_no_methods at lines 67-69) already establish the exact pattern to follow: use the app fixture, register routes via @app.route / app.add_url_rule, and assert behavior. Adding a small pytest.raises(TypeError) test for both the @app.route decorator path (which delegates through Scaffold.route to add_url_rule, src/flask/sansio/scaffold.py:336-365) and the direct app.add_url_rule call is a bounded, verifiable, test-only change well suited to a new backend contributor learning the request-routing registration flow. It changes no production code, so the static blast radius is zero for library consumers.",
+    "suggested_files": [
+      "tests/test_basic.py",
+      "src/flask/sansio/app.py",
+      "src/flask/sansio/scaffold.py"
+    ],
+    "blast_radius_node_ids": [
+      "50acc027567790660570a2d7",
+      "7fbe6ac65526ffa745eb33da",
+      "c064545eb156a41f4ccee39d"
+    ],
+    "checklist": [
+      "Read App.add_url_rule in src/flask/sansio/app.py (lines 605-661) to confirm the TypeError guard for string 'methods' at lines 623-627 and understand the methods-normalization flow.",
+      "Read tests/test_basic.py lines 56-69 (test_method_route, test_method_route_no_methods) to mirror fixture usage, naming, and assertion style.",
+      "Add a new test (e.g. test_method_route_string_methods_error) near test_method_route in tests/test_basic.py using the existing app fixture.",
+      "In the test, assert pytest.raises(TypeError) when registering a view via @app.route(\"/\", methods=\"GET\") and via app.add_url_rule(\"/x\", \"x\", view, methods=\"POST\").",
+      "Optionally assert the error message mentions 'Allowed methods must be a list of strings' to lock in the helpful guidance text.",
+      "Run the focused test module (tests/test_basic.py) and confirm the new test passes and no existing tests break.",
+      "Keep the change test-only; do not modify any file under src/."
+    ],
+    "definition_of_done": [
+      "A new test in tests/test_basic.py verifies that passing methods as a bare string to both @app.route and app.add_url_rule raises TypeError.",
+      "The test follows existing conventions in tests/test_basic.py (app fixture, pytest.raises, placement near test_method_route).",
+      "The full tests/test_basic.py module passes locally with the new test included.",
+      "No production source files under src/flask are modified; the diff is limited to tests/test_basic.py."
+    ],
+    "provider": "claude-code:claude-fable-5",
+    "confidence": 0.82,
+    "validation_checks": [
+      "Target symbol and every suggested file exist in this analysis.",
+      "Static blast radius contains 3 neighboring nodes.",
+      "At least one existing test file is included in the proposal.",
+      "This remains a proposal until a developer verifies the behavior and accepts it."
+    ],
+    "status": "proposed"
+  },
+  "model_comparison": {
+    "analysis_id": "6c89f44fbfc74835be24a7f6cd2f4c2a",
+    "question": "How does Flask route an incoming HTTP request to a view function?",
+    "evidence_fingerprint": "f1d915726ea3727d48adf652d73e27023014216ac98c94e72bd26ad4f52f0117",
+    "evidence_files": [
+      "src/flask/app.py",
+      "src/flask/config.py",
+      "src/flask/ctx.py",
+      "src/flask/sansio/app.py",
+      "src/flask/sansio/blueprints.py",
+      "src/flask/sansio/scaffold.py",
+      "src/flask/views.py",
+      "src/flask/wrappers.py"
+    ],
+    "answers": [
+      {
+        "provider": "claude-code",
+        "model": "sonnet",
+        "answer": "The retrieved evidence only contains class-level docstrings and attribute declarations, not the actual dispatch/matching method bodies (e.g., wsgi_app, full_dispatch_request, dispatch_request, or url_map.bind/match calls), so a complete step-by-step trace of Flask's routing algorithm cannot be fully reconstructed from what was retrieved. Based on what is present, the picture that emerges is:\n\n1. The Flask application object (flask.app.Flask, extending flask.sansio.app.App, which extends flask.sansio.scaffold.Scaffold) is described as 'a central registry for the view functions, the URL rules, template configuration and much more' \u2014 meaning the app object is where URL rules and their corresponding view functions are stored so that an incoming request can be matched to one of them.\n\n2. Blueprint (flask.sansio.blueprints.Blueprint), which shares the Scaffold base with Flask, shows that routes can also be defined on a Blueprint using the same decorators as Flask, but these are recorded as deferred functions and only actually registered onto the URL map when the blueprint itself is registered on the app \u2014 meaning blueprint routes become part of the same central routing registry as app routes.\n\n3. Once a request is being handled, Flask's request wrapper class (flask.wrappers.Request) exposes the results of routing: \n - `url_rule`: 'The internal URL rule that matched the request,' useful for inspecting which methods are allowed. \n - `view_args`: 'A dict of view arguments that matched the request,' i.e., the URL variables extracted from the path that will be passed to the view function. \n - `routing_exception`: set if matching the URL failed (e.g., a Werkzeug `NotFound` exception), in which case `url_rule`/`view_args` may not be populated because the request was never internally bound to a rule. \n This shows that Flask relies on an underlying URL-matching step (from Werkzeug's routing, referenced indirectly via `Rule` and `MethodNotAllowed`) to determine which rule/view corresponds to the incoming request path and method, storing the result on the request object.\n\n4. Each request/response cycle happens inside an application/request context: flask.ctx.AppContext states that 'a context is pushed at the beginning of each request... and popped at the end,' and is referred to as a 'request context' when it carries request information \u2014 this is the context in which the matched view function is ultimately invoked.\n\n5. Generic class-based views (flask.views.View) show one way a 'view function' can be produced: subclassing `View` and overriding `dispatch_request`, then calling `View.as_view(name)` to get a view function that Flask can register with `add_url_rule` for a URL rule (e.g., `app.add_url_rule('/hello/<name>', view_func=Hello.as_view('hello'))`), which is then called with the URL variables captured during matching.\n\nIn summary, from the evidence: Flask (via its Scaffold/App/Blueprint base classes) maintains a central registry mapping URL rules to view functions; when a request comes in, it is matched against that registry, and the result (the matched `url_rule` and extracted `view_args`, or a `routing_exception` on failure) is attached to the `Request` object within a per-request `AppContext`; the corresponding view function (which may be a plain function or one produced via `View.as_view()`) is then called with those view arguments to produce the response. The evidence does not include the specific internal methods (e.g., `wsgi_app`, `full_dispatch_request`, `dispatch_request`, or the Werkzeug `MapAdapter.match` call) that perform this matching and invocation, so those exact mechanics cannot be cited here.",
+        "basis": "Answer synthesized strictly from the provided excerpts: Flask/App/Scaffold class docstrings describing the app as a central registry of URL rules and view functions; Blueprint docstring describing deferred route registration; Request class attributes (url_rule, view_args, routing_exception) describing routing outcomes attached to a request; AppContext docstring describing per-request context; View class docstring describing dispatch_request/as_view for class-based views. No dispatch/matching method implementations were present in the retrieved evidence.",
+        "citations": [
+          {
+            "node_id": "206ed774caa8a5017f4a4842",
+            "qualified_name": "flask.app",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/app.py",
+              "start_line": 109,
+              "start_column": 0,
+              "end_line": 1625,
+              "end_column": 0
+            },
+            "title": "Flask class docstring (central registry for view functions and URL rules)",
+            "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+            "relevance": "Describes Flask as the central object registering view functions and URL rules used for routing."
+          },
+          {
+            "node_id": "5dc63d4c5369ecf5f9981ae2",
+            "qualified_name": "flask.sansio.app",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/app.py",
+              "start_line": 59,
+              "start_column": 0,
+              "end_line": 1013,
+              "end_column": 0
+            },
+            "title": "App class docstring",
+            "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+            "relevance": "Base class of Flask, restates the central registry concept for view functions and URL rules."
+          },
+          {
+            "node_id": "a3dda31320f82d342405b0d0",
+            "qualified_name": "flask.sansio.scaffold",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/scaffold.py",
+              "start_line": 52,
+              "start_column": 0,
+              "end_line": 698,
+              "end_column": 0
+            },
+            "title": "Scaffold class",
+            "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+            "relevance": "Common base shared by Flask and Blueprint that underlies route registration behavior."
+          },
+          {
+            "node_id": "aa04b7ad65e20c09309a35c7",
+            "qualified_name": "flask.sansio.blueprints",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/blueprints.py",
+              "start_line": 119,
+              "start_column": 0,
+              "end_line": 692,
+              "end_column": 0
+            },
+            "title": "Blueprint class docstring",
+            "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+            "relevance": "Shows how routes defined via decorators on a Blueprint are deferred and later registered into the app's routing registry."
+          },
+          {
+            "node_id": "977fda75428269b85dc6da05",
+            "qualified_name": "flask.wrappers",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/wrappers.py",
+              "start_line": 18,
+              "start_column": 0,
+              "end_line": 219,
+              "end_column": 0
+            },
+            "title": "Request class (url_rule, view_args, routing_exception)",
+            "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+            "relevance": "Shows the attributes Flask attaches to a request once URL matching has occurred, directly describing the outcome of routing to a view."
+          },
+          {
+            "node_id": "b1f7c0c635e9ffb051a8e6b7",
+            "qualified_name": "flask.ctx",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/ctx.py",
+              "start_line": 260,
+              "start_column": 0,
+              "end_line": 525,
+              "end_column": 0
+            },
+            "title": "AppContext class docstring",
+            "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+            "relevance": "Describes the per-request context pushed/popped around request handling, in which the matched view function executes."
+          },
+          {
+            "node_id": "d02a658171fc423d3a5d88a1",
+            "qualified_name": "flask.views",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/views.py",
+              "start_line": 1,
+              "start_column": 0,
+              "end_line": 160,
+              "end_column": 0
+            },
+            "title": "View class (class-based views, as_view/dispatch_request)",
+            "excerpt": "from __future__ import annotations\n\nimport typing as t\n\nfrom . import typing as ft\nfrom .globals import current_app\nfrom .globals import request\n",
+            "relevance": "Shows how a view function can be produced from a class and registered via add_url_rule, to be invoked after routing with matched view arguments."
+          }
+        ],
+        "duration_ms": 43982.515,
+        "input_tokens": 2,
+        "output_tokens": 3677,
+        "estimated_cost_usd": 0.106361,
+        "validation_status": "passed"
+      },
+      {
+        "provider": "claude-code",
+        "model": "claude-fable-5",
+        "answer": "Based on the frozen evidence, Flask's request-to-view routing works through the following pieces:\n\n1. **The Flask application object is the routing registry and WSGI entry point.** The `Flask` class \"implements a WSGI application and acts as the central object... a central registry for the view functions, the URL rules, template configuration and much more\" (src/flask/app.py). This behavior is inherited from the sans-IO `App` base class, which carries the same description (src/flask/sansio/app.py), which in turn extends `Scaffold`, the \"Common behavior shared between Flask and Blueprint\" that also handles adding a static route when a static folder is configured (src/flask/sansio/scaffold.py). So an incoming HTTP request arrives at the app via the WSGI interface, and the app holds the URL-rule-to-view-function mapping used to resolve it.\n\n2. **A context is pushed for each request.** An `AppContext` \"contains information about an app, and about the request when handling a request. A context is pushed at the beginning of each request and CLI command, and popped at the end\"; when it has request information it is a \"request context\" (src/flask/ctx.py). When popped, it runs teardown functions registered with `teardown_request` and `teardown_appcontext`.\n\n3. **URL matching results are stored on the Request object.** Flask's `Request` \"Remembers the matched endpoint and view arguments.\" It exposes:\n   - `url_rule`: \"The internal URL rule that matched the request\" (a Werkzeug `Rule`), useful e.g. to inspect allowed methods via `request.url_rule.methods`;\n   - `view_args`: \"A dict of view arguments that matched the request\" (the URL variables passed to the view);\n   - `routing_exception`: \"If matching the URL failed, this is the exception that will be raised / was raised as part of the request handling\", usually `NotFound` or `MethodNotAllowed` (whose `valid_methods` lists allowed methods when the request method was invalid for the rule) (src/flask/wrappers.py).\n   This shows matching is delegated to Werkzeug's routing (`Rule`), and the matched rule plus extracted URL variables are attached to the request so the corresponding view function can be called with those `view_args`.\n\n4. **Views are registered against URL rules.** Views can be plain functions or class-based `View` subclasses: `as_view` \"create[s] a view function that creates an instance of the class... and calls its `dispatch_request` method with any URL variables\", registered via `app.add_url_rule(\"/hello/<name>\", view_func=Hello.as_view(\"hello\"))`; the `methods` attribute controls which HTTP methods the view accepts, with the same default (`[\"GET\", \"HEAD\", \"OPTIONS\"]`) as `route`/`add_url_rule` (src/flask/views.py). `Blueprint`s use \"the same decorators as Flask, but defer... by recording them for later registration\" as deferred functions executed with a `BlueprintSetupState` when the blueprint is registered on an application, with the blueprint name \"prepended to each endpoint name\" (src/flask/sansio/blueprints.py).\n\n**Summary flow supported by this evidence:** a WSGI request enters the `Flask` app \u2192 an `AppContext`/request context is pushed \u2192 the URL is matched against the registered Werkzeug URL rules, storing `url_rule` and `view_args` on the `Request` (or `routing_exception` on failure) \u2192 the view function registered for the matched endpoint (via `route`/`add_url_rule`, possibly a class-based `View.as_view` wrapper or a blueprint-registered view) is invoked with the URL variables.\n\n**Limitation:** the frozen evidence does not include the actual dispatch code (e.g., `Flask.wsgi_app`, `full_dispatch_request`, or `dispatch_request` on the app), so the exact call sequence in those methods cannot be cited here; the description above is limited to what the provided class docstrings and attributes document.",
+        "basis": "Answer synthesized strictly from the frozen evidence chunks: Flask/App docstrings describing the app as WSGI application and central registry of URL rules and view functions; AppContext docstring on per-request context push/pop; Request attributes url_rule/view_args/routing_exception showing Werkzeug Rule matching results; View.as_view/add_url_rule and Blueprint deferred registration for how views are bound to rules. Explicitly noted that the dispatch method bodies are not in the evidence.",
+        "citations": [
+          {
+            "node_id": "206ed774caa8a5017f4a4842",
+            "qualified_name": "flask.app",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/app.py",
+              "start_line": 109,
+              "start_column": 0,
+              "end_line": 1625,
+              "end_column": 0
+            },
+            "title": "flask.app.Flask class docstring",
+            "excerpt": "class Flask(App):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+            "relevance": "Flask implements a WSGI application and is the central registry for view functions and URL rules."
+          },
+          {
+            "node_id": "5dc63d4c5369ecf5f9981ae2",
+            "qualified_name": "flask.sansio.app",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/app.py",
+              "start_line": 59,
+              "start_column": 0,
+              "end_line": 1013,
+              "end_column": 0
+            },
+            "title": "flask.sansio.app.App class docstring",
+            "excerpt": "class App(Scaffold):\n    \"\"\"The flask object implements a WSGI application and acts as the central\n    object.  It is passed the name of the module or package of the\n    application.  Once it is created it will act as a central registry for\n    the view functions, the URL rules, template configuration and much more.\n\n    The name of the package is used to resolve resources from inside the\n    package or the folder the module is contained in depending on if the",
+            "relevance": "Sans-IO base class carrying the central registry of URL rules and view functions."
+          },
+          {
+            "node_id": "a3dda31320f82d342405b0d0",
+            "qualified_name": "flask.sansio.scaffold",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/scaffold.py",
+              "start_line": 52,
+              "start_column": 0,
+              "end_line": 698,
+              "end_column": 0
+            },
+            "title": "flask.sansio.scaffold.Scaffold",
+            "excerpt": "class Scaffold:\n    \"\"\"Common behavior shared between :class:`~flask.Flask` and\n    :class:`~flask.blueprints.Blueprint`.\n\n    :param import_name: The import name of the module where this object\n        is defined. Usually :attr:`__name__` should be used.\n    :param static_folder: Path to a folder of static files to serve.\n        If this is set, a static route will be added.",
+            "relevance": "Shared behavior between Flask and Blueprint, including adding a static route when static_folder is set."
+          },
+          {
+            "node_id": "b1f7c0c635e9ffb051a8e6b7",
+            "qualified_name": "flask.ctx",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/ctx.py",
+              "start_line": 260,
+              "start_column": 0,
+              "end_line": 525,
+              "end_column": 0
+            },
+            "title": "flask.ctx.AppContext",
+            "excerpt": "class AppContext:\n    \"\"\"An app context contains information about an app, and about the request\n    when handling a request. A context is pushed at the beginning of each\n    request and CLI command, and popped at the end. The context is referred to\n    as a \"request context\" if it has request information, and an \"app context\"\n    if not.\n\n    Do not use this class directly. Use :meth:`.Flask.app_context` to create an",
+            "relevance": "A context is pushed at the beginning of each request and popped at the end; teardown functions run on pop."
+          },
+          {
+            "node_id": "977fda75428269b85dc6da05",
+            "qualified_name": "flask.wrappers",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/wrappers.py",
+              "start_line": 18,
+              "start_column": 0,
+              "end_line": 219,
+              "end_column": 0
+            },
+            "title": "flask.wrappers.Request",
+            "excerpt": "class Request(RequestBase):\n    \"\"\"The request object used by default in Flask.  Remembers the\n    matched endpoint and view arguments.\n\n    It is what ends up as :class:`~flask.request`.  If you want to replace\n    the request object used you can subclass this and set\n    :attr:`~flask.Flask.request_class` to your subclass.\n",
+            "relevance": "Request remembers the matched Werkzeug Rule (url_rule), view_args passed to the view, and routing_exception on match failure."
+          },
+          {
+            "node_id": "d02a658171fc423d3a5d88a1",
+            "qualified_name": "flask.views",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/views.py",
+              "start_line": 1,
+              "start_column": 0,
+              "end_line": 160,
+              "end_column": 0
+            },
+            "title": "flask.views.View",
+            "excerpt": "from __future__ import annotations\n\nimport typing as t\n\nfrom . import typing as ft\nfrom .globals import current_app\nfrom .globals import request\n",
+            "relevance": "as_view creates a view function registered with add_url_rule that calls dispatch_request with URL variables; methods default matches route/add_url_rule."
+          },
+          {
+            "node_id": "aa04b7ad65e20c09309a35c7",
+            "qualified_name": "flask.sansio.blueprints",
+            "kind": "module",
+            "span": {
+              "path": "src/flask/sansio/blueprints.py",
+              "start_line": 119,
+              "start_column": 0,
+              "end_line": 692,
+              "end_column": 0
+            },
+            "title": "flask.sansio.blueprints.Blueprint",
+            "excerpt": "class Blueprint(Scaffold):\n    \"\"\"Represents a blueprint, a collection of routes and other\n    app-related functions that can be registered on a real application\n    later.\n\n    A blueprint is an object that allows defining application functions\n    without requiring an application object ahead of time. It uses the\n    same decorators as :class:`~flask.Flask`, but defers the need for an",
+            "relevance": "Blueprints record routes as deferred functions registered on the app later; blueprint name is prepended to endpoint names."
+          }
+        ],
+        "duration_ms": 40569.444,
+        "input_tokens": 2,
+        "output_tokens": 3116,
+        "estimated_cost_usd": 0.311864,
+        "validation_status": "passed"
+      }
+    ]
+  },
+  "captured_trace_events": 66,
+  "trace_artifact": "verification\\results\\live-multistep-trace.jsonl",
+  "live_multistep_demo": "passed"
+}

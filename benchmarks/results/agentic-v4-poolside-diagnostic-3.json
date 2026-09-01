@@ -1,0 +1,57 @@
+{
+  "benchmark_version": "4.0",
+  "protocol": "independent_agent_retrieval",
+  "cases_manifests": [
+    "benchmarks\\retrieval_cases_v4_cases.json"
+  ],
+  "release_gate_eligible": false,
+  "pending_human_adjudication": [
+    "v4-wp-01"
+  ],
+  "endpoints": [
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free"
+    },
+    {
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free"
+    }
+  ],
+  "case_count": 1,
+  "successful_model_runs": 0,
+  "failed_model_runs": 2,
+  "completed_model_attempts": 2,
+  "expected_model_attempts": 2,
+  "success_rate": 0.0,
+  "summary": {},
+  "runs": [],
+  "failures": [
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-m.1:free",
+      "trace_id": "agentic-55f0b51f5b5e4013a676fcbf55fff873",
+      "error_type": "AgentExecutionError",
+      "detail": "Repository synthesis exceeded 2 attempts",
+      "duration_ms": 279476.679,
+      "validation_status": "failed"
+    },
+    {
+      "case_id": "v4-wp-01",
+      "repository": "waypoint",
+      "provider": "openrouter",
+      "model": "poolside/laguna-xs-2.1:free",
+      "trace_id": "agentic-4a0e301b502e468ab706b5e7c6048101",
+      "error_type": "AgentExecutionError",
+      "detail": "Repository synthesis exceeded 2 attempts",
+      "duration_ms": 320138.735,
+      "validation_status": "failed"
+    }
+  ],
+  "hook_artifacts": {
+    "events_jsonl": "benchmarks\\results\\agentic-v4-poolside-diagnostic-3.hooks.jsonl",
+    "aggregate_json": "benchmarks\\results\\agentic-v4-poolside-diagnostic-3.hooks.json"
+  }
+}

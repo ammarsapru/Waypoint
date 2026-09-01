@@ -1,0 +1,422 @@
+{
+  "generated_at": "2026-07-18T23:55:32.376183+00:00",
+  "passed": false,
+  "results": [
+    {
+      "repository": "Flask",
+      "size": "medium",
+      "commit": "36e4a82",
+      "generated_at": "2026-07-18T23:55:30.621476+00:00",
+      "elapsed_seconds": 2.56,
+      "peak_memory_mib": 0.0,
+      "stats": {
+        "files_discovered": 83,
+        "files_parsed": 83,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 1704,
+        "edge_count": 2164,
+        "unresolved_count": 4182,
+        "duration_ms": 2543.457
+      },
+      "node_counts": {
+        "function": 1059,
+        "class": 160,
+        "module": 83,
+        "method": 401,
+        "repository": 1
+      },
+      "edge_counts": {
+        "contains": 1703,
+        "imports": 176,
+        "may_call": 285
+      },
+      "evidence_counts": {
+        "verified": 1879,
+        "inferred": 285
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 83 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": false,
+          "detail": "Missing modules: flask, flask.app, flask.blueprints, flask.ctx"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": false,
+          "detail": "Missing symbols: flask.app.Flask, flask.blueprints.Blueprint, flask.ctx.AppContext"
+        },
+        {
+          "name": "source_layout",
+          "passed": false,
+          "detail": "Incorrect module prefixes found, e.g. ['src.flask', 'src.flask.__main__', 'src.flask.app', 'src.flask.blueprints', 'src.flask.cli']"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": false,
+          "detail": "56 obvious first-party imports remain unresolved, e.g. ['flask', 'flask.views', 'from flask import Blueprint', 'from flask import Flask', 'from flask import Module']"
+        }
+      ],
+      "missing_modules": [
+        "flask",
+        "flask.app",
+        "flask.blueprints",
+        "flask.ctx"
+      ],
+      "missing_symbols": [
+        "flask.app.Flask",
+        "flask.blueprints.Blueprint",
+        "flask.ctx.AppContext"
+      ],
+      "suspicious_first_party_imports": [
+        "flask",
+        "flask.views",
+        "from flask import Blueprint",
+        "from flask import Flask",
+        "from flask import Module",
+        "from flask import Request",
+        "from flask import Response",
+        "from flask import appcontext_popped",
+        "from flask import current_app",
+        "from flask import flash",
+        "from flask import g",
+        "from flask import json",
+        "from flask import jsonify",
+        "from flask import redirect",
+        "from flask import render_template",
+        "from flask import request",
+        "from flask import session",
+        "from flask import stream_template",
+        "from flask import template_rendered",
+        "from flask import url_for",
+        "from flask.cli import AppGroup",
+        "from flask.cli import FlaskGroup",
+        "from flask.cli import NoAppException",
+        "from flask.cli import ScriptInfo",
+        "from flask.cli import cli",
+        "from flask.cli import find_best_app",
+        "from flask.cli import get_version",
+        "from flask.cli import load_dotenv",
+        "from flask.cli import locate_app",
+        "from flask.cli import prepare_import",
+        "from flask.cli import run_command",
+        "from flask.cli import with_appcontext",
+        "from flask.debughelpers import DebugFilesKeyError",
+        "from flask.globals import _cv_app",
+        "from flask.globals import app_ctx",
+        "from flask.globals import app_ctx as _app_ctx",
+        "from flask.helpers import get_debug_flag",
+        "from flask.json import jsonify",
+        "from flask.json.provider import DefaultJSONProvider",
+        "from flask.json.tag import JSONTag",
+        "from flask.json.tag import TaggedJSONSerializer",
+        "from flask.logging import default_handler",
+        "from flask.logging import has_level_handler",
+        "from flask.logging import wsgi_errors_stream",
+        "from flask.sessions import SecureCookieSessionInterface",
+        "from flask.sessions import SessionInterface",
+        "from flask.templating import render_template",
+        "from flask.testing import EnvironBuilder",
+        "from flask.testing import FlaskCliRunner",
+        "from flask.testing import FlaskClient",
+        "from flask.views import MethodView",
+        "from flask.views import View",
+        "from flask.wrappers import Response",
+        "from flaskr import create_app",
+        "from flaskr.db import get_db",
+        "from flaskr.db import init_db"
+      ],
+      "passed": false
+    },
+    {
+      "repository": "Requests",
+      "size": "small-medium",
+      "commit": "f361ead",
+      "generated_at": "2026-07-18T23:55:31.973110+00:00",
+      "elapsed_seconds": 1.272,
+      "peak_memory_mib": 0.0,
+      "stats": {
+        "files_discovered": 37,
+        "files_parsed": 37,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 845,
+        "edge_count": 1261,
+        "unresolved_count": 2738,
+        "duration_ms": 1262.05
+      },
+      "node_counts": {
+        "function": 187,
+        "module": 37,
+        "method": 524,
+        "class": 96,
+        "repository": 1
+      },
+      "edge_counts": {
+        "may_call": 325,
+        "imports": 92,
+        "contains": 844
+      },
+      "evidence_counts": {
+        "inferred": 325,
+        "verified": 936
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 37 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": false,
+          "detail": "Missing modules: requests, requests.api, requests.models, requests.sessions"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": false,
+          "detail": "Missing symbols: requests.api.get, requests.models.Response, requests.sessions.Session"
+        },
+        {
+          "name": "source_layout",
+          "passed": false,
+          "detail": "Incorrect module prefixes found, e.g. ['src.requests', 'src.requests.__version__', 'src.requests._internal_utils', 'src.requests._types', 'src.requests.adapters']"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": false,
+          "detail": "22 obvious first-party imports remain unresolved, e.g. ['from requests import compat', 'from requests import hooks', 'from requests._internal_utils import unicode_is_ascii', 'from requests.adapters import HTTPAdapter', 'from requests.auth import HTTPDigestAuth, _basic_auth_str']"
+        }
+      ],
+      "missing_modules": [
+        "requests",
+        "requests.api",
+        "requests.models",
+        "requests.sessions"
+      ],
+      "missing_symbols": [
+        "requests.api.get",
+        "requests.models.Response",
+        "requests.sessions.Session"
+      ],
+      "suspicious_first_party_imports": [
+        "from requests import compat",
+        "from requests import hooks",
+        "from requests._internal_utils import unicode_is_ascii",
+        "from requests.adapters import HTTPAdapter",
+        "from requests.auth import HTTPDigestAuth, _basic_auth_str",
+        "from requests.compat import JSONDecodeError",
+        "from requests.compat import JSONDecodeError, Morsel, MutableMapping, builtin_str, cookielib, getproxies, is_urllib3_1, urlparse",
+        "from requests.compat import urljoin",
+        "from requests.cookies import RequestsCookieJar",
+        "from requests.cookies import cookiejar_from_dict, morsel_to_cookie",
+        "from requests.exceptions import ChunkedEncodingError, ConnectionError, ConnectTimeout, ContentDecodingError, InvalidHeader, InvalidProxyURL, InvalidSchema, InvalidURL, MissingSchema, ProxyError, ReadTimeout, RequestException, RetryError, Timeout, TooManyRedirects, UnrewindableBodyError",
+        "from requests.exceptions import SSLError as RequestsSSLError",
+        "from requests.help import info",
+        "from requests.hooks import default_hooks",
+        "from requests.models import PreparedRequest, urlencode",
+        "from requests.packages.urllib3.poolmanager import PoolManager",
+        "from requests.sessions import SessionRedirectMixin",
+        "from requests.structures import CaseInsensitiveDict",
+        "from requests.structures import CaseInsensitiveDict, LookupDict",
+        "from requests.utils import _parse_content_type_header, add_dict_to_cookiejar, address_in_network, dotted_netmask, extract_zipped_paths, get_auth_from_url, get_encoding_from_headers, get_encodings_from_content, get_environ_proxies, get_netrc_auth, guess_filename, guess_json_utf, is_ipv4_address, is_valid_cidr, iter_slices, parse_dict_header, parse_header_links, prepend_scheme_if_needed, requote_uri, select_proxy, set_environ, should_bypass_proxies, super_len, to_key_val_list, to_native_string, unquote_header_value, unquote_unreserved, urldefragauth",
+        "requests",
+        "requests.adapters"
+      ],
+      "passed": false
+    },
+    {
+      "repository": "ItsDangerous",
+      "size": "small",
+      "commit": "672971d",
+      "generated_at": "2026-07-18T23:55:32.373182+00:00",
+      "elapsed_seconds": 0.324,
+      "peak_memory_mib": 0.0,
+      "stats": {
+        "files_discovered": 15,
+        "files_parsed": 15,
+        "files_skipped": 0,
+        "parse_failures": 0,
+        "node_count": 160,
+        "edge_count": 287,
+        "unresolved_count": 377,
+        "duration_ms": 321.26
+      },
+      "node_counts": {
+        "method": 98,
+        "module": 15,
+        "function": 17,
+        "class": 29,
+        "repository": 1
+      },
+      "edge_counts": {
+        "contains": 159,
+        "imports": 46,
+        "may_call": 82
+      },
+      "evidence_counts": {
+        "verified": 205,
+        "inferred": 82
+      },
+      "checks": [
+        {
+          "name": "repository_size",
+          "passed": true,
+          "detail": "Discovered 15 Python files"
+        },
+        {
+          "name": "parse_success",
+          "passed": true,
+          "detail": "Parse failure ratio 0.000%"
+        },
+        {
+          "name": "unique_node_ids",
+          "passed": true,
+          "detail": "All node IDs are unique"
+        },
+        {
+          "name": "unique_edge_ids",
+          "passed": true,
+          "detail": "All edge IDs are unique"
+        },
+        {
+          "name": "valid_edge_endpoints",
+          "passed": true,
+          "detail": "Every edge endpoint resolves to a node"
+        },
+        {
+          "name": "valid_source_spans",
+          "passed": true,
+          "detail": "Every source-backed node has a valid span"
+        },
+        {
+          "name": "evidence_invariants",
+          "passed": true,
+          "detail": "Edge kinds use the expected evidence status"
+        },
+        {
+          "name": "architectural_modules",
+          "passed": false,
+          "detail": "Missing modules: itsdangerous, itsdangerous.serializer, itsdangerous.signer, itsdangerous.timed"
+        },
+        {
+          "name": "architectural_symbols",
+          "passed": false,
+          "detail": "Missing symbols: itsdangerous.serializer.Serializer, itsdangerous.signer.Signer, itsdangerous.timed.TimestampSigner"
+        },
+        {
+          "name": "source_layout",
+          "passed": false,
+          "detail": "Incorrect module prefixes found, e.g. ['src.itsdangerous', 'src.itsdangerous._json', 'src.itsdangerous.encoding', 'src.itsdangerous.exc', 'src.itsdangerous.serializer']"
+        },
+        {
+          "name": "first_party_import_resolution",
+          "passed": false,
+          "detail": "23 obvious first-party imports remain unresolved, e.g. ['from itsdangerous.encoding import base64_decode', 'from itsdangerous.encoding import base64_encode', 'from itsdangerous.encoding import bytes_to_int', 'from itsdangerous.encoding import int_to_bytes', 'from itsdangerous.encoding import want_bytes']"
+        }
+      ],
+      "missing_modules": [
+        "itsdangerous",
+        "itsdangerous.serializer",
+        "itsdangerous.signer",
+        "itsdangerous.timed"
+      ],
+      "missing_symbols": [
+        "itsdangerous.serializer.Serializer",
+        "itsdangerous.signer.Signer",
+        "itsdangerous.timed.TimestampSigner"
+      ],
+      "suspicious_first_party_imports": [
+        "from itsdangerous.encoding import base64_decode",
+        "from itsdangerous.encoding import base64_encode",
+        "from itsdangerous.encoding import bytes_to_int",
+        "from itsdangerous.encoding import int_to_bytes",
+        "from itsdangerous.encoding import want_bytes",
+        "from itsdangerous.exc import BadData",
+        "from itsdangerous.exc import BadPayload",
+        "from itsdangerous.exc import BadSignature",
+        "from itsdangerous.exc import BadTimeSignature",
+        "from itsdangerous.exc import SignatureExpired",
+        "from itsdangerous.serializer import Serializer",
+        "from itsdangerous.signer import HMACAlgorithm",
+        "from itsdangerous.signer import NoneAlgorithm",
+        "from itsdangerous.signer import Signer",
+        "from itsdangerous.signer import SigningAlgorithm",
+        "from itsdangerous.signer import _lazy_sha1",
+        "from itsdangerous.timed import TimedSerializer",
+        "from itsdangerous.timed import TimestampSigner",
+        "from itsdangerous.url_safe import URLSafeSerializer",
+        "from itsdangerous.url_safe import URLSafeTimedSerializer",
+        "from test_itsdangerous.test_serializer import TestSerializer",
+        "from test_itsdangerous.test_signer import TestSigner",
+        "from test_itsdangerous.test_timed import TestTimedSerializer"
+      ],
+      "passed": false
+    }
+  ]
+}
